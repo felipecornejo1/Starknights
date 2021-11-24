@@ -9,6 +9,8 @@ Santiago Badino - 22 años, fanático de los videojuegos.
 
 Felipe Cornejo - 19 años, me dedico a las criptomonedas y NFTs.
 
+Christian Adrian Aimone - 21 años, me dedico a fabricar armaduras medievales.
+
 
 Listado de páginas referentes:
 1) https://www.axieinfinity.com
