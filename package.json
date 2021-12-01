@@ -1,0 +1,23 @@
+{
+  "name": "ProyectoGrupal",
+  "version": "1.0.0",
+  "description": "Digital House",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipecornejo1/ProyectoGrupal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipecornejo1/ProyectoGrupal/issues"
+  },
+  "homepage": "https://github.com/felipecornejo1/ProyectoGrupal#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
