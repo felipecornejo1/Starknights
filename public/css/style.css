@@ -1,0 +1,72 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #17172E;
+}
+
+header {
+    background-color: #070720;
+}
+
+/* Hacer 3 divs para la barra de navegacion
+cada uno con width: 33%
+*/
+
+.logo {
+    width: 180px;
+    height: 60px;
+    padding-bottom: 25px;
+}
+nav {
+    margin: auto;
+    border-top: 3px solid #D6A771;
+}
+
+nav ul {
+    margin: 0;
+    padding: 50px 0;
+}
+
+nav ul li {
+    float: none;
+    display: inline-block;
+}
+
+nav ul li:nth-child(1),
+nav ul li:nth-child(2),
+nav ul li:nth-child(3),
+nav ul li:nth-child(4) {
+    float: left;
+}
+
+nav ul li a {
+    margin: 0 25px;
+    text-decoration: none;
+    color: #EAEAEA;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #D6A771;
+    transition-duration: .5s;
+}
+
+nav div {
+    display: inline-block;
+    text-align: center;
+}
+
+.nav-izquierda, .nav-derecha {
+    width: 40%;
+}
+
+.nav-centro {
+    width: 19%;
+}
+
+nav div ul {
+    display: inline-block;
+}
