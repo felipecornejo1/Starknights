@@ -70,3 +70,20 @@ nav div {
 nav div ul {
     display: inline-block;
 }
+
+/*Marketplace*/
+.container-marketplace {
+    margin:60px 50px; 
+    background-color: azure;
+}
+
+.slideshow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item img{
+    width: 15vw;
+}
+/*Fin marketplace*/
