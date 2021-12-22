@@ -22,11 +22,11 @@ app.get('/marketplace', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/marketplace.html'))
 })
 
-app.get('/marketplace/carrito', (req, res) => {
+app.get('/carrito', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/carrito.html'))
 })
 
-app.get('/marketplace/detalle', (req, res) => {
+app.get('/detalle', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/detalle.html'))
 })
 
