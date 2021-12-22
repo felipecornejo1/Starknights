@@ -73,7 +73,7 @@ nav div ul {
 
 /*-------Carrito-------*/
 
-h2{
+.titulo-carrito{
     color: #EAEAEA;
     margin: 20px;
     position: relative;
@@ -258,7 +258,7 @@ h2{
 }
 
 @media (min-width: 361px){
-    h2{
+    .titulo-carrito{
         color: #EAEAEA;
         font-size: 20px;
         margin: 20px;        
@@ -365,7 +365,7 @@ h2{
 }
 
 @media (min-width: 1280px){
-    h2{
+    .titulo-carrito{
         color: #EAEAEA;
         margin: 30px;
         font-size: 30px;
