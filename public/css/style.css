@@ -73,7 +73,7 @@ nav div ul {
 
 /*-------Carrito-------*/
 
-h2{
+.titulo-carrito{
     color: #EAEAEA;
     margin: 20px;
     position: relative;
@@ -99,7 +99,7 @@ h2{
 
 .productos{
     width: 95%;
-    height: 171px;
+    height: 135px;
     background-color: #11113d;
     border-bottom: 1px solid rgba(5, 7, 12, .75);;
     display: flex;
@@ -109,7 +109,7 @@ h2{
 }
 
 .productos img{
-    margin: 0;
+    margin-left: 20px;
     width: 150px;
     border-radius: 5%;
     display: flex;        
@@ -258,7 +258,7 @@ h2{
 }
 
 @media (min-width: 361px){
-    h2{
+    .titulo-carrito{
         color: #EAEAEA;
         font-size: 20px;
         margin: 20px;        
@@ -266,7 +266,7 @@ h2{
 
     .productos_seleccionados {
         width: 90%;
-        padding-bottom: 20px;
+        padding: 20px 0;
         background-color: #11113d;
         border-radius: 2%;
         box-sizing: border-box;
@@ -275,7 +275,7 @@ h2{
     }
 
     .productos img{
-        margin: 20px;
+        margin-left: 20px;
         width: 40%;
         max-height: 85%;
         border-radius: 5%;
@@ -289,7 +289,7 @@ h2{
 
     .productos_seleccionados button{
         margin: 5px;
-        font-size: 15px;        
+        font-size: 12px;        
     }
 
     .button-carrito button{
@@ -394,10 +394,13 @@ h2{
     .descripcion-productos p {
         font-size: 22px;
     }
+    .productos{
+        height: 171px;
+    }
 }
 
 @media (min-width: 1280px){
-    h2{
+    .titulo-carrito{
         color: #EAEAEA;
         margin: 30px;
         font-size: 30px;
@@ -419,7 +422,7 @@ h2{
         margin: 10px;
         display: flex;
         box-sizing: border-box;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between; 
     }
     
@@ -450,7 +453,7 @@ h2{
     .productos_seleccionados button{
         align-self: flex-end;
         margin: 5px;
-        font-size: 18px;
+        font-size: 15px;
         transition: background-color 450ms;
         border-radius: 10%;
     }
@@ -485,7 +488,7 @@ h2{
     }
     
     .destacados p{
-        font-size: 25px;
+        font-size: 22px;
         position: relative;
         bottom: 1px;   
     }
@@ -517,13 +520,13 @@ h2{
     }
     
     #descripcion-p{
-        font-size: 25px;
+        font-size: 22px;
     }
     
     .descripcion-productos p{
         text-align: justify;
         margin: 20px 30px;
-        font-size: 20px;
+        font-size: 15px;
     }
     
     .recomendado{
@@ -552,7 +555,7 @@ h2{
     
     .recomendado p{
         width: 100%;
-        font-size: 20px;
+        font-size: 22px;
         text-align: center;
         position: relative;
         bottom: 7px;
