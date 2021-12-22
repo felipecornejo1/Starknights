@@ -99,7 +99,7 @@ h2{
 
 .productos{
     width: 95%;
-    height: 171px;
+    height: 135px;
     background-color: #11113d;
     border-bottom: 1px solid rgba(5, 7, 12, .75);;
     display: flex;
@@ -109,7 +109,7 @@ h2{
 }
 
 .productos img{
-    margin: 0;
+    margin-left: 20px;
     width: 150px;
     border-radius: 5%;
     display: flex;        
@@ -266,7 +266,7 @@ h2{
 
     .productos_seleccionados {
         width: 90%;
-        padding-bottom: 20px;
+        padding: 20px 0;
         background-color: #11113d;
         border-radius: 2%;
         box-sizing: border-box;
@@ -275,7 +275,7 @@ h2{
     }
 
     .productos img{
-        margin: 20px;
+        margin-left: 20px;
         width: 40%;
         max-height: 85%;
         border-radius: 5%;
@@ -359,6 +359,9 @@ h2{
     .descripcion-productos p {
         font-size: 22px;
     }
+    .productos{
+        height: 171px;
+    }
 }
 
 @media (min-width: 1280px){
@@ -384,7 +387,7 @@ h2{
         margin: 10px;
         display: flex;
         box-sizing: border-box;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between; 
     }
     
