@@ -353,6 +353,41 @@ h2{
         bottom: 5px;
         margin: 0px;
     }
+
+    /*-------Marketplace-------*/
+
+
+
+.container-mkt {
+    margin: 50px;
+}
+
+.item-mkt {
+    width: 200px;
+    padding: 10px;
+    background-color: black;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.item-mkt hr {
+    border: 0;
+    height: 1px;
+    background-color: #fff;
+}
+
+.item-img {
+    width: 200px;
+}
+
+.item-title-mkt, .precio-mkt {
+    color: #fff;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1em;
+}
+/*------Fin Marketplace-------*/
 }
 
 @media (min-width: 769px){
@@ -526,40 +561,7 @@ h2{
 
 /*-------Fin Carrito-------*/
 
-/*-------Marketplace-------*/
 
-
-
-.container-mkt {
-    margin: 50px;
-}
-
-.item-mkt {
-    width: 200px;
-    padding: 10px;
-    background-color: black;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-.item-mkt hr {
-    border: 0;
-    height: 1px;
-    background-color: #fff;
-}
-
-.item-img {
-    width: 200px;
-}
-
-.item-title-mkt, .precio-mkt {
-    color: #fff;
-    text-align: center;
-    font-weight: normal;
-    font-size: 1em;
-}
-/*------Fin Marketplace-------*/
 
 
 
