@@ -13,9 +13,8 @@ header {
 }
 
 .logo {
-    padding: 10px 200px 10px 0px;
-    width: 180px;
-    height: 60px;
+    padding: 10px 80px 10px  80px;
+    height: 100px;
 }
 .nav {
     display: flex;
@@ -297,9 +296,23 @@ nav ul li:nth-child(4) {
 }
 
 .market-title {
+    display: inline-block;
     margin-bottom: 0px;
     margin-left: 50px;
     color: #fff;
+    text-decoration: none;
+}
+
+.ver-todo {
+    display: inline-block;
+    margin-left: 20px;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #070720;
+    padding: 5px 10px;
+    border-radius: 25px;
 }
 
 .item-id {
@@ -343,6 +356,25 @@ nav ul li:nth-child(4) {
     font-size: 1em;
 }
 /*------Fin Marketplace-------*/
+
+.cartel-proximamente {
+    width: 500px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.cartel-proximamente img {
+    position: relative;
+    margin: 0 auto;
+    margin-left: 100px;
+    width: 300px;
+}
+
+.proximamente {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
 
 @media (min-width: 361px){
     .titulo-carrito{
