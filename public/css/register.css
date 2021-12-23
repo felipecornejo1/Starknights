@@ -6,7 +6,7 @@
     background-color: #11113d;
     padding: 30px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 50px;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow : 0px 0px 10px rgb(100, 100, 100);
@@ -16,6 +16,7 @@
     font-size: 22px;
     margin-bottom: 20px;
     margin-top: 5px;
+    color: #fff;
 }
 
 .casillas{
@@ -31,12 +32,14 @@
     font-size: 18px;
     padding-bottom: 10px;
     text-align: left;    
+    color: #fff;
 }
 
 .formulario-register h3 .perfil{
     font-size: 18px;
     padding-bottom: 5px;
     text-align: left; 
+    color: #fff;
 }
 
 #intereses {
