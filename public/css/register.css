@@ -1,0 +1,101 @@
+/*Formulario register*/
+
+.formulario-register{
+    box-sizing: border-box;
+    width: 350px;
+    background-color: #11113d;
+    padding: 30px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow : 0px 0px 10px rgb(100, 100, 100);
+}
+
+.formulario-register h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.casillas{
+    width: 92%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+.formulario-register h3{
+    font-size: 18px;
+    padding-bottom: 10px;
+    text-align: left;    
+}
+
+.formulario-register h3 .perfil{
+    font-size: 18px;
+    padding-bottom: 5px;
+    text-align: left; 
+}
+
+#intereses {
+    padding-top: 10px;
+}
+
+.checksbox{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-register .boton{
+    width: 100%;
+    background-color: #1259c3;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 450ms;
+}
+
+.archivo{
+    margin-bottom: 20px;
+}
+
+.formulario-register .boton:hover{
+    background-color: #D6A771;
+}
+
+@media (min-width: 1280px){
+    .formulario-register{        
+        width: 400px;
+    }
+
+    .formulario-register h4{
+        font-size: 27px;        
+    }
+    .casillas{
+        font-size: 20px;
+    }
+
+    .formulario-register h3{
+        font-size: 23px;
+    }
+
+    .formulario-register h3 .perfil{
+        font-size: 23px;
+    }
+
+    .formulario-register .boton{
+        font-size: 21px;
+    }
+
+    label{
+        font-size: 22px;
+    }
+}
+
+/*Fin formulario register*/
