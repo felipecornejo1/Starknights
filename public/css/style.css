@@ -216,3 +216,60 @@ footer {
     padding-top: 5%;
     background-color: #17172E;
 }
+
+/*-----Detalle------*/
+.Fila1 {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.art-detail{
+    width: 90%;
+   
+}
+
+.flex-detalle{
+    display: flexbox;
+    border: dotted 5px white;
+    text-align: center;
+    background-color: whitesmoke;
+    margin: 50px;
+}
+
+.descripciones{
+    
+    padding: 25px;
+}
+
+.bordes-box{
+    display: flex;
+    padding: 25px; 
+    margin: 20px;
+    border: #11113d;
+    text-align: justify;
+    flex-wrap: wrap;
+    justify-self: center;
+}
+
+.info-ventas{
+    margin: 10px;
+    padding: 8px;
+}
+
+.main-detalle{
+    margin: auto;
+}
+
+.texto-art{
+    text-align: justify;
+}
+
+.filehistory-selected{
+    margin: auto;
+    padding: 15px;
+}
+
+.Fila1{
+    text-align: center;
+}
