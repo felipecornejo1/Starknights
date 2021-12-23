@@ -13,9 +13,8 @@ header {
 }
 
 .logo {
-    padding: 10px 200px 10px 0px;
-    width: 180px;
-    height: 60px;
+    padding: 10px 80px 10px  80px;
+    height: 100px;
 }
 .nav {
     display: flex;
@@ -297,9 +296,23 @@ nav ul li:nth-child(4) {
 }
 
 .market-title {
+    display: inline-block;
     margin-bottom: 0px;
     margin-left: 50px;
     color: #fff;
+    text-decoration: none;
+}
+
+.ver-todo {
+    display: inline-block;
+    margin-left: 20px;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #070720;
+    padding: 5px 10px;
+    border-radius: 25px;
 }
 
 .item-id {
@@ -343,6 +356,25 @@ nav ul li:nth-child(4) {
     font-size: 1em;
 }
 /*------Fin Marketplace-------*/
+
+.cartel-proximamente {
+    width: 500px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.cartel-proximamente img {
+    position: relative;
+    margin: 0 auto;
+    margin-left: 100px;
+    width: 300px;
+}
+
+.proximamente {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
 
 @media (min-width: 361px){
     .titulo-carrito{
@@ -706,4 +738,113 @@ nav ul li:nth-child(4) {
 footer {
     padding-top: 5%;
     background-color: #17172E;
+}
+
+/*-----Detalle------*/
+.producto-title{
+    text-align: center;
+}
+
+.Fila1 {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.art-detail{
+   margin: auto;
+   padding: auto; 
+   justify-self: auto;
+   
+}
+
+.flex-detalle{
+    width: 850px;
+    height: auto;
+    background-color: #11113d;
+    margin: auto;
+    padding-bottom: 25px;
+    border-radius: 5%;
+    border: solid 5px lightskyblue;
+    margin-top: 50px;
+    padding: 20px 15px 20px;
+    color: #EAEAEA;
+}
+
+.descripciones{
+  float: left;
+  width: 400px;
+  height: 250px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.descripciones{
+    font-size: 20px;
+    text-align: right;
+  }
+
+.art-img{
+    float: right;
+    text-align: center;
+    border-radius: 10%;
+    width: 350px;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+    background-color: black;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    justify-self:center;
+    
+}
+
+.info-ventas{
+  
+}
+
+.info-ventas p{
+    text-align: left;
+}
+
+.buttons-detalle{
+
+}
+
+.cuadro-estadisticas{
+    
+}
+
+.bordes-box{
+    margin: auto;
+    padding: auto;
+
+}
+
+
+.main-detalle{
+    margin: auto;
+}
+
+.texto-art{
+    text-align: justify;
+}
+
+.filehistory-selected{
+    margin: auto;
+    padding: 15px;
+}
+
+.Fila1{
+    text-align: center;
+}
+.button-detalle button{
+    padding: 20px;
+    transition: background-color 450ms;
+    border-radius: 10%;
+}
+
+.button-detalle button:hover{
+    background-color: #D6A771;
 }
