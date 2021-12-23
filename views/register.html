@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,5 +31,33 @@
             </div>
         </nav>
     </header>
+    
+    <form class= "formulario-register" action="/creatucuenta" method="POST">
+        <h4>Registro de usuario </h4>
+        <input class="casillas" type="text" name="usuario" placeholder="Nombre y Apellido"/>
+        <br>
+        <input class="casillas" type="text" name="usuario" placeholder="Usuario"/>
+        <br>
+        <input class="casillas" type="email" name="email" placeholder="Correo Electrónico" required/>
+        <br>
+        <h3> Fecha de Nacimiento </h3>
+        <input class="casillas" type="date" min="1950-01-01" max="2021-12-01" name="fecha" />
+        <br>
+        <input class="casillas" type="text" name="usuario" placeholder="Domicilio"/>
+        <br>
+        <h3 class="titulos"> Ingresé su foto de perfil </h3>
+        <input class= "archivo" type="file" name="archivo" accept=".jpg" />
+        <br>
+        <input class="casillas" type="password" name="clave" placeholder="Contraseña" required />
+        <input class="casillas" type="password" name="clave" placeholder="Confirme su contraseña" required />
+        <button class= "boton" type="reset"> Reiniciar </button>
+        <button class= "boton" type="submit"> Enviar </button>        
+        
+      </form>
+
 </body>
+
+<footer>
+
+</footer>
 </html>
