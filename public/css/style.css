@@ -816,10 +816,6 @@ footer {
     
 }
 
-.info-ventas{
-  
-}
-
 .info-ventas p{
     text-align: left;
 }
@@ -834,10 +830,6 @@ footer {
 .buttons-detalle button:hover {
     background-color: #D6A771;
     transition-duration: 450ms;
-}
-
-.cuadro-estadisticas{
-    
 }
 
 .bordes-box{
