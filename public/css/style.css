@@ -257,6 +257,67 @@ nav div ul {
     bottom: 7px;
 }
 
+/*-------Marketplace-------*/
+
+
+
+.container-mkt {
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    overflow: hidden;
+    justify-content: space-evenly;
+    margin: 20px 50px;
+}
+
+.market-title {
+    margin-bottom: 0px;
+    margin-left: 50px;
+    color: #fff;
+}
+
+.item-id {
+    position: absolute;
+    background-color: #17172E;
+    border: 2px #D6A771 solid;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px;
+}
+
+.item-mkt {
+    position: relative;
+    width: 200px;
+    padding: 10px;
+    margin: 15px 15px;
+    background-color: #11113d;
+    text-decoration: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.item-mkt hr {
+    border: 0;
+    height: 1px;
+    background-color: #fff;
+}
+
+.item-img {
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+}
+
+.item-title-mkt, .precio-mkt {
+    color: #fff;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1em;
+}
+/*------Fin Marketplace-------*/
+
 @media (min-width: 361px){
     .titulo-carrito{
         color: #EAEAEA;
@@ -353,41 +414,6 @@ nav div ul {
         bottom: 5px;
         margin: 0px;
     }
-
-    /*-------Marketplace-------*/
-
-
-
-.container-mkt {
-    margin: 50px;
-}
-
-.item-mkt {
-    width: 200px;
-    padding: 10px;
-    background-color: black;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-.item-mkt hr {
-    border: 0;
-    height: 1px;
-    background-color: #fff;
-}
-
-.item-img {
-    width: 200px;
-}
-
-.item-title-mkt, .precio-mkt {
-    color: #fff;
-    text-align: center;
-    font-weight: normal;
-    font-size: 1em;
-}
-/*------Fin Marketplace-------*/
 }
 
 @media (min-width: 769px){
