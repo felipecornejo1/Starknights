@@ -1,4 +1,4 @@
-# ProyectoGrupal
+# Starknights
 Digital House
 
 DESCRIPCIÓN DEL PROYECTO
