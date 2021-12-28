@@ -15,6 +15,16 @@
     align-items: center;
 }
 
+.ya-tienes-cuenta {
+    font-size: 14px;
+    color: white;
+    font-weight: normal;
+}
+
+.ya-tienes-cuenta a {
+    color: blue;
+}
+
 .casillas-login{
     width: 25%;
     padding: 15px;
