@@ -1,5 +1,5 @@
 {
-  "name": "proyecto-grupal",
+  "name": "starknights",
   "version": "1.0.0",
   "description": "Digital House",
   "main": "src/app.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/felipecornejo1/ProyectoGrupal.git"
+    "url": "git+https://github.com/felipecornejo1/Starknights.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/felipecornejo1/ProyectoGrupal/issues"
+    "url": "https://github.com/felipecornejo1/Starknigths/issues"
   },
-  "homepage": "https://github.com/felipecornejo1/ProyectoGrupal#readme",
+  "homepage": "https://github.com/felipecornejo1/Starknights#readme",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1"
