@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    width: 99vw;
+    width: 100vw;
     background-color: #070720;
 }
 
@@ -395,7 +395,68 @@ nav ul li:nth-child(4) {
     text-align: center;
 }
 
-@media (min-width: 361px){
+@media (min-width: 361px) and (max-width: 768px){ /*------------MOBILE------------------------*/
+
+    /*----HEADER----*/
+
+    .nav-izquierda {
+        display: none;
+    }
+
+    .nav-derecha {
+        display: none;
+    }
+
+    /*--FIN HEADER--*/
+
+    /*----BANNER----*/
+
+    .main-img-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main-img1 {
+        width: 100vw;
+    }
+
+    .logo-banner {
+        width: 50vw;
+        padding-left: 25%;
+    }
+
+    /*--FIN BANNER--*/
+
+
+    /*----CREA TU CIVILIZACION----*/
+
+    .div-civilizacion-txt{
+        font-size: 1em;
+    }
+
+    .div-civilizacion-txt .h1-civilizacion{
+        font-size: 1.5em;
+    }
+
+    .div-civilizacion-img {
+        display: none;
+    }
+
+    /*--FIN CREA TU CIVILIZACION--*/
+
+
+
+    /*----ELEGIR RAZA----*/
+
+    .container-raza {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /*--FIN ELEGIR RAZA--*/
+
     .titulo-carrito{
         color: #EAEAEA;
         font-size: 20px;
@@ -691,20 +752,20 @@ nav ul li:nth-child(4) {
     width: 100%;
 }
 
-.main-img1 {
+/*.main-img1 {
     width: 60%;
     height: auto;
     padding-left: 40%;
     padding-top: .2%;
-}
+}*/
 
-.logo-banner {
+/*.logo-banner {
     position: absolute;
     display: block;
     align-self: flex-start;
     left: 10vw;
     width: 23vw;
-}
+}*/
 
 .container-civ {
     display: flex;
