@@ -686,10 +686,176 @@ nav ul li:nth-child(4) {
     .productos{
         height: 171px;
     }
+
+
+
+
+
+
+
+    .titulo-carrito{
+        color: #EAEAEA;
+        margin: 30px;
+        font-size: 30px;
+        position: relative;
+        left: 20px;
+    }
+        
+    .productos_seleccionados{
+        width: 50%;
+        padding: 20px 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .productos{
+        width: 95%;
+        height: 171px;
+        margin: 10px;
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: space-between; 
+    }
+    
+    .productos img{
+        max-height: 140px;
+        border-radius: 5%;
+        display: flex;        
+    }
+    
+    .precio-descuento-descripcion-remover{
+        display: flex;
+        flex-direction: column; 
+        margin-right: inherit; 
+    }
+    
+    .precio-descuento-descripcion-remover button{
+        align-self: flex-start;
+        margin: 5px;
+        font-size: 15px;
+    }
+    
+    .productos_seleccionados p{
+        align-self: flex-start;
+        margin: 5px;
+        font-size: 20px;
+    }
+    
+    .productos_seleccionados button{
+        align-self: flex-end;
+        margin: 5px;
+        font-size: 15px;
+        transition: background-color 450ms;
+    }
+    
+    .productos_seleccionados button:hover{
+        background-color: #D6A771;
+    }
+    
+    .total p{
+        padding: 20px;
+        text-align: right;
+    }
+    
+    .button-carrito button{
+        padding: 10px;
+        margin: 10px;
+        transition: background-color 450ms;
+    }
+    
+    .button-carrito button:hover{
+        background-color: #D6A771;
+    }
+    
+    .destacados{
+        width: 40%;
+        margin: 0;
+        border-radius: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .destacados p{
+        font-size: 22px;
+        position: relative;
+        bottom: 1px;   
+    }
+    
+    .destacados img{
+        width: 90%;
+        border-radius: 5%;
+        padding: 10px;       
+    }
+    
+    .button-carrito{
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .descripcion-recomendados{
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
+    .descripcion-productos{
+        padding: 10px;
+        margin: 30px 10px;
+        width: 40%;
+        height: auto;
+        border-radius: 5%;
+    }
+    
+    #descripcion-p{
+        font-size: 22px;
+    }
+    
+    .descripcion-productos p{
+        text-align: justify;
+        margin: 20px 30px;
+        font-size: 15px;
+    }
+    
+    .recomendado{
+        width: 50%;
+        padding: 20px 0;
+        margin: 30px 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: space-evenly;
+    }
+    
+    .recomendado-imagen{
+        margin: 10px;
+        width: 40%;
+        border-radius: 5%;
+        display: flex; 
+        align-items: center;
+    }
+    
+    .recomendado-imagen img{
+        width: 100%;
+        border-radius: 5%;
+    }
+    
+    .recomendado p{
+        width: 100%;
+        font-size: 22px;
+        text-align: center;
+        position: relative;
+        bottom: 7px;
+    }
 }
 
 @media (min-width: 1280px) {
 
+    /*-----HEADER-----*/
 
     .header {
         width: 99vw;
@@ -760,8 +926,6 @@ nav ul li:nth-child(4) {
     }
 
     /*--FIN CREA TU CIVILIZACION--*/
-
-
 
     /*----ELEGIR RAZA----*/
 
@@ -1136,7 +1300,6 @@ footer {
     padding: auto;
 
 }
-
 
 .main-detalle{
     margin: auto;
