@@ -4,7 +4,7 @@ const controller =
 {
     marketplace: (req, res) => {
         /*res.sendFile(path.resolve(__dirname, '..', './views/marketplace.html'));*/
-        res.render('marcketplace');
+        res.render('marketplace');
     },
     carrito: (req, res) => {
         /*res.sendFile(path.resolve(__dirname, '..', './views/carrito.html'));*/
