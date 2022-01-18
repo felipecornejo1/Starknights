@@ -391,7 +391,7 @@ nav ul li:nth-child(4) {
     text-align: center;
 }
 
-@media (min-width: 361px) and (max-width: 768px){ /*------------MOBILE------------------------*/
+@media (max-width: 768px){ /*------------MOBILE------------------------*/
 
     /*----HEADER----*/
 
@@ -454,7 +454,8 @@ nav ul li:nth-child(4) {
     .h1-elige-raza {
         color: #EAEAEA;
         font-size: 1em;
-        margin-left: 30%;
+        margin: 0 auto;
+        text-align: center;
         padding-top: 8%;
         text-transform: uppercase;
     }
@@ -466,13 +467,15 @@ nav ul li:nth-child(4) {
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
+        margin: 0 auto;
     }
     
     .protoss-1, .terran-1, .zerg-1 {
         width: 200px;
         height: 200px;
-        margin-top: 30%;
-        margin-left: 23%;
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right: auto;
         border: solid 1px rgba(214, 167, 113, .8);
     }
 
@@ -656,7 +659,8 @@ nav ul li:nth-child(4) {
     .h1-elige-raza {
         color: #EAEAEA;
         font-size: 1em;
-        margin-left: 41%;
+        margin: 0 auto;
+        text-align: center;
         padding-top: 8%;
         text-transform: uppercase;
     }
@@ -674,7 +678,8 @@ nav ul li:nth-child(4) {
         width: 200px;
         height: 200px;
         margin-top: 35px;
-        margin-left: 3px;
+        margin-left: auto;
+        margin-right: auto;
         border: solid 1px rgba(214, 167, 113, .8);
     }
 
@@ -932,7 +937,8 @@ nav ul li:nth-child(4) {
     .h1-elige-raza {
         color: #EAEAEA;
         font-size: 2em;
-        margin-left: 41%;
+        margin: 0 auto;
+        text-align: center;
         padding-top: 8%;
         text-transform: uppercase;
     }
@@ -949,7 +955,8 @@ nav ul li:nth-child(4) {
     .protoss-1, .terran-1, .zerg-1 {
         width: 300px;
         height: 300px;
-        margin-left: 0;
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 35px;
         border: solid 1px rgba(214, 167, 113, .8);
     }
