@@ -7,10 +7,13 @@ const path = require('path');
 let app = express();
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'));
 
 const publicPath = path.resolve(__dirname, '..', './public');
+const viewsPath = path.resolve(__dirname, './views')
 
 app.use(express.static(publicPath));
+app.use(express.static(viewsPath));
 
 app.use('/', mainRoutes);
 app.use('/marketplace', marketplaceRoutes);
