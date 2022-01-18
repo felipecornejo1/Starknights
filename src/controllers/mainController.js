@@ -6,17 +6,13 @@ const controller =
         /*res.sendFile(path.resolve(__dirname, '..', './views/home.html'));*/
         res.render('home');
     },
-    marketplace: (req, res) => {
-        /*res.sendFile(path.resolve(__dirname, '..', './views/marketplace.html'));*/
-        res.render('marketplace')
-    },
     login: (req, res) => {
         /*res.sendFile(path.resolve(__dirname, '..', './views/login.html'));*/
-        res.render('login');
+        res.render('users/login');
     },
     register: (req, res) => {
         /*res.sendFile(path.resolve(__dirname, '..', './views/register.html'));*/
-        res.render('register');
+        res.render('users/register');
     },
     proximamente: (req, res) => {
         /*res.sendFile(path.resolve(__dirname, '..', './views/proximamente.html'));*/

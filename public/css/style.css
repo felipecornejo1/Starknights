@@ -330,6 +330,25 @@ nav ul li:nth-child(4) {
     transition: 450ms;
 }
 
+.nuevo-item {
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 80%;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #070720;
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: #D6A771 solid 1px;
+}
+.nuevo-item:hover {
+    background-color: #D6A771;
+    transition: 450ms;
+}
+
 .item-id {
     position: absolute;
     background-color: #17172E;
@@ -391,6 +410,39 @@ nav ul li:nth-child(4) {
     text-align: center;
 }
 
+/*Formulario - Crear Items*/
+.item-form {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 15px 10px;
+    border-radius: 8px;
+    width: 650px;
+    max-width: 90vw;
+    background-color: #11113d;
+}
+
+.casillas {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+.save-button {
+    color: #fff;
+    background-color: #21218b;
+    padding: 10px;
+    border: none;
+}
+
+.save-button:hover {
+    background-color: #1f1fc9;
+}
+
 @media (max-width: 768px){ /*------------MOBILE------------------------*/
 
     /*----HEADER----*/
@@ -398,6 +450,10 @@ nav ul li:nth-child(4) {
     .header {
         width: 100vw;
         background-color: #070720;
+    }
+
+    .logo {
+        padding-left: 10px;
     }
 
     .nav-izquierda {
@@ -1278,7 +1334,7 @@ footer {
     height: auto;
     margin: auto;
     padding: 10px;
-    background-color: black;
+    background-color: #17172E;
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;

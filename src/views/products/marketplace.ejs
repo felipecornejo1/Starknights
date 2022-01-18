@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Head-->
+<%- include('../partials/head', {stylesheet: 'style', title: 'Marketplace'}) %>
+
+<body>
+    
+    <!--Header-->
+    <%- include('../partials/header') %>
+
+    <main>
+
+        <a href="/marketplace/nuevo-item" class="nuevo-item">NUEVO ITEM</a>
+
+        <!--Naves-->
+        <section class="market-section naves">
+            <a href="#" class="market-title"><h1 class="market-title">Naves</h1></a>
+            <a href="/proximamente" class="ver-todo">VER TODO</a>
+                
+            <div class="container-mkt">
+                <% for(let i=0; i<items.length; i++) { if(items[i].category == "naves") { %>
+                <a href="/marketplace/detail/<%= items[i].id %>" class="item-mkt">
+                    <div class="item-id">#<%= items[i].id %></div>
+                    <img src="img/naves/<%= items[i].image %>" class="item-img">
+                    <hr>
+                    <div class="item-info-mkt">
+                        <h2 class="precio-mkt">Ξ <%= items[i].price %></h2>
+                    </div>
+                </a>
+                <% } } %>
+            </div>
+
+            <!--Armaduras-->
+            <a href="#" class="market-title"><h1 class="market-title">Armaduras</h1></a>
+            <a href="/proximamente" class="ver-todo">VER TODO</a>
+            <div class="container-mkt">
+                <% for(let i=0; i<items.length; i++) { if(items[i].category == "armaduras") { %>
+                    <a href="/marketplace/detail/<%= items[i].id %>" class="item-mkt">
+                        <div class="item-id">#<%= items[i].id %></div>
+                        <img src="img/armaduras/<%= items[i].image %>" class="item-img">
+                        <hr>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt">Ξ <%= items[i].price %></h2>
+                        </div>
+                    </a>
+                    <% } } %>
+            </div>
+
+            <!--Mascotas-->
+            <a href="#" class="market-title"><h1 class="market-title">Mascotas</h1></a>
+            <a href="/proximamente" class="ver-todo">VER TODO</a>
+            <div class="container-mkt">
+                <% for(let i=0; i<items.length; i++) { if(items[i].category == "mascotas") { %>
+                    <a href="/marketplace/detail/<%= items[i].id %>" class="item-mkt">
+                        <div class="item-id">#<%= items[i].id %></div>
+                        <img src="img/mascotas/<%= items[i].image %>" class="item-img">
+                        <hr>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt">Ξ <%= items[i].price %></h2>
+                        </div>
+                    </a>
+                    <% } } %>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -12,8 +12,10 @@ app.set('views', path.join(__dirname, '/views'));
 const publicPath = path.resolve(__dirname, '..', './public');
 const viewsPath = path.resolve(__dirname, './views')
 
-app.use(express.static(publicPath));
-app.use(express.static(viewsPath));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.static(publicPath)); //Hacer publica la carpeta Public
+app.use(express.static(viewsPath)); //Hacer publica la carpeta views
 
 app.use('/', mainRoutes);
 app.use('/marketplace', marketplaceRoutes);

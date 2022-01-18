@@ -5,8 +5,6 @@ const router = express.Router();
 
 router.get('/', mainController.home);
 
-router.get('/marketplace', mainController.marketplace);
-
 router.get('/login', mainController.login);
 
 router.get('/register', mainController.register);

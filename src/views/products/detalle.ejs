@@ -1,40 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="/css/style.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/69b11e3637.js" crossorigin="anonymous"></script>
-    <title>Starknights</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
+
+<!--Head-->
+<%- include('../partials/head', {stylesheet: 'style', title: 'Detalle'}) %>
 
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-centro">
-                <a href="/"><img src="/img/logo-blanco.png" alt="logo" class="logo"></a>
-            </div>
-            <div class="nav-izquierda">
-                <ul class="nav-ul-izq">
-                    <li class="nav-li-izq"><a href="/marketplace" class="nav-li-a">Marketplace</a></li>
-                    <li class="nav-li-izq"><a href="/proximamente" class="nav-li-a">Historia</a></li> <!--Mas adelante hagamos esta pestaña y la de planetas, por ahora van a llevar a una pestaña de proximamente-->
-                    <li class="nav-li-izq"><a href="/proximamente" class="nav-li-a">Planetas</a></li>
-                </ul>
-            </div>
-            <div class="nav-derecha">
-                <ul class="nav-ul-der">
-                    <li class="nav-li-der"><a href="/marketplace/carrito" class="nav-li-a">Carrito</a></li>
-                    <li class="nav-li-der"><a href="/register" class="nav-li-a">Cuenta</a></li> <!--Hacer un drop menu para iniciar sesion, registrarse o configurar la cuenta-->
-                </ul>
-            </div>
-        </nav>
-</header>
+    
+    <!--Header-->
+    <%- include('../partials/header') %>
 
     <main class="main-detalle">
         <div class="flex-detalle">
-            <h2 class="producto-title">Nave #1234</h2>
+            <h2 class="producto-title"><%= item.name %></h2>
             <div class="descripciones"> 
                 
                 <p class="texto-art">
@@ -42,7 +19,13 @@
                 </p>
             </div> 
             <div class="art-img">
-                <img src="../img/naves/test-spaceship.png" class="art-detail">
+                <% if(item.category == 'naves') {%>
+                    <img src="/img/naves/<%= item.image %>" class="art-detail">
+                <% } else if (item.category == 'armaduras') { %>
+                    <img src="/img/armaduras/<%= item.image %>" class="art-detail">
+                <% } else { %>
+                    <img src="/img/mascotas/<%= item.image %>" class="art-detail">
+                <% } %>
             </div>
 
             <div class= "buttons-detalle"> 

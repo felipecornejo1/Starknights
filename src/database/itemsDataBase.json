@@ -1,0 +1,107 @@
+[
+ {
+  "id": 28378421,
+  "name": "Nave Roja",
+  "category": "naves",
+  "price": 123.45,
+  "image": "test-spaceship.png"
+ },
+ {
+  "id": 28378422,
+  "name": "Nave Amarilla",
+  "category": "naves",
+  "price": 321.45,
+  "image": "test-spaceship-2.png"
+ },
+ {
+  "id": 28378423,
+  "name": "Nave Violeta",
+  "category": "naves",
+  "price": 657.45,
+  "image": "test-spaceship-3.png"
+ },
+ {
+  "id": 28378424,
+  "name": "Nave Azul",
+  "category": "naves",
+  "price": 35.45,
+  "image": "test-spaceship-4.png"
+ },
+ {
+  "id": 28378425,
+  "name": "Nave Celeste",
+  "category": "naves",
+  "price": 999.45,
+  "image": "test-spaceship-5.png"
+ },
+ {
+  "id": 28378426,
+  "name": "Armadura Genérica",
+  "category": "armaduras",
+  "price": 123.45,
+  "image": "test-armor.png"
+ },
+ {
+  "id": 28378427,
+  "name": "Armadura Genérica",
+  "category": "armaduras",
+  "price": 321.45,
+  "image": "test-armor.png"
+ },
+ {
+  "id": 28378428,
+  "name": "Armadura Genérica",
+  "category": "armaduras",
+  "price": 657.45,
+  "image": "test-armor.png"
+ },
+ {
+  "id": 28378429,
+  "name": "Armadura Genérica",
+  "category": "armaduras",
+  "price": 35.45,
+  "image": "test-armor.png"
+ },
+ {
+  "id": 283784210,
+  "name": "Armadura Genérica",
+  "category": "armaduras",
+  "price": 999.45,
+  "image": "test-armor.png"
+ },
+ {
+  "id": 283784211,
+  "name": "alien 1",
+  "category": "mascotas",
+  "price": 123.45,
+  "image": "test-pet-1.png"
+ },
+ {
+  "id": 283784212,
+  "name": "alien 2",
+  "category": "mascotas",
+  "price": 321.45,
+  "image": "test-pet-2.png"
+ },
+ {
+  "id": 283784213,
+  "name": "alien 3",
+  "category": "mascotas",
+  "price": 657.45,
+  "image": "test-pet-3.png"
+ },
+ {
+  "id": 283784214,
+  "name": "alien 4",
+  "category": "mascotas",
+  "price": 35.45,
+  "image": "test-pet-4.png"
+ },
+ {
+  "id": 283784215,
+  "name": "alien 5",
+  "category": "mascotas",
+  "price": 999.45,
+  "image": "test-pet-5.png"
+ }
+]
