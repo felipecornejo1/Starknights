@@ -36,11 +36,11 @@
 
         <div class="input-container">
             <input class= "casillas-login" type="text" name="usuario" placeholder="Usuario" value="<%= old.usuario %>"/>
-            <% if(errors.usuario) { %><p class="form-error"><%= errors.usuario.msg %></p><% } %>
+            <% if(locals.errors.usuario) { %><p class="form-error"><%= errors.usuario.msg %></p><% } %>
         </div>
         <div class="input-container">
             <input class= "casillas-login" type="password" name="password" placeholder="Contraseña"/>
-            <% if(errors.password) { %><p class="form-error"><%= errors.password.msg %></p><% } %>
+            <% if(locals.errors.password) { %><p class="form-error"><%= errors.password.msg %></p><% } %>
         </div>
         <button class= "boton-login" type="submit"> Ingresar </button>        
     </form>

@@ -24,6 +24,10 @@ router.post('/login', loginValidations, usersController.sendLogin);
 
 router.get('/register', usersController.register);
 
-router.post('/register', registerValidations, usersController.sendRegister)
+router.post('/register', registerValidations, usersController.sendRegister);
+
+router.get('/profile', usersController.profile);
+
+router.post('/logout', usersController.logout);
 
 module.exports = router;

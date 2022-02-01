@@ -44,6 +44,13 @@ const controller = {
 
                 res.redirect('/');
             }
+            /* else {
+                res.redirect('users/login', {errors: {
+                    usuario: {
+                        msg: 'Las credenciales son inválidas'
+                    }
+                }})
+            } */
 
         }
         else {
@@ -88,6 +95,13 @@ const controller = {
         else {
             res.render('users/register', {errors: errors.mapped, old: req.body});
         }
+    },
+    profile: (req, res) => {
+        res.render('users/profile');
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect('/')
     }
 }
 
