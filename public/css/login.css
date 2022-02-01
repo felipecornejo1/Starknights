@@ -26,11 +26,10 @@
 }
 
 .casillas-login{
-    width: 25%;
+    width: 50vw;
     padding: 15px;
     border-radius: 5px;
     border: none;
-    margin-bottom: 16px;
     font-size: 18px;
 }
 
@@ -51,7 +50,7 @@
 
 @media (min-width: 361px){
     .casillas-login{
-        width: 60%;
+        width: 50vw;
         padding: 10px;
     }
 
@@ -62,7 +61,7 @@
 }
 @media (min-width: 769px){
     .casillas-login{
-        width: 40%;
+        width: 30vw;
         padding: 12px;
     }
 
@@ -74,7 +73,7 @@
 
 @media (min-width: 1280px){
     .casillas-login{
-        width: 25%;
+        width: 30vw;
         padding: 15px;
     }
 

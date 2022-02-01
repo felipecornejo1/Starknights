@@ -1,8 +1,12 @@
 const mainRoutes = require('./routes/mainRoutes');
 const marketplaceRoutes = require('./routes/marketplaceRoutes');
+const usersRoutes = require('./routes/usersRoutes');
+const isUserLogged = require('./middlewares/isUserLogged');
 
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 let app = express();
 
@@ -17,9 +21,21 @@ app.use(express.json());
 app.use(express.static(publicPath)); //Hacer publica la carpeta Public
 app.use(express.static(viewsPath)); //Hacer publica la carpeta views
 
-app.use('/', mainRoutes);
-app.use('/marketplace', marketplaceRoutes);
+app.use(session({
+	secret: "secreto starknights",
+	resave: true,
+	saveUninitialized: false,
+})); //Configurar session
+
+app.use(cookieParser());
+
+const userCookie = require('./middlewares/userCookie');
+//app.use(userCookie);
+
+app.use('/', isUserLogged, mainRoutes);
+app.use('/marketplace', isUserLogged, marketplaceRoutes);
+app.use('/users', isUserLogged, usersRoutes);
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log('Servidor corriendo en el puerto 3000')
+    console.log('Servidor corriendo en el puerto 3000');
 });

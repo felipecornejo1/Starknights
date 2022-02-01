@@ -15,29 +15,40 @@
   <!--Header-->
   <%- include('../partials/header') %>
     
-    <form class= "formulario-register" action="/creatucuenta" method="POST">
-        <h4 class="title">Registro de usuario </h4>
-        <h4 class="ya-tienes-cuenta">¿Ya tienes cuenta? - <a href="/login">Iniciar sesión</a></h4>
-        <input class="casillas" type="text" name="usuario" placeholder="Nombre y Apellido"/>
-        <br>
-        <input class="casillas" type="text" name="usuario" placeholder="Usuario"/>
-        <br>
-        <input class="casillas" type="email" name="email" placeholder="Correo Electrónico" required/>
-        <br>
-        <h3> Fecha de Nacimiento </h3>
-        <input class="casillas" type="date" min="1950-01-01" max="2021-12-01" name="fecha" />
-        <br>
-        <input class="casillas" type="text" name="usuario" placeholder="Domicilio"/>
-        <br>
-        <h3 class="titulos"> Ingresé su foto de perfil </h3>
-        <input class= "archivo" type="file" name="archivo" accept=".jpg" />
-        <br>
-        <input class="casillas" type="password" name="clave" placeholder="Contraseña" required />
-        <input class="casillas" type="password" name="clave" placeholder="Confirme su contraseña" required />
-        <button class= "boton" type="reset"> Reiniciar </button>
-        <button class= "boton" type="submit"> Enviar </button>        
-        
-      </form>
+  <% if(locals.errors == undefined) { %>
+  
+    <form class= "formulario-register" action="/users/register" method="POST">
+      <h4 class="title">Registro de usuario </h4>
+      <h4 class="ya-tienes-cuenta">¿Ya tienes cuenta? - <a href="/users/login">Iniciar sesión</a></h4>
+      <input class="casillas" type="text" name="usuario" placeholder="Nombre de Usuario"/>
+      <br>
+      <input class="casillas" type="email" name="email" placeholder="Correo Electrónico"/>
+      <br>
+      <h3 class="titulos"> Ingrese su foto de perfil </h3>
+      <input class= "archivo" type="file" name="archivo" accept=".jpg" />
+      <br>
+      <input class="casillas" type="password" name="password" placeholder="Contraseña"/>
+      <button class= "boton" type="reset"> Reiniciar </button>
+      <button class= "boton" type="submit"> Enviar </button>        
+    </form>
+
+  <% } else { %>
+    <form class= "formulario-register" action="/users/register" method="POST">
+      <h4 class="title">Registro de usuario </h4>
+      <h4 class="ya-tienes-cuenta">¿Ya tienes cuenta? - <a href="/users/login">Iniciar sesión</a></h4>
+      <input class="casillas" type="text" name="usuario" placeholder="Nombre de Usuario" value="<%= old.usuario %>"/>
+      <% if(errors.usuario) { %><p class="form-error"><%= errors.usuario.msg %></p><% } %>
+      <br>
+      <input class="casillas" type="email" name="email" placeholder="Correo Electrónico" value="<%= old.email %>"/>
+      <br>
+      <h3 class="titulos"> Ingrese su foto de perfil </h3>
+      <input class= "archivo" type="file" name="archivo" accept=".jpg" />
+      <br>
+      <input class="casillas" type="password" name="password" placeholder="Contraseña"/>
+      <button class= "boton" type="reset"> Reiniciar </button>
+      <button class= "boton" type="submit"> Enviar </button>        
+    </form>
+  <% } %>
 
 </body>
 

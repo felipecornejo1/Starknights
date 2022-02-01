@@ -1,16 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
-const itemsFilePath = path.join(__dirname, '../database/itemsDataBase.json')
+const itemsFilePath = path.join(__dirname, '../database/itemsDB.json')
 const items = JSON.parse(fs.readFileSync(itemsFilePath, 'utf-8'))
 
 const controller = 
 {
     marketplace: (req, res) => {
-        res.render('products/marketplace', {items: items});
+        res.render('products/marketplace', {items: items, user: req.session.loggedUser});
     },
     carrito: (req, res) => {
-        res.render('products/carrito');
+        res.render('products/carrito', {user: req.session.loggedUser});
     },
     detail: (req, res) => {
         
@@ -18,7 +18,7 @@ const controller =
             return i.id == req.params.id;
         }))[0];
         
-        res.render('products/detalle', {item: itemBuscado});
+        res.render('products/detalle', {item: itemBuscado, user: req.session.loggedUser});
     },
     create: (req, res) => {
         res.render('products/product-create-form')

@@ -17,14 +17,34 @@
     <!--Header-->
     <%- include('../partials/header') %>
 
-    <form class="formulario-login" action= "./views/home.html" method="POST">
-        <h4 class="ya-tienes-cuenta">¿No tienes cuenta? - <a href="/register">Registrarse</a></h4>
-
-        <input class= "casillas-login" type="text" name="usuario" placeholder="Usuario"/>
-        <input class= "casillas-login" type="password" name="clave" placeholder="Contraseña" />
+    <% if(locals.errors==undefined) { %>
+    <form class="formulario-login" action= "/users/login" method="POST">
+        <h4 class="ya-tienes-cuenta">¿No tienes cuenta? - <a href="/users/register">Registrarse</a></h4>
+        <div class="input-container">
+            <input class= "casillas-login" type="text" name="usuario" placeholder="Usuario"/>
+        </div>
+        <div class="input-container">
+            <input class= "casillas-login" type="password" name="password" placeholder="Contraseña" />
+        </div>
         <button class= "boton-login" type="submit"> Ingresar </button>        
         
     </form>
+    <% } else { %>
+
+    <form class="formulario-login" action= "/users/login" method="POST">
+        <h4 class="ya-tienes-cuenta">¿No tienes cuenta? - <a href="/users/register">Registrarse</a></h4>
+
+        <div class="input-container">
+            <input class= "casillas-login" type="text" name="usuario" placeholder="Usuario" value="<%= old.usuario %>"/>
+            <% if(errors.usuario) { %><p class="form-error"><%= errors.usuario.msg %></p><% } %>
+        </div>
+        <div class="input-container">
+            <input class= "casillas-login" type="password" name="password" placeholder="Contraseña"/>
+            <% if(errors.password) { %><p class="form-error"><%= errors.password.msg %></p><% } %>
+        </div>
+        <button class= "boton-login" type="submit"> Ingresar </button>        
+    </form>
+    <% } %>
       
 </body>
 <footer>

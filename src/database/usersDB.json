@@ -1,0 +1,42 @@
+[
+ {
+  "usuario": "felipeprueba",
+  "email": "felicornejo@gmail.com",
+  "password": "$2b$10$g83G324kDDD3i3SotkWEMefRdW8n5LYKw73yfbLFplowbJDZSsJrO"
+ },
+ {
+  "usuario": "felipeprueba2",
+  "email": "felicornejo@gmail.com",
+  "password": "$2b$10$3abj61CkDxsFKuTSZ0P8N.3TlGQebZLmmOqHMgkKaezWQHb0OLf32"
+ },
+ {
+  "usuario": "felipeprueba2",
+  "email": "felicornejo2@gmail.com",
+  "archivo": "",
+  "password": "felipe01"
+ },
+ {
+  "usuario": "felipeprueba3",
+  "email": "felicornejo@gmail.com",
+  "archivo": "",
+  "password": "$2b$10$GzonaKouO3uSVTfhbChKmeGDqe2cIiFFTf.cA1wq.W.gbU.jobG8q"
+ },
+ {
+  "usuario": "felipeprueba4",
+  "email": "felicornejo@gmail.com",
+  "archivo": "",
+  "password": "$2b$10$2FWIaelrsikv4E/cuZrVB.adZ/zFG5qHonAdREYN3AcBeXqud9Oj."
+ },
+ {
+  "usuario": "Felipe Cornejo",
+  "email": "felicornejo22@gmail.com",
+  "archivo": "",
+  "password": "$2b$10$ZtHpvFihBffq5uM4R8XHqOuSVmmbM8cGAGQNHXtRxgtLy0k4eOVYW"
+ },
+ {
+  "usuario": "Ebi",
+  "email": "ebi@gmail.com",
+  "archivo": "",
+  "password": "$2b$10$0rejZocGRWLpecfZZ/CHBe5PUqChC/1PWsUuT11YjhyAGy7FYE2/q"
+ }
+]

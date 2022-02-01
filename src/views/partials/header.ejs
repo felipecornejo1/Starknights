@@ -13,8 +13,12 @@
         <div class="nav-derecha">
             <ul class="nav-ul-der">
                 <li class="nav-li-der"><a href="/marketplace/carrito" class="nav-li-a">Carrito</a></li>
-                <li class="nav-li-der"><a href="/register" class="nav-li-a">Cuenta</a></li> <!--Hacer un drop menu para iniciar sesion, registrarse o configurar la cuenta-->
-            </ul>
+                <% if(locals.user != undefined) { %>
+                    <li class="nav-li-der"><a href="/users/profile" class="nav-li-a">Perfil</a></li>
+                    <% } else { %>
+                        <li class="nav-li-der"><a href="/users/register" class="nav-li-a">Registrarse</a></li>
+                    <% } %>
+                    </ul>
         </div>
     </nav>
 </header>
