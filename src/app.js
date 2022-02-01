@@ -31,9 +31,9 @@ app.use(cookieParser());
 
 //app.use(userCookie);
 
-app.use('/', isUserLogged, mainRoutes);
-app.use('/marketplace', isUserLogged, marketplaceRoutes);
-app.use('/users', isUserLogged, usersRoutes);
+app.use('/', mainRoutes);
+app.use('/marketplace', marketplaceRoutes);
+app.use('/users', usersRoutes);
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
