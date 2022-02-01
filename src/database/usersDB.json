@@ -38,5 +38,11 @@
   "email": "ebi@gmail.com",
   "archivo": "",
   "password": "$2b$10$0rejZocGRWLpecfZZ/CHBe5PUqChC/1PWsUuT11YjhyAGy7FYE2/q"
+ },
+ {
+  "usuario": "sava",
+  "email": "sava@gmail.com",
+  "archivo": "",
+  "password": "$2b$10$X9w7ADxies5PHLF6QyWnlO62ZaHNTXiRXs51WLvvcsvR41.rDv2yC"
  }
 ]

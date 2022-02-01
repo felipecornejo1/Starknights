@@ -29,7 +29,6 @@ app.use(session({
 
 app.use(cookieParser());
 
-const userCookie = require('./middlewares/userCookie');
 //app.use(userCookie);
 
 app.use('/', isUserLogged, mainRoutes);
