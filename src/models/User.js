@@ -3,7 +3,7 @@ const path = require('path')
 const usersFilePath = path.join(__dirname, '../database/usersDB.json')
 
 const user = {
-
+    
     getData: function (){
         return JSON.parse (fs.readFileSync(usersFilePath, "utf-8"));
     },

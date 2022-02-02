@@ -2,6 +2,8 @@ const usersController = require('./../controllers/usersController');
 
 const guestMiddleware = require('./../middlewares/guestMiddleware');
 const authMiddleware = require('./../middlewares/authMiddleware');
+const loginValidator = require('../middlewares/loginValidator');
+const loginDataCheck = require('../middlewares/loginDataCheck');
 
 
 const express = require('express');
@@ -23,7 +25,7 @@ const loginValidations = [
 
 router.get('/login', guestMiddleware, usersController.login);
 
-router.post('/login', loginValidations, usersController.sendLogin);
+router.post('/login', loginValidations, loginValidator, loginDataCheck, usersController.sendLogin);
 
 router.get('/register', guestMiddleware, usersController.register);
 
