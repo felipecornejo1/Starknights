@@ -1,10 +1,11 @@
 const fs = require("fs");
+const path = require('path')
+const usersFilePath = path.join(__dirname, '../database/usersDB.json')
 
 const user = {
-    fileName: "./../database/usersDB.json",
 
     getData: function (){
-        return JSON.parse (fs.readFileSync(this.fileName, "utf-8"));
+        return JSON.parse (fs.readFileSync(usersFilePath, "utf-8"));
     },
 
     generateId: function(){
@@ -39,7 +40,7 @@ const user = {
             ...userData
         }
         allUsers.push(userData);
-        fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, " "));
+        fs.writeFileSync(usersFilePath, JSON.stringify(allUsers, null, " "));
         return true;
     }
 }
