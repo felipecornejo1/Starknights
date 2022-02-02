@@ -12,5 +12,12 @@
   "archivo": "",
   "password": "$2b$10$rAFX4zuDnrPh4rDgcBQQeusAQ6NDE.9D0YUD8Uj/NbN6TzOyXLV3C",
   "id": 2
+ },
+ {
+  "usuario": "Santi",
+  "email": "santi@gmail.com",
+  "archivo": "",
+  "password": "$2b$10$GLCqlze1GiPHRYL9I2UNKO69UHiF6P8T8WVpXYIHPG3vxvYRUXhRa",
+  "id": 3
  }
 ]
