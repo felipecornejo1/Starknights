@@ -44,8 +44,4 @@ const user = {
     }
 }
 
-<<<<<<< HEAD
-module.exports = user;
-=======
 console.log(User.generateId());
->>>>>>> 793dc7f7bf6143106494090cb018807880a5aab0
