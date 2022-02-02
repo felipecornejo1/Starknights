@@ -1,10 +1,11 @@
 const fs = require("fs");
+const path = require('path')
+const usersFilePath = path.join(__dirname, '../database/usersDB.json')
 
 const user = {
-    fileName: "./database/usersDB.json",
 
     getData: function (){
-        return JSON.parse (FileSystem.readFileSync(this.fileName, "utf-8"));
+        return JSON.parse (fs.readFileSync(usersFilePath, "utf-8"));
     },
 
     generateId: function(){
@@ -39,9 +40,16 @@ const user = {
             ...userData
         }
         allUsers.push(userData);
-        fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, " "));
+        fs.writeFileSync(usersFilePath, JSON.stringify(allUsers, null, " "));
+        return true;
+    },
+
+    delete: function(id){
+        let allUser =   this.findAll();
+        let finalUsers = allUser.filter(oneUser => oneUser.id !== id)
+        fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, " "));
         return true;
     }
 }
 
-console.log(User.generateId());
+module.exports = user;
