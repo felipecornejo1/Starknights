@@ -18,15 +18,19 @@ const loginDataCheck = (req, res, next) => {
         }
     }
 
-    if(userCheck = true) {
+    if(userCheck == true) {
+        console.log('LoginDataCheck Pasado' + userCheck)
         next();
     }
     else {
-        res.redirect('/login', {errors: {
+
+        console.log('LoginDataCheck Fallido')
+        res.render('users/login', {errors: {
             usuario: {
                 msg: 'Las credenciales son inválidas'
             }
-        }})
+        },
+        old: req.body})
     }
 }
 
