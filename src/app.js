@@ -1,4 +1,4 @@
-const mainRoutes = require('./routes/mainRoutes');
+/*const mainRoutes = require('./routes/mainRoutes');
 const marketplaceRoutes = require('./routes/marketplaceRoutes');
 const usersRoutes = require('./routes/usersRoutes');
 const isUserLogged = require('./middlewares/isUserLogged');
@@ -37,4 +37,4 @@ app.use('/users', isUserLogged, usersRoutes);
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
-});
+});*/
