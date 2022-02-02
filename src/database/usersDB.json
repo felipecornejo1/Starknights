@@ -55,5 +55,17 @@
   "email": "ariel@gmail.com",
   "archivo": "",
   "password": "$2b$10$dNn2RKHTZgsIj/bLx2gkvOrF4g9YSpYgHPO8XDfjWOJyLvV5cH5mG"
+ },
+ {
+  "usuario": "pepe",
+  "email": "pepeargento@gmail.com",
+  "archivo": "",
+  "password": "$2b$10$5VpUn/64PzftL40e6ouTA.QZ/PM4mpviVhIadz8bERSZTUNxT169e"
+ },
+ {
+  "usuario": "juan",
+  "email": "cacho@gmail.com",
+  "archivo": "",
+  "password": "$2b$10$cH.c20YB9CfFcJvvfEX8de8jf2FHnVOeuAr1vl8l8gBgHdxTnIjNO"
  }
 ]
