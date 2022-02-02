@@ -44,5 +44,16 @@
   "email": "sava@gmail.com",
   "archivo": "",
   "password": "$2b$10$X9w7ADxies5PHLF6QyWnlO62ZaHNTXiRXs51WLvvcsvR41.rDv2yC"
+ },
+ {
+  "usuario": "Santi",
+  "email": "santi@gmail.com",
+  "archivo": ""
+ },
+ {
+  "usuario": "Ariel",
+  "email": "ariel@gmail.com",
+  "archivo": "",
+  "password": "$2b$10$dNn2RKHTZgsIj/bLx2gkvOrF4g9YSpYgHPO8XDfjWOJyLvV5cH5mG"
  }
 ]

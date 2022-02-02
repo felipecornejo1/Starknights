@@ -21,7 +21,13 @@ app.use(express.json());
 app.use(express.static(publicPath)); //Hacer publica la carpeta Public
 app.use(express.static(viewsPath)); //Hacer publica la carpeta views
 
+app.use(session({
+	secret: "secreto starknights",
+	resave: true,
+	saveUninitialized: false,
+})); //Configurar session
 
+app.use(cookieParser());
 
 //app.use(userCookie);
 
