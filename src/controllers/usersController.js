@@ -22,41 +22,6 @@ const controller = {
     login: (req, res) => {
         res.render('users/login');
     },
-    sendLogin: (req, res) => {
-        let errors = validationResult(req);
-
-        if(errors.isEmpty()) {
-            
-            let reqUser = {
-                ...req.body
-            }
-            let userCheck = undefined;
-
-            for(let u of users) {
-                if(reqUser.usuario == u.usuario && bcrypt.compareSync(reqUser.password, u.password)) {
-                    userCheck = u
-                    delete userCheck.password
-                }
-            }
-
-            if(userCheck) {
-                req.session.loggedUser = userCheck
-
-                res.redirect('/');
-            }
-            /* else {
-                res.redirect('users/login', {errors: {
-                    usuario: {
-                        msg: 'Las credenciales son inválidas'
-                    }
-                }})
-            } */
-
-        }
-        else {
-            res.render('users/login', {errors: errors.mapped(), old: req.body});
-        }
-    },
     register: (req, res) => {
         res.render('users/register');
     },
