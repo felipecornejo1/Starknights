@@ -1,71 +1,35 @@
 [
  {
-  "usuario": "felipeprueba",
-  "email": "felicornejo@gmail.com",
-  "password": "$2b$10$g83G324kDDD3i3SotkWEMefRdW8n5LYKw73yfbLFplowbJDZSsJrO"
- },
- {
-  "usuario": "felipeprueba2",
-  "email": "felicornejo@gmail.com",
-  "password": "$2b$10$3abj61CkDxsFKuTSZ0P8N.3TlGQebZLmmOqHMgkKaezWQHb0OLf32"
- },
- {
-  "usuario": "felipeprueba2",
-  "email": "felicornejo2@gmail.com",
+  "usuario": "Felipe",
+  "email": "felipe@gmail.com",
   "archivo": "",
-  "password": "felipe01"
- },
- {
-  "usuario": "felipeprueba3",
-  "email": "felicornejo@gmail.com",
-  "archivo": "",
-  "password": "$2b$10$GzonaKouO3uSVTfhbChKmeGDqe2cIiFFTf.cA1wq.W.gbU.jobG8q"
- },
- {
-  "usuario": "felipeprueba4",
-  "email": "felicornejo@gmail.com",
-  "archivo": "",
-  "password": "$2b$10$2FWIaelrsikv4E/cuZrVB.adZ/zFG5qHonAdREYN3AcBeXqud9Oj."
- },
- {
-  "usuario": "Felipe Cornejo",
-  "email": "felicornejo22@gmail.com",
-  "archivo": "",
-  "password": "$2b$10$ZtHpvFihBffq5uM4R8XHqOuSVmmbM8cGAGQNHXtRxgtLy0k4eOVYW"
- },
- {
-  "usuario": "Ebi",
-  "email": "ebi@gmail.com",
-  "archivo": "",
-  "password": "$2b$10$0rejZocGRWLpecfZZ/CHBe5PUqChC/1PWsUuT11YjhyAGy7FYE2/q"
- },
- {
-  "usuario": "sava",
-  "email": "sava@gmail.com",
-  "archivo": "",
-  "password": "$2b$10$X9w7ADxies5PHLF6QyWnlO62ZaHNTXiRXs51WLvvcsvR41.rDv2yC"
+  "id": 1
  },
  {
   "usuario": "Santi",
   "email": "santi@gmail.com",
-  "archivo": ""
+  "archivo": "",
+  "id": 2
  },
  {
   "usuario": "Ariel",
   "email": "ariel@gmail.com",
   "archivo": "",
-  "password": "$2b$10$dNn2RKHTZgsIj/bLx2gkvOrF4g9YSpYgHPO8XDfjWOJyLvV5cH5mG"
+  "password": "$2b$10$Hl/xR/TQUKzErOBrAYZwuuH/ZvqhZEj8IXdPknHB/P6qfvzLgNk8e",
+  "id": 3
  },
  {
-  "usuario": "pepe",
-  "email": "pepeargento@gmail.com",
+  "usuario": "Adrian",
+  "email": "adrian@gmail.com",
   "archivo": "",
-  "password": "$2b$10$5VpUn/64PzftL40e6ouTA.QZ/PM4mpviVhIadz8bERSZTUNxT169e"
+  "password": "$2b$10$csZFGp/6GsTq7M.rsTs.5OCWDqsDmDjy3bdtRQhgjaHcvrIycVt.e",
+  "id": 4
  },
  {
-  "usuario": "juan",
-  "email": "cacho@gmail.com",
+  "usuario": "Felipe2",
+  "email": "felipe2@gmail.com",
   "archivo": "",
-  "password": "$2b$10$cH.c20YB9CfFcJvvfEX8de8jf2FHnVOeuAr1vl8l8gBgHdxTnIjNO"
+  "password": "$2b$10$ZwlGvvoZgKdLxf8PqWTIpes53aQew40OTpuUTis5qcLtVpPTmQVae",
+  "id": 5
  }
 ]

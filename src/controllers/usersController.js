@@ -7,6 +7,8 @@ const session = require('express-session');
 const usersFilePath = path.join(__dirname, '../database/usersDB.json')
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
+const user = require('../models/user');
+
 const controller = {
     storeUser: (req, res) => {
         const generateID = () => {
@@ -21,6 +23,41 @@ const controller = {
     },
     login: (req, res) => {
         res.render('users/login');
+    },
+    sendLogin: (req, res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()) {
+            
+            let reqUser = {
+                ...req.body
+            }
+            let userCheck = undefined;
+
+            for(let u of users) {
+                if(reqUser.usuario == u.usuario && bcrypt.compareSync(reqUser.password, u.password)) {
+                    userCheck = u
+                    delete userCheck.password
+                }
+            }
+
+            if(userCheck) {
+                req.session.loggedUser = userCheck
+
+                res.redirect('/');
+            }
+            /* else {
+                res.redirect('users/login', {errors: {
+                    usuario: {
+                        msg: 'Las credenciales son inválidas'
+                    }
+                }})
+            } */
+
+        }
+        else {
+            res.render('users/login', {errors: errors.mapped(), old: req.body});
+        }
     },
     register: (req, res) => {
         res.render('users/register');
@@ -47,9 +84,19 @@ const controller = {
                     old: req.body })
             }
             else {
-                let newUser = {
-                    ...req.body,
-                    password: bcrypt.hashSync(req.body.password, 10)
+                if(users.length>0) {
+                    var newUser = {
+                        ...req.body,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        id: users[users.length - 1].id + 1
+                    }
+                }
+                else {
+                    var newUser = {
+                        ...req.body,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        id: 1
+                    }
                 }
     
                 users.push(newUser);

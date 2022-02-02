@@ -1,11 +1,14 @@
 const usersController = require('./../controllers/usersController');
-const isUserLogged = require('../middlewares/isUserLogged');
+
+const guestMiddleware = require('./../middlewares/guestMiddleware');
+const authMiddleware = require('./../middlewares/authMiddleware');
+
 
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcrypt');
 
-const {body, validationResult, check} = require('express-validator');
+
+const {check} = require('express-validator');
 
 const registerValidations = [
     check('usuario').notEmpty().withMessage('Este campo es obligatorio'),
@@ -18,14 +21,16 @@ const loginValidations = [
     check('password').notEmpty().withMessage('Ingresa tu contraseña')
 ];
 
-router.get('/login', usersController.login);
+router.get('/login', guestMiddleware, usersController.login);
 
-router.get('/register', usersController.register);
+router.post('/login', loginValidations, usersController.sendLogin);
+
+router.get('/register', guestMiddleware, usersController.register);
 
 router.post('/register', registerValidations, usersController.sendRegister);
 
-router.get('/profile', usersController.profile);
+router.get('/profile', authMiddleware, usersController.profile);
 
-router.post('/logout', usersController.logout);
+router.post('/logout', authMiddleware, usersController.logout);
 
 module.exports = router;
