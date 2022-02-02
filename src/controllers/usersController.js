@@ -84,20 +84,11 @@ const controller = {
                     old: req.body })
             }
             else {
-                if(users.length>0) {
                     var newUser = {
                         ...req.body,
                         password: bcrypt.hashSync(req.body.password, 10),
-                        id: users[users.length - 1].id + 1
+                        id: user.generateId()
                     }
-                }
-                else {
-                    var newUser = {
-                        ...req.body,
-                        password: bcrypt.hashSync(req.body.password, 10),
-                        id: 1
-                    }
-                }
     
                 users.push(newUser);
                 fs.writeFileSync(usersFilePath, JSON.stringify(users,null,' '));

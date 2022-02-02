@@ -1,10 +1,10 @@
 const fs = require("fs");
 
 const user = {
-    fileName: "./database/usersDB.json",
+    fileName: "./../database/usersDB.json",
 
     getData: function (){
-        return JSON.parse (FileSystem.readFileSync(this.fileName, "utf-8"));
+        return JSON.parse (fs.readFileSync(this.fileName, "utf-8"));
     },
 
     generateId: function(){
@@ -40,8 +40,4 @@ const user = {
     }
 }
 
-<<<<<<< HEAD
 module.exports = user;
-=======
-console.log(User.generateId());
->>>>>>> 793dc7f7bf6143106494090cb018807880a5aab0
