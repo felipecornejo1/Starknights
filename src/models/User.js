@@ -3,7 +3,7 @@ const path = require('path')
 const usersFilePath = path.join(__dirname, '../database/usersDB.json')
 
 const user = {
-
+    
     getData: function (){
         return JSON.parse (fs.readFileSync(usersFilePath, "utf-8"));
     },
@@ -41,6 +41,13 @@ const user = {
         }
         allUsers.push(userData);
         fs.writeFileSync(usersFilePath, JSON.stringify(allUsers, null, " "));
+        return true;
+    },
+
+    delete: function(id){
+        let allUser =   this.findAll();
+        let finalUsers = allUser.filter(oneUser => oneUser.id !== id)
+        fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, " "));
         return true;
     }
 }
