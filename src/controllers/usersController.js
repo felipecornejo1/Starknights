@@ -7,6 +7,8 @@ const session = require('express-session');
 const usersFilePath = path.join(__dirname, '../database/usersDB.json')
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
+const user = require('../models/user');
+
 const controller = {
     storeUser: (req, res) => {
         const generateID = () => {
@@ -82,9 +84,19 @@ const controller = {
                     old: req.body })
             }
             else {
-                let newUser = {
-                    ...req.body,
-                    password: bcrypt.hashSync(req.body.password, 10)
+                if(users.length>0) {
+                    var newUser = {
+                        ...req.body,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        id: users[users.length - 1].id + 1
+                    }
+                }
+                else {
+                    var newUser = {
+                        ...req.body,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        id: 1
+                    }
                 }
     
                 users.push(newUser);

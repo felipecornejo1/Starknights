@@ -12,23 +12,23 @@ const user = {
     },
 
     findByPk: function (id) {
-        let allUsers = thi.findAll();
+        let allUsers = this.findAll();
         let userFound = allUsers.find(oneUser => oneUser.id === id);
         return userFound;
     },
 
     findByField: function (field, text) {
-        let allUsers = thi.findAll();
+        let allUsers = this.findAll();
         let userFound = allUsers.find(oneUser => oneUser[field] === text);
         return userFound;
     },
 
     create: function (userData){
-        let allUsers = thi.findAll();
+        let allUsers = this.findAll();
         allUsers.push(userData);
         fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, " "));
         return true;
     }
-};
+}
 
-console.log(User.getData());
+module.exports = user;
