@@ -13,6 +13,7 @@
         <h1 class="titulo-perfil">
             Bienvenido <%= locals.user.usuario %>
         </h1>
+        <img class="profile-picture" src="/img/profile/<%= locals.user.archivo %>">
         <form action="/users/logout" method="post">
             <div class="center">
                 <button class="delete-button">Cerrar Sesión</button>

@@ -1,6 +1,6 @@
 const guestMiddleware = (req, res, next) => {
-    if(req.session.loggedUser) {
-        res.send('No puedes acceder a esta página si ya iniciaste sesión')
+    if(req.session.user) {
+        res.redirect('/users/profile');
     }
     else {
         next()

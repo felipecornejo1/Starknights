@@ -15,16 +15,14 @@ const loginDataCheck = (req, res, next) => {
         if(reqUser == u.usuario && bcrypt.compareSync(reqPassword, u.password) ) {
             userCheck = true;
             req.session.loggedUser = u
+            res.cookie('email', u.email)
         }
     }
 
     if(userCheck == true) {
-        console.log('LoginDataCheck Pasado' + userCheck)
         next();
     }
     else {
-
-        console.log('LoginDataCheck Fallido')
         res.render('users/login', {errors: {
             usuario: {
                 msg: 'Las credenciales son inválidas'

@@ -13,7 +13,7 @@
         <div class="nav-derecha">
             <ul class="nav-ul-der">
                 <li class="nav-li-der"><a href="/marketplace/carrito" class="nav-li-a">Carrito</a></li>
-                <% if(locals.user != undefined) { %>
+                <% if(locals.isUserLogged == true) { %>
                     <li class="nav-li-der"><a href="/users/profile" class="nav-li-a">Perfil</a></li>
                 <% } else { %>
                     <li class="nav-li-der"><a href="/users/register" class="nav-li-a">Registrarse</a></li>

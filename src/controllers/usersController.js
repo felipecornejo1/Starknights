@@ -52,11 +52,23 @@ const controller = {
                     old: req.body })
             }
             else {
+                console.log(req.body)
+                if(req.body.archivo == undefined) {
                     var newUser = {
                         ...req.body,
                         password: bcrypt.hashSync(req.body.password, 10),
-                        id: user.generateId()
+                        id: user.generateId(),
+                        archivo: 'default.jpg'
                     }
+                }
+                else {
+                    var newUser = {
+                        ...req.body,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        id: user.generateId(),
+                        archivo: req.file.filename
+                    }
+                }
     
                 users.push(newUser);
                 fs.writeFileSync(usersFilePath, JSON.stringify(users,null,' '));
@@ -72,6 +84,7 @@ const controller = {
     },
     logout: (req, res) => {
         req.session.destroy();
+        res.clearCookie('email');
         res.redirect('/')
     }
 }
