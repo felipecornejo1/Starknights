@@ -19,5 +19,12 @@
   "password": "$2a$10$Sttjm9wm0wam2pcewMN2welhXkxaqG9E6FjvENPzXI0aZhOT71SsG",
   "id": 3,
   "archivo": "1644000329279-242566693.jpg"
+ },
+ {
+  "usuario": "profesor",
+  "email": "profesor@digitalhouse.com",
+  "password": "$2a$10$y4q7E2zLZ9qnzOb82nJ4oORawSa/NYqvJT4Aq1DvV4vO/O9GCFc3G",
+  "id": 4,
+  "archivo": "1644005489751-887278241.jfif"
  }
 ]

@@ -518,7 +518,7 @@ nav ul li:nth-child(4) {
     border: 5px solid #D6A771
 }
 
-@media (max-width: 768px){ /*------------MOBILE------------------------*/
+@media (max-width: 800px){ /*------------MOBILE------------------------*/
 
     /*----HEADER----*/
 
