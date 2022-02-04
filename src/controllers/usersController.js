@@ -7,7 +7,7 @@ const session = require('express-session');
 const usersFilePath = path.join(__dirname, '../database/usersDB.json')
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
-const user = require('../models/user');
+const user = require('../models/User');
 
 const controller = {
     storeUser: (req, res) => {
