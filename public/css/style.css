@@ -26,6 +26,7 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+    list-style: none;
 }
 
 .nav-li-izq, .nav-li-der {
@@ -44,6 +45,10 @@ body {
 .nav-li-a:hover {
     color: #D6A771;
     transition-duration: .3s;
+}
+
+.hamburger {
+    display: none;
 }
 
 /*nav ul {
@@ -524,11 +529,21 @@ nav ul li:nth-child(4) {
 
     .header {
         width: 100vw;
+        height: 100px;
         background-color: #070720;
     }
 
     .logo {
-        padding-left: 10px;
+        display: block;
+        position: absolute;
+        padding: 0;
+        top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 10;
     }
 
     .nav-izquierda {
@@ -537,6 +552,18 @@ nav ul li:nth-child(4) {
 
     .nav-derecha {
         display: none;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 32px;
+        color: #fff;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+
+    .hamburger:hover {
+        cursor: pointer;
     }
 
     /*--FIN HEADER--*/
