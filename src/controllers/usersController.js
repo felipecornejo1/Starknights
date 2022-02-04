@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator')
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const session = require('express-session');
 
 const usersFilePath = path.join(__dirname, '../database/usersDB.json')
