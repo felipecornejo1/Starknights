@@ -5,10 +5,21 @@ const authMiddleware = require('./../middlewares/authMiddleware');
 const loginValidator = require('../middlewares/loginValidator');
 const loginDataCheck = require('../middlewares/loginDataCheck');
 
-
+const path = require('path');
 const express = require('express');
 const router = express.Router();
 
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './public/img/profile');
+    },
+    filename: (req, file, cb) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, uniqueSuffix + path.extname(file.originalname));
+    }
+});
+const uploadFile = multer({ storage: storage });
 
 const {check} = require('express-validator');
 
@@ -29,7 +40,7 @@ router.post('/login', loginValidations, loginValidator, loginDataCheck, usersCon
 
 router.get('/register', guestMiddleware, usersController.register);
 
-router.post('/register', registerValidations, usersController.sendRegister);
+router.post('/register', uploadFile.single('archivo'), registerValidations, usersController.sendRegister);
 
 router.get('/profile', authMiddleware, usersController.profile);
 

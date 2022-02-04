@@ -74,11 +74,6 @@
     transition: background-color 450ms;
 }
 
-.archivo{
-    margin-bottom: 20px;
-    color: #fff;
-}
-
 .formulario-register .boton:hover{
     background-color: #D6A771;
 }

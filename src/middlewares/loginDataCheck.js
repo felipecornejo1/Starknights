@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require("fs");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../database/usersDB.json')
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
@@ -15,16 +15,14 @@ const loginDataCheck = (req, res, next) => {
         if(reqUser == u.usuario && bcrypt.compareSync(reqPassword, u.password) ) {
             userCheck = true;
             req.session.loggedUser = u
+            res.cookie('email', u.email)
         }
     }
 
     if(userCheck == true) {
-        console.log('LoginDataCheck Pasado' + userCheck)
         next();
     }
     else {
-
-        console.log('LoginDataCheck Fallido')
         res.render('users/login', {errors: {
             usuario: {
                 msg: 'Las credenciales son inválidas'
