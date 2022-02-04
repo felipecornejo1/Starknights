@@ -54,7 +54,7 @@ const controller =
 
     // No se porque el redirect no me refresca la pagina. BORRA BIEN cuando refrescamos.
 
-	    res.redirect('/');
+        res.redirect('/marketplace');
 
 	}
 };
