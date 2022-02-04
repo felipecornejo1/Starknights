@@ -13,4 +13,7 @@ router.get('/nuevo-item', marketplaceController.create);
 
 router.post('/subir-item', marketplaceController.store);
 
+/*** DELETE ONE PRODUCT***/ 
+router.delete('/delete/:id', marketplaceController.destroy);
+
 module.exports = router;

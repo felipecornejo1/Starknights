@@ -4,6 +4,8 @@ const path = require('path');
 const itemsFilePath = path.join(__dirname, '../database/itemsDB.json')
 const items = JSON.parse(fs.readFileSync(itemsFilePath, 'utf-8'))
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 const controller = 
 {
     marketplace: (req, res) => {
@@ -39,7 +41,22 @@ const controller =
         fs.writeFileSync(itemsFilePath, JSON.stringify(items,null,' '));
 
         res.redirect('/marketplace');
-    }
-}
+    },
+    destroy : (req, res) => {
+
+		let idProductoSeleccionado = req.params.id;
+
+		let products2 = items.filter(function(element){
+			return element.id!=idProductoSeleccionado;
+		})
+
+		fs.writeFileSync(itemsFilePath, JSON.stringify(products2,null,' '));
+
+    // No se porque el redirect no me refresca la pagina. BORRA BIEN cuando refrescamos.
+
+	    res.redirect('/');
+
+	}
+};
 
 module.exports = controller;

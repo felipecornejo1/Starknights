@@ -31,6 +31,9 @@
             <div class= "buttons-detalle"> 
                 <button type="button"> Añadir al carro </button>
                 <button type="button"> Comprar </button>
+            <form action="/marketplace/delete/<%= item.id %>?_method=DELETE" method="POST">
+                <button type="submit"> Borrar </button>
+            </form>
             </div>
             <div class="cuadro-estadisticas">
                 <table class="bordes-box">

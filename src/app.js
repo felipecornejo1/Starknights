@@ -8,6 +8,8 @@ const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
+const methodOverride = require('method-override');
+
 let app = express();
 
 app.set('view engine', 'ejs');
@@ -20,6 +22,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(publicPath)); //Hacer publica la carpeta Public
 app.use(express.static(viewsPath)); //Hacer publica la carpeta views
+
+app.use(methodOverride('_method'));
 
 app.use(session({
 	secret: "secreto starknights",
