@@ -8,6 +8,7 @@ const usersFilePath = path.join(__dirname, '../database/usersDB.json')
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 const user = require('../models/User');
+const { clearCookie } = require('express/lib/response');
 
 const controller = {
     storeUser: (req, res) => {
@@ -53,12 +54,12 @@ const controller = {
             }
             else {
                 console.log(req.body)
-                if(req.body.archivo == undefined) {
+                if(req.file.filename) {
                     var newUser = {
                         ...req.body,
                         password: bcrypt.hashSync(req.body.password, 10),
                         id: user.generateId(),
-                        archivo: 'default.jpg'
+                        archivo: req.file.filename
                     }
                 }
                 else {
@@ -66,7 +67,7 @@ const controller = {
                         ...req.body,
                         password: bcrypt.hashSync(req.body.password, 10),
                         id: user.generateId(),
-                        archivo: req.file.filename
+                        archivo: 'default.jpg'
                     }
                 }
     
