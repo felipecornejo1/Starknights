@@ -25,14 +25,9 @@
     "express-validator": "^6.14.0",
     "method-override": "^3.0.0",
     "multer": "^1.4.4",
-<<<<<<< HEAD
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
     "sequelize": "5.21",
     "sequelize-cli": "^6.4.1"
-=======
-    "nodemon": "^2.0.15",
-    "sequelize": "^6.16.1"
->>>>>>> 8e0d3cdd33f5108b8669bcae21f71363f098f8ea
   }
 }
