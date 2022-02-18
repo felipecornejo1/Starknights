@@ -1,4 +1,4 @@
-const {body, check, validationResult} = require('express-validator');
+const {validationResult} = require('express-validator');
 
 const loginValidator = (req, res, next) => {
     let errors = validationResult(req);

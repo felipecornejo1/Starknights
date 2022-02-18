@@ -1,17 +1,7 @@
-const fs = require('fs');
-const path = require('path');
 const {validationResult} = require('express-validator')
 const bcrypt = require('bcryptjs');
-const session = require('express-session');
 
 const db = require('../../database/models');
-
-const usersFilePath = path.join(__dirname, '../database/usersDB.json')
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
-
-const user = require('../models/User');
-const { clearCookie } = require('express/lib/response');
-const { brotliDecompress } = require('zlib');
 
 const controller = {
     login: (req, res) => {
