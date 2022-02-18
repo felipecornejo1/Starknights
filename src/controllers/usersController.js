@@ -4,24 +4,16 @@ const {validationResult} = require('express-validator')
 const bcrypt = require('bcryptjs');
 const session = require('express-session');
 
+const db = require('../../database/models');
+
 const usersFilePath = path.join(__dirname, '../database/usersDB.json')
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 const user = require('../models/User');
 const { clearCookie } = require('express/lib/response');
+const { brotliDecompress } = require('zlib');
 
 const controller = {
-    storeUser: (req, res) => {
-        const generateID = () => {
-            const lastUser = users[users.length - 1];
-            if(lastUser != undefined) {
-                return lastUser.id + 1;
-            }
-            return 1;
-        }
-
-        // FALTA TERMINAR, SOLO SE GENERÓ EL NUEVO ID
-    },
     login: (req, res) => {
         res.render('users/login');
     },
@@ -36,45 +28,26 @@ const controller = {
 
         if(errors.isEmpty()) {
 
-            let userInDB = undefined;
-
-            for(let u of users) {
-                if(u.email == req.body.email) {
-                    userInDB = req.body.email
-                }
-            }
-
-            if (userInDB) {
-                res.render('users/register', {
-                    errors: {
-                        email: {
-                            msg: 'Este email ya se encuentra registrado'
-                        }},
-                    old: req.body })
+            if(req.file.filename) {
+                console.log('archivo')
+                db.Users.create({
+                    name: req.body.usuario,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    picture: req.file.filename
+                })
             }
             else {
-                console.log(req.body)
-                if(req.file.filename) {
-                    var newUser = {
-                        ...req.body,
-                        password: bcrypt.hashSync(req.body.password, 10),
-                        id: user.generateId(),
-                        archivo: req.file.filename
-                    }
-                }
-                else {
-                    var newUser = {
-                        ...req.body,
-                        password: bcrypt.hashSync(req.body.password, 10),
-                        id: user.generateId(),
-                        archivo: 'default.jpg'
-                    }
-                }
-    
-                users.push(newUser);
-                fs.writeFileSync(usersFilePath, JSON.stringify(users,null,' '));
-                res.redirect('/users/login');
+                console.log('no archivo')
+                db.Users.create({
+                    name: req.body.usuario,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    picture: 'default.jpg'
+                })
             }
+            res.redirect('/users/login');
+            
         }
         else {
             res.render('users/register', {errors: errors.mapped, old: req.body});

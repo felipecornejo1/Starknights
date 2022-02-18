@@ -51,6 +51,10 @@ body {
     display: none;
 }
 
+.fa-bars:before {
+    display: none;
+}
+
 /*nav ul {
     margin: 0;
     padding: 50px 0;
