@@ -9,4 +9,8 @@ router.get('/', mainController.home);
 
 router.get('/proximamente', mainController.proximamente);
 
+router.get('/santi', (req, res) => {
+    res.redirect('/marketplace')
+})
+
 module.exports = router;

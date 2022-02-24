@@ -4,8 +4,6 @@ const path = require('path');
 const itemsFilePath = path.join(__dirname, '../database/itemsDB.json')
 const items = JSON.parse(fs.readFileSync(itemsFilePath, 'utf-8'))
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 const controller = 
 {
     marketplace: (req, res) => {

@@ -18,8 +18,9 @@ const controller = {
 
         if(errors.isEmpty()) {
 
-            if(req.file.filename) {
-                console.log('archivo')
+            console.log(req.file)
+
+            if(req.file) {
                 db.Users.create({
                     name: req.body.usuario,
                     email: req.body.email,
@@ -28,7 +29,6 @@ const controller = {
                 })
             }
             else {
-                console.log('no archivo')
                 db.Users.create({
                     name: req.body.usuario,
                     email: req.body.email,

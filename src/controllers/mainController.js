@@ -10,6 +10,8 @@ const controller =
         /*res.sendFile(path.resolve(__dirname, '..', './views/proximamente.html'));*/
         res.render('proximamente', {user: req.session.loggedUser});
     }
+
+
 };
 
 module.exports = controller;
