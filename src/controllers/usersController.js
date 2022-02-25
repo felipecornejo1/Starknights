@@ -27,6 +27,8 @@ const controller = {
                     password: bcrypt.hashSync(req.body.password, 10),
                     picture: req.file.filename
                 })
+                .then(res.redirect('/users/login'))
+
             }
             else {
                 db.Users.create({
@@ -35,8 +37,8 @@ const controller = {
                     password: bcrypt.hashSync(req.body.password, 10),
                     picture: 'default.jpg'
                 })
+                .then(res.redirect('/users/login'))
             }
-            res.redirect('/users/login');
             
         }
         else {
