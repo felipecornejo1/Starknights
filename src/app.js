@@ -41,6 +41,6 @@ app.use(userCookie);
 
 //app.use(userCookie);
 
-app.use('/', mainRoutes);
+app.use('/', (req, res, next) => {console.log('main'); next()} , mainRoutes);
 app.use('/marketplace', marketplaceRoutes);
 app.use('/users', usersRoutes);

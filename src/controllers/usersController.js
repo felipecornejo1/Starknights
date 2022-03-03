@@ -14,36 +14,45 @@ const controller = {
         res.render('users/register');
     },
     sendRegister: (req, res) => {
+        console.log(1)
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
-
-            console.log(req.file)
+            console.log(2)
 
             if(req.file) {
+                console.log(3)
                 db.Users.create({
                     name: req.body.usuario,
                     email: req.body.email,
                     password: bcrypt.hashSync(req.body.password, 10),
                     picture: req.file.filename
                 })
-                .then(res.redirect('/users/login'))
+                res.redirect('/users/login')
+                console.log(4)
 
             }
             else {
+                console.log(5)
                 db.Users.create({
                     name: req.body.usuario,
                     email: req.body.email,
                     password: bcrypt.hashSync(req.body.password, 10),
                     picture: 'default.jpg'
+                    
                 })
-                .then(res.redirect('/users/login'))
+                console.log(6)
+                res.redirect('/users/login')
+                console.log(7)
             }
+            console.log(8)
             
         }
         else {
+            console.log(9)
             res.render('users/register', {errors: errors.mapped, old: req.body});
         }
+        console.log(10)
     },
     profile: (req, res) => {
         res.render('users/profile');
