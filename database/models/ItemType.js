@@ -17,5 +17,13 @@ module.exports = (sequelize, dataTypes) => {
     }
     
     const ItemType = sequelize.define(alias, cols, config);
+
+    ItemType.associate = function(models) {
+        ItemType.hasMany(models.Items, {
+            as: 'types',
+            foreignKey: 'typeFK'
+        })
+    }
+
     return ItemType;
 }

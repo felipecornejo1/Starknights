@@ -14,13 +14,17 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             type: dataTypes.STRING
         },
-        picture: {
+        profile_picture: {
             allowNull: true,
             type: dataTypes.STRING
         },
         password: {
             allowNull: false,
             type: dataTypes.STRING
+        },
+        created_at: {
+            allowNull: false,
+            type: dataTypes.DATE
         }
     }
     let config = {

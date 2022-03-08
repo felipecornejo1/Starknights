@@ -19,9 +19,9 @@
                 </p>
             </div> 
             <div class="art-img">
-                <% if(item.category == 'naves') {%>
+                <% if(item.typeFK == 1) {%>
                     <img src="/img/naves/<%= item.image %>" class="art-detail">
-                <% } else if (item.category == 'armaduras') { %>
+                <% } else if (item.typeFK == 2) { %>
                     <img src="/img/armaduras/<%= item.image %>" class="art-detail">
                 <% } else { %>
                     <img src="/img/mascotas/<%= item.image %>" class="art-detail">

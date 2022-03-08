@@ -10,19 +10,19 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             type: dataTypes.DATE
         },
-        id_item: {
+        itemFK: {
             allowNull: false,
             type: dataTypes.INTEGER
         },
-        price: {
+        amount: {
             allowNull: false,
             type: dataTypes.DECIMAL
         },
-        id_buyer: {
+        buyerFK: {
             allowNull: false,
             type: dataTypes.INTEGER
         },
-        id_seller: {
+        sellerFK: {
             allowNull: false,
             type: dataTypes.INTEGER
         }
@@ -33,5 +33,17 @@ module.exports = (sequelize, dataTypes) => {
     }
     
     const Transaction = sequelize.define(alias, cols, config);
+
+    //! Revisar como hacer muchas asociaciones de hasMany en la misma tabla
+    /* Transaction.associate = function(models) {
+        Transaction.belongsTo(models.Users, {
+            as: 'buyers',
+            foreignKey: 'buyerFK'
+        }, {
+            as: 'sellers',
+            foreignKey: 'sellerFK'
+        })
+    } */
+
     return Transaction;
 }

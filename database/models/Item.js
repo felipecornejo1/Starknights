@@ -10,17 +10,21 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             type: dataTypes.STRING
         },
-        id_type: {
+        typeFK: {
             allowNull: false,
             type: dataTypes.INTEGER
         },
-        id_owner: {
+        ownerFK: {
             allowNull: false,
             type: dataTypes.INTEGER
         },
-        current_price: {
+        price: {
             allowNull: true,
             type: dataTypes.DECIMAL
+        },
+        image: {
+            allowNull: true,
+            type: dataTypes.STRING
         }
     }
     let config = {
@@ -29,5 +33,13 @@ module.exports = (sequelize, dataTypes) => {
     }
     
     const Item = sequelize.define(alias, cols, config);
+
+    Item.associate = function(models) {
+        Item.belongsTo(models.ItemTypes, {
+            as: 'types',
+            foreignKey: 'typeFK'
+        })
+    }
+    
     return Item;
 }

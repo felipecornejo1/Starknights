@@ -1,59 +1,63 @@
 const fs = require('fs');
 const path = require('path');
 
-const itemsFilePath = path.join(__dirname, '../database/itemsDB.json')
-const items = JSON.parse(fs.readFileSync(itemsFilePath, 'utf-8'))
+const db = require('../../database/models')
+
+const items = db.Items.findAll()
 
 const controller = 
 {
     marketplace: (req, res) => {
-        res.render('products/marketplace', {items: items, user: req.session.loggedUser});
+        db.Items.findAll()
+            .then(result => {
+                res.render('products/marketplace', {items: result, user:req.session.loggedUser})
+            })
     },
     carrito: (req, res) => {
         res.render('products/carrito', {user: req.session.loggedUser});
     },
     detail: (req, res) => {
-        
-        let itemBuscado = (items.filter(function(i){
-            return i.id == req.params.id;
-        }))[0];
-        
-        res.render('products/detalle', {item: itemBuscado, user: req.session.loggedUser});
+
+        db.Items.findOne({where: {id: req.params.id}})
+            .then(result => {
+                res.render('products/detalle', {item: result, user: req.session.loggedUser});
+            });
     },
     create: (req, res) => {
         res.render('products/product-create-form')
     },
     store: (req, res) => {
-
-        let newID = items[items.length-1].id + 1;
-        let newItem = {
-            "id": newID,
-            "name": req.body.name,
-            "category": req.body.category,
-            "price": req.body.price,
-            "image": "test-spaceship-2.png"
+        if(req.body.category == 'naves') {
+            db.Items.create({
+                name: req.body.name,
+                typeFK: 1,
+                ownerFK: req.session.user.id,
+                price: req.body.price,
+                image: 'test-spaceship.png'
+            }).then(res.redirect('/marketplace'))
         }
-
-        items.push(newItem);
-
-        fs.writeFileSync(itemsFilePath, JSON.stringify(items,null,' '));
-
-        res.redirect('/marketplace');
+        else if (req.body.category == 'armaduras') {
+            db.Items.create({
+                name: req.body.name,
+                typeFK: 2,
+                ownerFK: req.session.user.id,
+                price: req.body.price,
+                image: 'test-armor.png'
+            }).then(res.redirect('/marketplace'))
+        }
+        else {
+            db.Items.create({
+                name: req.body.name,
+                typeFK: 3,
+                ownerFK: req.session.user.id,
+                price: req.body.price,
+                image: 'test-pet-1.png'
+            }).then(res.redirect('/marketplace'))
+        }
     },
     destroy : (req, res) => {
-
-		let idProductoSeleccionado = req.params.id;
-
-		let products2 = items.filter(function(element){
-			return element.id!=idProductoSeleccionado;
-		})
-
-		fs.writeFileSync(itemsFilePath, JSON.stringify(products2,null,' '));
-
-    // No se porque el redirect no me refresca la pagina. BORRA BIEN cuando refrescamos.
-
-        res.redirect('/marketplace');
-
+        db.Items.destroy({where: {id: req.params.id}})
+            .then(res.redirect('/marketplace'));
 	}
 };
 
