@@ -11,7 +11,25 @@
 
     <main>
         <!--Formulario de item-->
-        <form action="/marketplace/subir-item" method="post" class="item-form">
+        <% if(locals.errors != undefined) { %>
+
+            <form action="/marketplace/subir-item" method="post" class="item-form">
+                <input type="text" id="name" name="name" class="casillas" placeholder="Título" required>
+                <!-- <% if(errors.name != undefined) { %>
+                    <h1>hola</h1>
+                <% } %> -->
+                <input type="number" name="price" class="casillas" placeholder="Precio" required>
+                <select name="category" class="casillas" required>
+                    <option value="">Elegir Opción</option>
+                    <option value="naves">Naves</option>
+                    <option value="armaduras">Armaduras</option>
+                    <option value="mascotas">Mascotas</option>
+                </select>
+                <button type="submit" class="save-button">Guardar</button>
+            </form>
+            
+        <% } else { %>
+            <form action="/marketplace/subir-item" method="post" class="item-form">
                 <input type="text" id="name" name="name" class="casillas" placeholder="Título">
                 <input type="number" name="price" class="casillas" placeholder="Precio">
                 <select name="category" class="casillas">
@@ -20,8 +38,9 @@
                     <option value="armaduras">Armaduras</option>
                     <option value="mascotas">Mascotas</option>
                 </select>
-            <button type="submit" class="save-button">Guardar</button>
-        </form>
+                <button type="submit" class="save-button">Guardar</button>
+            </form>
+        <% } %>
     </main>
 
 </body>

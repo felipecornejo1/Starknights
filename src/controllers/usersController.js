@@ -27,7 +27,7 @@ const controller = {
                     created_at: Date.now()
 
                 })
-                res.redirect('/users/login')
+                res.redirect('/users/login');
 
             }
             else {

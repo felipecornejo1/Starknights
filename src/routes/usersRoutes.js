@@ -30,7 +30,7 @@ const registerValidations = [
 ];
 
 const loginValidations = [
-    check('usuario').notEmpty().withMessage('Ingresa tu nombre de usuario'),
+    check('name').notEmpty().withMessage('Ingresa tu nombre de usuario'),
     check('password').notEmpty().withMessage('Ingresa tu contraseña')
 ];
 

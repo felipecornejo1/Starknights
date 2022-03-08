@@ -34,16 +34,16 @@ module.exports = (sequelize, dataTypes) => {
     
     const Transaction = sequelize.define(alias, cols, config);
 
-    //! Revisar como hacer muchas asociaciones de hasMany en la misma tabla
-    /* Transaction.associate = function(models) {
+     Transaction.associate = function(models) {
         Transaction.belongsTo(models.Users, {
             as: 'buyers',
             foreignKey: 'buyerFK'
-        }, {
+        });
+        Transaction.belongsTo(models.Users, {
             as: 'sellers',
             foreignKey: 'sellerFK'
-        })
-    } */
+        });
+    }
 
     return Transaction;
 }

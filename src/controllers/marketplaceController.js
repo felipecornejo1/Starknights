@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const {validationResult} = require('express-validator')
+
 const db = require('../../database/models')
 
 const items = db.Items.findAll()
@@ -27,33 +29,41 @@ const controller =
         res.render('products/product-create-form')
     },
     store: (req, res) => {
-        if(req.body.category == 'naves') {
-            db.Items.create({
-                name: req.body.name,
-                typeFK: 1,
-                ownerFK: req.session.user.id,
-                price: req.body.price,
-                image: 'test-spaceship.png'
-            }).then(res.redirect('/marketplace'))
-        }
-        else if (req.body.category == 'armaduras') {
-            db.Items.create({
-                name: req.body.name,
-                typeFK: 2,
-                ownerFK: req.session.user.id,
-                price: req.body.price,
-                image: 'test-armor.png'
-            }).then(res.redirect('/marketplace'))
+        let errors = validationResult(req);
+        if(errors.isEmpty()) {
+            if(req.body.category == 'naves') {
+                db.Items.create({
+                    name: req.body.name,
+                    typeFK: 1,
+                    ownerFK: req.session.user.id,
+                    price: req.body.price,
+                    image: 'test-spaceship.png'
+                }).then(res.redirect('/marketplace'))
+            }
+            else if (req.body.category == 'armaduras') {
+                db.Items.create({
+                    name: req.body.name,
+                    typeFK: 2,
+                    ownerFK: req.session.user.id,
+                    price: req.body.price,
+                    image: 'test-armor.png'
+                }).then(res.redirect('/marketplace'))
+            }
+            else {
+                db.Items.create({
+                    name: req.body.name,
+                    typeFK: 3,
+                    ownerFK: req.session.user.id,
+                    price: req.body.price,
+                    image: 'test-pet-1.png'
+                }).then(res.redirect('/marketplace'))
+            }
         }
         else {
-            db.Items.create({
-                name: req.body.name,
-                typeFK: 3,
-                ownerFK: req.session.user.id,
-                price: req.body.price,
-                image: 'test-pet-1.png'
-            }).then(res.redirect('/marketplace'))
+            res.render('products/product-create-form', {errors: errors})
         }
+
+        
     },
     destroy : (req, res) => {
         db.Items.destroy({where: {id: req.params.id}})
