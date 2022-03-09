@@ -1,17 +1,14 @@
-/*const path = require('path');*/
-
+// Controller
 const controller =
 {
     home: (req, res) => {
-        /*res.sendFile(path.resolve(__dirname, '..', './views/home.html'));*/
+        // Renderizar la vista home
         res.render('home');
     },
     proximamente: (req, res) => {
-        /*res.sendFile(path.resolve(__dirname, '..', './views/proximamente.html'));*/
+        // Renderizar la vista proximamente y pasarle la variable 'user' (con los datos del usuario logueado)
         res.render('proximamente', {user: req.session.loggedUser});
     }
-
-
 };
 
 module.exports = controller;

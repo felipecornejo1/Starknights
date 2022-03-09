@@ -1,5 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
+    // Alias con el que llamaremos a esta tabla en otros archivos
     let alias = 'Users';
+    // Definir las columnas de esta tabla
     let cols = {
         id: {
             autoIncrement: true,
@@ -27,11 +29,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DATE
         }
     }
+    // Definir la configuración de esta tabla
     let config = {
         tableName: 'users',
         timestamps: false
     }
     
+    // Ejecutar el método define y le pasamos como parametros todo lo que definimos anteriormente
     const User = sequelize.define(alias, cols, config);
+    
     return User;
 }
