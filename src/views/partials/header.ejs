@@ -18,7 +18,7 @@
                     Cuenta
                     <% if(locals.isUserLogged == true) { %>
                         <ul class="dropdown" id="dropdown-user-logged">
-                            <a href=""><li>Perfil</li></a>
+                            <a href="/users/profile"><li>Perfil</li></a>
                             <form action="/users/logout" method="post"><button type="submit" class="logout-header">CERRAR SESIÓN</button></form>
                         </ul>
                     <% } else { %>
