@@ -14,12 +14,22 @@
         <div class="nav-derecha">
             <ul class="nav-ul-der">
                 <li class="nav-li-der"><a href="/marketplace/carrito" class="nav-li-a">Carrito</a></li>
-                <% if(locals.isUserLogged == true) { %>
-                    <li class="nav-li-der"><a href="/users/profile" class="nav-li-a">Perfil</a></li>
-                <% } else { %>
-                    <li class="nav-li-der"><a href="/users/register" class="nav-li-a">Registrarse</a></li>
-                <% } %>
+                <li class="nav-li-der" id="boton-cuenta">
+                    Cuenta
+                    <% if(locals.isUserLogged == true) { %>
+                        <ul class="dropdown" id="dropdown-user-logged">
+                            <a href=""><li>Perfil</li></a>
+                            <form action="/users/logout" method="post"><button type="submit" class="logout-header">CERRAR SESIÓN</button></form>
+                        </ul>
+                    <% } else { %>
+                        <ul class="dropdown" id="dropdown-user-not-logged">
+                            <a href="/users/register"><li>Registrarse</li></a>
+                            <a href="/users/login"><li>Iniciar Sesión</li></a>
+                        </ul>
+                    <% } %>
+                </li>
             </ul>
         </div>
     </nav>
+    <script src="/js/header.js"></script>
 </header>

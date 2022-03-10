@@ -19,45 +19,47 @@
             <a href="/proximamente" class="ver-todo">VER TODO</a>
                 
             <div class="container-mkt">
-                <% for(let i=0; i<items.length; i++) { if(items[i].category == "naves") { %>
-                <a href="/marketplace/detail/<%= items[i].id %>" class="item-mkt">
-                    <div class="item-id">#<%= items[i].id %></div>
-                    <img src="img/naves/<%= items[i].image %>" class="item-img">
+                <% for(let i of items) { if(i.typeFK == 1) { %>
+                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                    <div class="item-id">#<%= i.id %></div>
+                    <img src="img/naves/<%= i.image %>" class="item-img">
                     <hr>
                     <div class="item-info-mkt">
-                        <h2 class="precio-mkt">Ξ <%= items[i].price %></h2>
+                        <h2 class="precio-mkt">Ξ <%= i.price %></h2>
                     </div>
                 </a>
                 <% } } %>
             </div>
 
             <!--Armaduras-->
+        <section class="market-section armaduras">
             <a href="#" class="market-title"><h1 class="market-title">Armaduras</h1></a>
             <a href="/proximamente" class="ver-todo">VER TODO</a>
+                
             <div class="container-mkt">
-                <% for(let i=0; i<items.length; i++) { if(items[i].category == "armaduras") { %>
-                    <a href="/marketplace/detail/<%= items[i].id %>" class="item-mkt">
-                        <div class="item-id">#<%= items[i].id %></div>
-                        <img src="img/armaduras/<%= items[i].image %>" class="item-img">
-                        <hr>
-                        <div class="item-info-mkt">
-                            <h2 class="precio-mkt">Ξ <%= items[i].price %></h2>
-                        </div>
-                    </a>
-                    <% } } %>
+                <% for(let i of items) { if(i.typeFK == 2) { %>
+                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                    <div class="item-id">#<%= i.id %></div>
+                    <img src="img/armaduras/<%= i.image %>" class="item-img">
+                    <hr>
+                    <div class="item-info-mkt">
+                        <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                    </div>
+                </a>
+                <% } } %>
             </div>
 
             <!--Mascotas-->
             <a href="#" class="market-title"><h1 class="market-title">Mascotas</h1></a>
             <a href="/proximamente" class="ver-todo">VER TODO</a>
             <div class="container-mkt">
-                <% for(let i=0; i<items.length; i++) { if(items[i].category == "mascotas") { %>
-                    <a href="/marketplace/detail/<%= items[i].id %>" class="item-mkt">
-                        <div class="item-id">#<%= items[i].id %></div>
-                        <img src="img/mascotas/<%= items[i].image %>" class="item-img">
+                <% for(let i of items) { if(i.typeFK == 3) { %>
+                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                        <div class="item-id">#<%= i.id %></div>
+                        <img src="img/mascotas/<%= i.image %>" class="item-img">
                         <hr>
                         <div class="item-info-mkt">
-                            <h2 class="precio-mkt">Ξ <%= items[i].price %></h2>
+                            <h2 class="precio-mkt">Ξ <%= i.price %></h2>
                         </div>
                     </a>
                     <% } } %>

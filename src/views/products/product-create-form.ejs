@@ -11,17 +11,44 @@
 
     <main>
         <!--Formulario de item-->
-        <form action="/marketplace/subir-item" method="post" class="item-form">
+        <% if(locals.errors) { %>
+
+            <form action="/marketplace/subir-item" method="post" class="item-form">
+                <h1 class="form-title">Subir Nuevo Item</h1>
+                <% if(errors.name) { %>
+                    <p class="form-error">Completa este campo</p>
+                <% } %>
                 <input type="text" id="name" name="name" class="casillas" placeholder="Título">
+                <% if(errors.price) { %>
+                    <p class="form-error">Completa este campo</p>
+                <% } %>
                 <input type="number" name="price" class="casillas" placeholder="Precio">
+                <% if(errors.category) { %>
+                    <p class="form-error">Elige una opción</p>
+                <% } %>
                 <select name="category" class="casillas">
-                    <option value="">Elegir Opción</option>
+                    <option value="">Elegir Categoría</option>
                     <option value="naves">Naves</option>
                     <option value="armaduras">Armaduras</option>
                     <option value="mascotas">Mascotas</option>
                 </select>
-            <button type="submit" class="save-button">Guardar</button>
-        </form>
+                <button type="submit" class="save-button">Guardar</button>
+            </form>
+            
+        <% } else { %>
+            <form action="/marketplace/subir-item" method="post" class="item-form">
+                <h1 class="form-title">Subir Nuevo Item</h1>
+                <input type="text" id="name" name="name" class="casillas" placeholder="Título">
+                <input type="number" name="price" class="casillas" placeholder="Precio">
+                <select name="category" class="casillas">
+                    <option value="">Elegir Categoría</option>
+                    <option value="naves">Naves</option>
+                    <option value="armaduras">Armaduras</option>
+                    <option value="mascotas">Mascotas</option>
+                </select>
+                <button type="submit" class="save-button">Guardar</button>
+            </form>
+        <% } %>
     </main>
 
 </body>

@@ -1,46 +1,49 @@
+// Importar rutas
 const mainRoutes = require('./routes/mainRoutes');
 const marketplaceRoutes = require('./routes/marketplaceRoutes');
 const usersRoutes = require('./routes/usersRoutes');
+// Importar archivo que usa las cookies
 const userCookie = require('./middlewares/userCookie');
-
+// Importar librerias
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-
 const methodOverride = require('method-override');
 
+// Ejecutar express en la variable app
 let app = express();
-
+// Levantar servidor
 app.listen(process.env.PORT || 3000, () => {
 	console.log('Servidor corriendo en el puerto 3000');
 });
-
+// Configurar ejs como motor de vistas y configurar la ubicación de la carpeta views
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
+// Hacer pública la carpeta public
 const publicPath = path.resolve(__dirname, '..', './public');
-const viewsPath = path.resolve(__dirname, './views')
+app.use(express.static(publicPath)); //Hacer publica la carpeta Public
 
+// Configuración para poder acceder a los datos que llegan por body
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static(publicPath)); //Hacer publica la carpeta Public
-app.use(express.static(viewsPath)); //Hacer publica la carpeta views
 
+// Ejecutar methodOverride para poder hacer rutas por PUT y DELETE
 app.use(methodOverride('_method'));
 
+// Configurar session
 app.use(session({
 	secret: "secreto starknights",
 	resave: true,
 	saveUninitialized: false,
-})); //Configurar session
+}));
 
+// Activar las cookies y usar el archivo que las maneja (userCookie.js)
 app.use(cookieParser());
-
 app.use(userCookie);
 
-//app.use(userCookie);
-
+// Definir las rutas principales
 app.use('/', mainRoutes);
 app.use('/marketplace', marketplaceRoutes);
 app.use('/users', usersRoutes);
