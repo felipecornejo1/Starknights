@@ -1,5 +1,6 @@
 // Importar la libreria bcrypt y los modelos de sequelize (base de datos)
 const bcrypt = require('bcryptjs');
+const { localsName } = require('ejs');
 const bd = require('../../database/models')
 
 const loginDataCheck = (req, res, next) => {

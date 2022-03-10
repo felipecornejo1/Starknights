@@ -10,6 +10,8 @@ const router = express.Router();
 router.get('/', mainController.home);
 // Proximamente
 router.get('/proximamente', mainController.proximamente);
+// Planetas
+router.get('/planetas', mainController.planetas);
 
 // Exportar rutas
 module.exports = router;
