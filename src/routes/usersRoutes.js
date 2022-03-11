@@ -4,6 +4,7 @@ const guestMiddleware = require('./../middlewares/guestMiddleware'); // Middlewa
 const authMiddleware = require('./../middlewares/authMiddleware'); // Middleware que verifica que el usuario SÍ esté logueado
 const loginValidator = require('../middlewares/loginValidator'); // Middleware que verifica que el formulario de login se haya llenado correctamente
 const loginDataCheck = require('../middlewares/loginDataCheck'); // Middleware que busca en la base de datos al usuario que intenta loguearse, y lo deja seguir adelante en caso de verificar los datos
+const registerDuplicateCheck = require('../middlewares/registerDuplicateCheck'); // Middleware que comprueba si el usuario que intenta registrarse ya existe en la base de datos
 
 
 // Importar path y express, y crear la variable que ejecuta el método Router de express
@@ -44,7 +45,7 @@ const loginValidations = [
 // Formulario de registro
 router.get('/register', guestMiddleware, usersController.register);
 // Enviar y procesar datos del formulario de registro
-router.post('/register', uploadFile.single('archivo'), registerValidations, usersController.sendRegister);
+router.post('/register', uploadFile.single('archivo'), registerValidations, registerDuplicateCheck, usersController.sendRegister);
 // Formulario de login
 router.get('/login', guestMiddleware, usersController.login);
 // Enviar y procesar datos del formulario de login
