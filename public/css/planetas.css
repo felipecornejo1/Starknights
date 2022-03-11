@@ -1,27 +1,105 @@
 
+.bg-img {
+    /* The image used */
+    background-image: url("/img/planetas/planeta3.jpg");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-        .image-planeta {
-            position: absolute;
-            z-index: 1;
-            width: 99vw;
-            height: auto;
-            filter: blur(8px);
-            -webkit-filter: blur(8px);
-        }
+.p1-img {
+    width: 60%;
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-bottom: 3%;
+    padding-right: 0;
+}
+
+.p2-img {
+    width: 60%;
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-bottom: 3%;
+    padding-right: 0;
+}
+
+.p2-img-container {
+    padding-right: 3%;
+}
+
+.p3-img {
+    width: 60%;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-bottom: 2%;
+    padding-right: 0;
+}
+
+.p3-img-container {
+    width: 63vw;
+}
           
-          /* Posicionar texto en el medio de la pagina/imagen */
-          .bg-text {
-            background-color: rgb(0,0,0); 
-            background-color: rgba(0,0,0, 0.4); 
-            color: white;
-            font-weight: bold;
-            border: 3px solid #f1f1f1;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            width: 80%;
-            padding: 20px;
-            text-align: center;
-          }
+ /* Posicionar texto en el medio de la pagina/imagen */
+ .bg-text {
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.4); 
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+.p1-seccion {
+    background-color: #0B0A0E;
+    color: #EAEAEA;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.p2-seccion {
+    background-color: #000000;
+    color: #EAEAEA;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.p3-seccion {
+    background-color: #0B141B;
+    color: #EAEAEA;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.txt-p1, .txt-p2, .txt-p3 {
+    font-size: 1em;
+    padding-right: 5vw;
+}
+
+#principal, html {
+    height: 100%;
+    background-color: #0E161D;
+    margin: 0;
+    padding: 0;
+}
