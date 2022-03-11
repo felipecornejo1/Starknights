@@ -5,16 +5,16 @@
             <a href="/"><img src="/img/logo-blanco.png" alt="logo" class="logo"></a>
         </div>
         <div class="nav-izquierda">
-            <ul class="nav-ul-izq">
-                <li class="nav-li-izq"><a href="/marketplace" class="nav-li-a">Marketplace</a></li>
-                <li class="nav-li-izq"><a href="/proximamente" class="nav-li-a">Historia</a></li> <!--Mas adelante hagamos esta pestaña y la de planetas, por ahora van a llevar a una pestaña de proximamente-->
-                <li class="nav-li-izq"><a href="/planetas" class="nav-li-a">Planetas</a></li>
+            <ul class="nav-ul">
+                <li><a href="/marketplace">Marketplace</a></li>
+                <li><a href="/proximamente">Historia</a></li> <!--Mas adelante hagamos esta pestaña y la de planetas, por ahora van a llevar a una pestaña de proximamente-->
+                <li><a href="/planetas">Planetas</a></li>
             </ul>
         </div>
         <div class="nav-derecha">
-            <ul class="nav-ul-der">
-                <li class="nav-li-der"><a href="/marketplace/carrito" class="nav-li-a">Carrito</a></li>
-                <li class="nav-li-der" id="boton-cuenta">
+            <ul class="nav-ul">
+                <li><a href="/marketplace/carrito">Carrito</a></li>
+                <li id="boton-cuenta">
                     Cuenta
                     <% if(locals.isUserLogged == true) { %>
                         <ul class="dropdown" id="dropdown-user-logged">

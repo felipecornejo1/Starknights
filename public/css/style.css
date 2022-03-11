@@ -21,7 +21,7 @@ body {
     margin: auto;
 }
 
-.nav-ul-izq,  .nav-ul-der {
+.nav-ul{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -29,74 +29,82 @@ body {
     list-style: none;
 }
 
-.nav-li-izq, .nav-li-der {
+.nav-ul > li {
     margin-left: 25px;
     padding: 10px 0px 10px 0px;
-}
-
-.nav-li-a {
-    margin: 0 25px;
-    text-decoration: none;
     color: #EAEAEA;
     text-transform: uppercase;
+    margin: 0 15px;
+    transition-duration: .3s;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-ul a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.dropdown {
+    display: none;
+    padding: 5px 15px;
+}
+
+.dropdown li {
+    margin: 10px 0px;
+    transition: .3s ease;
+}
+
+.active {
+    display: block;
+    position: absolute;
+    right: -40px;
+    top: 35px;
+    text-decoration: none;
+    list-style: none;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #11113d;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.nav-ul > li:hover, .nav-ul a:hover {
+    color: #D6A771;
     transition-duration: .3s;
 }
 
-.nav-li-a:hover {
+.dropdown li:hover {
     color: #D6A771;
-    transition-duration: .3s;
+}
+
+.logout-header {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: #fff;
+    padding: 0;
+    margin: 10px 0px;
+    transition: 0.3s ease;
+}
+
+.logout-header:hover {
+    color: #D6A771;
 }
 
 .hamburger {
     display: none;
 }
 
-/*nav ul {
-    margin: 0;
-    padding: 50px 0;
-}*/
-
-/*nav ul li {
-    float: none;
-    display: inline-block;
-}*/
-
-/*nav ul li:nth-child(1),
-nav ul li:nth-child(2),
-nav ul li:nth-child(3),
-nav ul li:nth-child(4) {
-    float: left;
-}*/
-
-/*nav ul li a {
-    margin: 0 25px;
-    text-decoration: none;
-    color: #EAEAEA;
-    text-transform: uppercase;
-}*/
-
-/*nav a:hover {
-    color: #D6A771;
-    transition-duration: .5s;
-}*/
-
-/*nav div {
-    display: inline-block;
-    text-align: center;
-}*/
-
 .nav-derecha {
     margin-left: auto;
     margin-right: 50px;
 }
-
-/*.nav-centro {
-    width: 19%;
-}*/
-
-/*nav div ul {
-    display: inline-block;
-}*/
 
 /*-------Carrito-------*/
 
