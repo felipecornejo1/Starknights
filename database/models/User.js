@@ -27,6 +27,10 @@ module.exports = (sequelize, dataTypes) => {
         created_at: {
             allowNull: false,
             type: dataTypes.DATE
+        },
+        wallet_balance: {
+            allowNull: false,
+            type: dataTypes.INTEGER
         }
     }
     // Definir la configuración de esta tabla

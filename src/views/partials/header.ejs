@@ -1,35 +1,70 @@
 <header class="header">
     <nav class="nav">
-        <i class="fas fa-bars hamburger"></i>
-        <div class="nav-centro">
+        <div class="logo">
             <a href="/"><img src="/img/logo-blanco.png" alt="logo" class="logo"></a>
         </div>
-        <div class="nav-izquierda">
-            <ul class="nav-ul">
-                <li><a href="/marketplace">Marketplace</a></li>
-                <li><a href="/proximamente">Historia</a></li> <!--Mas adelante hagamos esta pestaña y la de planetas, por ahora van a llevar a una pestaña de proximamente-->
-                <li><a href="/planetas">Planetas</a></li>
-            </ul>
-        </div>
-        <div class="nav-derecha">
-            <ul class="nav-ul">
-                <li><a href="/marketplace/carrito">Carrito</a></li>
-                <li id="boton-cuenta">
-                    Cuenta
-                    <% if(locals.isUserLogged == true) { %>
-                        <ul class="dropdown" id="dropdown-user-logged">
-                            <a href="/users/profile"><li>Perfil</li></a>
-                            <form action="/users/logout" method="post"><button type="submit" class="logout-header">CERRAR SESIÓN</button></form>
-                        </ul>
-                    <% } else { %>
-                        <ul class="dropdown" id="dropdown-user-not-logged">
-                            <a href="/users/register"><li>Registrarse</li></a>
-                            <a href="/users/login"><li>Iniciar Sesión</li></a>
-                        </ul>
-                    <% } %>
-                </li>
-            </ul>
+        <div class="ctn-menu">
+            <% if(locals.isUserLogged == true) { %>
+                <div class="datos-header-mobile">
+                    <a href="/users/profile">
+                        <img class="pp-header" src="/img/profile/<%=locals.user.profile_picture%>">
+                        <div class="datos-header-mobile-ctn">
+                            <p><%= locals.user.name %></p>
+                            <p><i class="fab fa-brands fa-ethereum"></i></i></i> <%= locals.user.wallet_balance %></p>
+                        </div>
+                    </a>
+                </div>
+            <% } else { %>
+                <div class="datos-header-mobile">
+                    <a href="/">
+                        <div class="datos-header-mobile-ctn">
+                            <p>Menu</p>
+                        </div>
+                        <img src="/img/logo-blanco.png" class="logo-menu-mobile" alt="">
+                    </a>
+                </div>
+            <% } %>
+            <div class="nav-izquierda">
+                <ul class="nav-ul">
+                    <li><a href="/marketplace"><i class="fa-solid fa-shop"></i>  Marketplace</a></li>
+                    <li><a href="/proximamente"><i class="fa-solid fa-scroll"></i>  Historia</a></li> <!--Mas adelante hagamos esta pestaña y la de planetas, por ahora van a llevar a una pestaña de proximamente-->
+                    <li><a href="/planetas"><i class="fa-solid fa-earth-oceania"></i>  Planetas</a></li>
+                </ul>
+            </div>
+            <div class="nav-derecha">
+                <ul class="nav-ul">
+                    <li><a href="/marketplace/carrito"><i class="fa-solid fa-cart-shopping"></i>  Carrito</a></li>
+                    <li id="boton-cuenta">
+                        <button class="header-btn account-btn"><i class="fa-solid fa-user-astronaut"></i>  CUENTA  <i class=" fas fa-solid fa-angle-down dropdown-btn"></i></button>
+                        <% if(locals.isUserLogged == true) { %>
+                            <ul class="dropdown" id="dropdown-user-logged">
+                                <a href="/users/profile">
+                                    <li id="datos-header">
+                                        <img class="pp-header" src="/img/profile/<%=locals.user.profile_picture%>">
+                                        <div class="datos-header-ctn">
+                                            <p><%= locals.user.name %></p>
+                                            <p><i class="fab fa-brands fa-ethereum"></i></i></i> <%= locals.user.wallet_balance %></p>
+                                        </div>
+                                    </li>
+
+                                </a>
+                                <a href="/users/profile"><li><i class="fa-solid fa-gear"></i>  Configuracion</li></a>
+                                <form action="/users/logout" method="post"><button type="submit" class="header-btn logout-header-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>  CERRAR SESIÓN</button></form>
+                            </ul>
+                        <% } else { %>
+                            <ul class="dropdown" id="dropdown-user-not-logged">
+                                <a href="/users/register"><li><i class="fa-solid fa-pencil"></i>  Registrarse</li></a>
+                                <a href="/users/login"><li><i class="fa-solid fa-arrow-right-to-bracket"></i>  Iniciar Sesión</li></a>
+                            </ul>
+                        <% } %>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
+    <button class="header-btn"><i class="fas fa-bars hamburger"></i></button>
+
+    <div id="overlay"></div>
+
     <script src="/js/header.js"></script>
 </header>
