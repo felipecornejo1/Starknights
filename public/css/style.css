@@ -1420,7 +1420,7 @@ body {
     padding-bottom: 25px;
     border-radius: 5%;
     border: solid 5px lightskyblue;
-    margin-top: 50px;
+    margin-top: 20px;
     padding: 20px 15px 20px;
     color: #EAEAEA;
 }
@@ -1477,7 +1477,7 @@ body {
 }
 
 .main-detalle{
-    margin: auto;
+    margin-bottom: 20px;
 }
 
 .texto-art{
