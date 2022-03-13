@@ -1761,10 +1761,8 @@ footer {
 }
 
 /*-----Fin Footer--------*/
-=======
 @media(min-width: 830px) and (max-width: 970px) {
     i {
         display: none !important;
     }
 }
->>>>>>> 1cdf060a1af6202bb2270b7961ced6fd5192b890
