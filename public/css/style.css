@@ -1496,3 +1496,74 @@ body {
     padding: 20px;
     transition: background-color 450ms;
 }
+
+/*-----Footer--------*/
+footer {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    background-color: #070720;
+}
+
+.footer-pri {
+    color: #fff;  
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-logo {    
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;    
+}
+
+.footer-cuenta {
+    display: flex;
+    flex-direction: column; 
+    align-self: center;
+}
+
+.footer-cuenta a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    transition: color 450ms;
+}
+
+.footer-cuenta a:hover{
+    color: #D6A771;
+}
+
+.footer-social{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.footer-social p{
+    padding-left: 10px; 
+}
+
+.footer-social a{
+    padding: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff; 
+    transition: color 450ms;
+}
+
+.social-logos{
+    display: flex; 
+    align-content: row; 
+    transition: color 450ms;
+}
+
+.footer-social a:hover{
+    color: #D6A771;
+}
+
+.foot-logo{
+    height: 100px;
+}
+
+/*-----Fin Footer--------*/
