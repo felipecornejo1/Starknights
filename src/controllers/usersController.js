@@ -33,7 +33,8 @@ const controller = {
                     email: req.body.email,
                     password: bcrypt.hashSync(req.body.password, 10),
                     profile_picture: req.file.filename,
-                    created_at: Date.now()
+                    created_at: Date.now(),
+                    wallet_balance: 500
                 })
                 // Redirigir al login
                 res.redirect('/users/login');
@@ -47,7 +48,8 @@ const controller = {
                     email: req.body.email,
                     password: bcrypt.hashSync(req.body.password, 10),
                     profile_picture: 'default.jpg',
-                    created_at: Date.now()
+                    created_at: Date.now(),
+                    wallet_balance: 500
                 });
                 // Redirigir al login
                 res.redirect('/users/login')
