@@ -2,6 +2,7 @@
 const mainRoutes = require('./routes/mainRoutes');
 const marketplaceRoutes = require('./routes/marketplaceRoutes');
 const usersRoutes = require('./routes/usersRoutes');
+const carritoRoutes = require('./routes/carritoRoutes')
 // Importar archivo que usa las cookies
 const userCookie = require('./middlewares/userCookie');
 // Importar librerias
@@ -47,3 +48,4 @@ app.use(userCookie);
 app.use('/', mainRoutes);
 app.use('/marketplace', marketplaceRoutes);
 app.use('/users', usersRoutes);
+app.use('/carrito', carritoRoutes);
