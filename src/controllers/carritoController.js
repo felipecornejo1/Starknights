@@ -14,6 +14,10 @@ const controller =
         // Renderizar la vista comprar)
         res.render('products/comprar');
     },
+    comprarAmigo: (req, res) => {
+        // Renderizar la vista comprar)
+        res.render('products/comprarAmigo');
+    },
     marketplace: (req, res) => {
         // Traer todos los datos de la tabla items
         db.Items.findAll()
