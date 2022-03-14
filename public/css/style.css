@@ -640,6 +640,11 @@ header {
 
 @media (max-width: 830px){ /*------------MOBILE------------------------*/
 
+    /*! Footer invisible hasta que se lo haga responsive */
+    .footer-pri {
+        display: none;
+    }
+
     /*----HEADER----*/
     .header {
         width: 100%;
