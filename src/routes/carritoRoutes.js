@@ -21,6 +21,8 @@ const router = express.Router();
 router.get('/', carritoController.carrito);
 // Comprar
 router.get('/comprar', carritoController.comprar);
+// Comprar
+router.get('/comprarAmigo', carritoController.comprarAmigo);
 // Marketplace
 router.get('/marketplace', carritoController.marketplace);
 
