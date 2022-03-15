@@ -24,7 +24,7 @@ const controller =
         db.Items.findOne({where: {id: req.params.id}})
             // Después de traer ese item, renderizar la vista 'detalle' y pasarle las variables 'item' (con el item encontrado) y 'user' (con los datos del usuario logueado)
             .then(result => {
-                res.render('products/detalle', {item: result, user: req.session.loggedUser});
+                res.render('products/detalle', {item: result, user: req.session.user});
             });
     },
     create: (req, res) => {

@@ -26,16 +26,3 @@ window.addEventListener('load', () => {
     }
      
 });
-
-//Eliminar las clases del navbar cuando la ventana supere los 830px de ancho
-window.addEventListener('resize', function() {
-    let menu = document.querySelector('.ctn-menu');
-    let overlay = document.querySelector('#overlay');
-    let dropdown = document.querySelector('.dropdown');
-
-    if(window.innerWidth >= 830) {
-        overlay.classList.remove('active');
-        dropdown.classList.remove('active');
-
-    }
-  })
