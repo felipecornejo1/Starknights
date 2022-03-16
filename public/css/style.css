@@ -122,7 +122,15 @@ header {
     justify-content: space-evenly;
     padding: 5px;
     background-color: #D6A771;
+    animation: 300ms ease-in-out;
     position: relative;
+    border-radius: 8px;
+
+}
+
+#datos-header:hover {
+    background-color: #f0b268;
+    color: #fff;
 }
 
 .datos-header-ctn {
@@ -132,10 +140,6 @@ header {
 
 .datos-header-ctn p {
     margin: 0;
-}
-
-#datos-header:hover p{
-    color: #EAEAEA;
 }
 
 .datos-header-mobile {
@@ -441,9 +445,9 @@ header {
 
 .nuevo-item {
     display: inline-block;
-    position: relative;
-    margin-top: 20px;
-    margin-left: 80%;
+    position: absolute;
+    top: 150px;
+    right: 50px;
     color: #fff;
     font-size: 12px;
     text-decoration: none;
@@ -456,6 +460,10 @@ header {
 .nuevo-item:hover {
     background-color: #D6A771;
     transition: 450ms;
+}
+
+.naves {
+    margin-top: 30px;
 }
 
 .item-id {
@@ -641,7 +649,7 @@ header {
 @media (max-width: 830px){ /*------------MOBILE------------------------*/
 
     /*! Footer invisible hasta que se lo haga responsive */
-    .footer-pri {
+    footer {
         display: none;
     }
 
@@ -656,7 +664,7 @@ header {
         position: fixed;
         justify-content: start;
         width: 250px;
-        height: 105%;
+        height: 120%;
         top: -2px;
         right: -255px;
         transition: 300ms ease-in-out;
@@ -762,7 +770,7 @@ header {
 
     #boton-cuenta {
         position: absolute;
-        bottom: 80px;
+        bottom: 23%;
     }
 
     .account-btn {
@@ -947,6 +955,12 @@ header {
         position: relative;
         bottom: 5px;
         margin: 0px;
+    }
+
+    /* Marketplace */
+    .nuevo-item {
+        right: 20px;
+        top: 120px;
     }
 }
 
