@@ -1,0 +1,39 @@
+/*.container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}*/
+
+#principal, html {
+    height: 100%;
+    background-color: #0E161D;
+    margin: 0;
+    padding: 0;
+    background-image: url("/img/fondo-historia.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    
+
+.historia {
+    color: #EAEAEA;
+    font-size: 12px;
+    margin: 3vw 25vw 0vw 25vw;
+}
+
+.historia h1{
+    font-size: 25px;
+}
+
+.h-portada {
+    width: 100%;
+    height: auto;
+}
+
+.articulos {
+    color: #EAEAEA;
+    font-size: 13px;
+}
