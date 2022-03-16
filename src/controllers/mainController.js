@@ -11,6 +11,9 @@ const controller =
     },
     planetas: (req, res) => {
         res.render('planetas');
+    },
+    historia: (req, res) => {
+        res.render('historia');
     }
 };
 

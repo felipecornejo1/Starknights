@@ -12,6 +12,8 @@ router.get('/', mainController.home);
 router.get('/proximamente', mainController.proximamente);
 // Planetas
 router.get('/planetas', mainController.planetas);
+// historia
+router.get('/historia', mainController.historia);
 
 // Exportar rutas
 module.exports = router;
