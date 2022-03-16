@@ -59,12 +59,21 @@ const controller = {
         // En caso de haber errores:
         else {
             // Renderizar la vista register y pasarle las variables errors (con los errores) y old (con los datos que llegaron desde el formulario)
-            res.render('users/register', {errors: errors.mapped, old: req.body});
+            res.render('users/register', {errors: errors.mapped(), old: req.body});
         }
     },
-    profile: (req, res) => {
+    profileAccount: (req, res) => {
         // Renderizar la vista profile
-        res.render('users/profile');
+        res.render('users/profile/account', {user: req.session.user});
+    },
+    profileInventory: (req, res) => {
+        res.render('users/profile/inventory', {user: req.session.user})
+    },
+    profileActivity: (req, res) => {
+        res.render('users/profile/activity', {user: req.session.user})
+    },
+    profileSettings: (req, res) => {
+        res.render('users/profile/settings', {user: req.session.user})
     },
     logout: (req, res) => {
         // Eliminar la session y las variables en locals

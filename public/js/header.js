@@ -1,4 +1,6 @@
 window.addEventListener('load', () => {
+
+    let body = document.querySelector('body');
     let botonCuenta = document.querySelector('#boton-cuenta');
     let dropdown = document.querySelector('.dropdown');
     let dropdownButton = document.querySelector('.dropdown-btn');
@@ -14,11 +16,13 @@ window.addEventListener('load', () => {
     hamburger.addEventListener('click', () => {
         overlay.classList.add('active');
         menu.classList.add('active');
+        body.style.position = 'fixed'
     });
 
     overlay.addEventListener('click', () => {
         menu.classList.remove('active');
         overlay.classList.remove('active');
+        body.style.position = 'relative'
     });
 
     if(window.innerWidth<830){

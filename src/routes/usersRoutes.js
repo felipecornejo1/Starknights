@@ -31,8 +31,8 @@ const {check} = require('express-validator');
 // Definir validaciones del formulario de registro
 const registerValidations = [
     check('usuario').notEmpty().withMessage('Este campo es obligatorio'),
-    check('email').isEmail().withMessage('Debes incluir un email válido'),
-    check('password').isLength({min: 6}).withMessage('Debe contener 6 caracteres como mínimo')
+    check('email').isEmail().withMessage('Debes ingresar un email válido'),
+    check('password').isLength({min: 6}).withMessage('La contraseña debe contener 6 caracteres como mínimo')
 ];
 
 // Definir validaciones del formulario de login
@@ -51,7 +51,10 @@ router.get('/login', guestMiddleware, usersController.login);
 // Enviar y procesar datos del formulario de login
 router.post('/login', loginValidations, loginValidator, loginDataCheck, usersController.sendLogin);
 // Perfil
-router.get('/profile', authMiddleware, usersController.profile);
+router.get('/profile/account', authMiddleware, usersController.profileAccount);
+router.get('/profile/inventory', authMiddleware, usersController.profileInventory);
+router.get('/profile/activity', authMiddleware, usersController.profileActivity);
+router.get('/profile/settings', authMiddleware, usersController.profileSettings);
 // Cerrar sesión
 router.post('/logout', authMiddleware, usersController.logout);
 

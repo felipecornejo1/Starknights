@@ -19,6 +19,24 @@ header {
     border-top: 3px solid #D6A771;
 }
 
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.nowrap {
+    flex-wrap: nowrap;
+}
+
 .logo {
     padding: 10px 0px 10px  20px;
     height: 100px;
@@ -508,6 +526,136 @@ header {
 }
 /*------Fin Marketplace-------*/
 
+/* ------ Cuenta/Profile/Account -------- */
+
+    #acc-menu {
+        background-color: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        width: fit-content;
+        padding: 10px 0px;
+        height: 100%;
+        }
+
+    #acc-menu a {
+        text-decoration: none;
+        color: #fff;
+        transition: 300ms ease-in-out;
+    }
+
+    /* #acc-menu a:hover {
+        color: #f0b268;
+    } */
+
+    .acc-menu-ctn {
+        text-align: left;
+        padding: 20px 100px 20px 20px;
+        transition: 300ms ease-in-out;
+    }
+
+    .acc-menu-ctn:hover {
+        background-color: rgba(31, 14, 94, 0.404);
+    }
+
+    .acc-menu-ctn.tab-selected {
+        background-color: rgba(31, 14, 94, 0.815);
+    }
+    
+    .acc-menu-ctn.tab-selected:hover {
+        background-color: rgba(42, 17, 131, 0.815);
+    }
+
+    .acc-menu-ctn p {
+        margin: 0;
+    }
+
+    #acc-menu-logout {
+        display: block;
+        position: absolute;
+        bottom: 150px;
+        left: 20px;
+    }
+
+    #acc-menu-settings {
+        position: absolute;
+        width: max-content;
+        bottom: 180px;
+        padding-right: 67px;
+    }
+
+    .acc-view {
+        position: absolute;
+        left: 230px;
+        right: 0;
+        bottom: 0;
+        top: 123px;
+        margin: 0;
+    }
+
+    .acc-box {
+        position: relative;
+        border-radius: 8px;
+        border: 2px rgba(255, 255, 255, 0.2) solid;
+        width: fit-content;
+        padding: 15px 25px;
+        overflow: hidden;
+        background-color: rgba(31, 14, 94, 0.404);
+    }
+
+    .acc-box i {
+        font-size: 220px;
+        position: absolute;
+        left: -30px;
+        bottom: -5px;
+        color: rgba(17, 1, 32, 0.5);
+        z-index: -1;
+    }
+
+    .acc-box h1 {
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+
+    .acc-box p {
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .acc-box button {
+        outline: none;
+        background-color: rgba(27, 27, 44, 0.76);
+        padding: 10px 40px;
+        color: #fff;
+        border: 2px rgba(255, 255, 255, 0.2) solid;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+    }
+
+    .acc-box button:hover {
+        background-color: rgba(38, 38, 53, 0.76);
+        border: rgba(255, 255, 255, 0.308) 2px solid;
+    }
+
+    #wallet-box {
+        margin: 50px 0 0 130px;
+        width: 300px;
+    }
+
+    #acc-wallet-balance {
+        font-size: 18px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+
+    #airdrop-button {
+        display: block;
+        margin: auto;
+    }
+    
+/* ------ Fin Cuenta/Profile/Account -------- */
+
 .cartel-proximamente {
     width: 500px;
     margin: auto;
@@ -582,13 +730,23 @@ header {
 }
 
 .form-error {
+    display: none;
+    color: rgb(255, 0, 0);
+    margin: 0;
+    font-size: 12px;
+    width: 250px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.form-message {
+    color: rgba(255, 255, 255, 0.925);
+    width: 250px;
+    font-size: 12px;
+}
+
+.form-error.active {
     display: block;
-    color: #fff;
-    background-color: #17172E;
-    border: 2px #D6A771 solid;
-    padding: 10px;
-    width: fit-content;
-    border-radius: 15px;
 }
 
 .form-title {
@@ -770,7 +928,7 @@ header {
 
     #boton-cuenta {
         position: absolute;
-        bottom: 23%;
+        bottom: 23%; 
     }
 
     .account-btn {
