@@ -6,7 +6,7 @@
         <div class="ctn-menu">
             <% if(locals.isUserLogged == true) { %>
                 <div class="datos-header-mobile">
-                    <a href="/users/profile">
+                    <a href="/users/profile/account">
                         <img class="pp-header" src="/img/profile/<%=locals.user.profile_picture%>">
                         <div class="datos-header-mobile-ctn">
                             <p><%= locals.user.name %></p>
@@ -38,7 +38,7 @@
                         <button class="header-btn account-btn"><i class="fa-solid fa-user-astronaut"></i>  CUENTA  <i class=" fas fa-solid fa-angle-down dropdown-btn"></i></button>
                         <% if(locals.isUserLogged == true) { %>
                             <ul class="dropdown" id="dropdown-user-logged">
-                                <a href="/users/profile">
+                                <a href="/users/profile/account">
                                     <li id="datos-header">
                                         <img class="pp-header" src="/img/profile/<%=locals.user.profile_picture%>">
                                         <div class="datos-header-ctn">
@@ -48,7 +48,7 @@
                                     </li>
 
                                 </a>
-                                <a href="/users/profile"><li><i class="fa-solid fa-user-astronaut"></i>  Mi Cuenta</li></a>
+                                <a href="/users/profile/account"><li><i class="fa-solid fa-user-astronaut"></i>  Mi Cuenta</li></a>
                                 <form action="/users/logout" method="post"><button type="submit" class="header-btn logout-header-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>  CERRAR SESIÓN</button></form>
                             </ul>
                         <% } else { %>
