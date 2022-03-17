@@ -648,11 +648,6 @@ header {
 
 @media (max-width: 830px){ /*------------MOBILE------------------------*/
 
-    /*! Footer invisible hasta que se lo haga responsive */
-    footer {
-        display: none;
-    }
-
     /*----HEADER----*/
     .header {
         width: 100%;
@@ -1710,9 +1705,8 @@ header {
 }
 
 /*-----Footer--------*/
+
 footer {
-    width: 100%;
-    height: 100%;
     padding: 5px;
     background-color: #070720;
 }
@@ -1720,6 +1714,7 @@ footer {
 .footer-pri {
     color: #fff;  
     display: flex;
+    flex-wrap: wrap-reverse;
     justify-content: space-evenly;
 }
 
@@ -1746,6 +1741,26 @@ footer {
     color: #D6A771;
 }
 
+.twitter .instagram .linkedin .mail{
+    transition: color 450ms;
+}
+
+.twitter:hover{
+    color: #00acee
+}
+
+.instagram:hover{
+    color: #d12896
+}
+
+.linkedin:hover{
+    color: #0072b1
+}
+
+.mail:hover{
+    color: #D6A771;
+}
+
 .footer-social{
     display: flex;
     flex-direction: column;
@@ -1759,9 +1774,12 @@ footer {
 .footer-social a{
     padding: 10px;
     text-decoration: none;
-    font-size: 14px;
     color: #fff; 
     transition: color 450ms;
+}
+
+.footer-social i{
+    font-size: 35px;
 }
 
 .social-logos{
@@ -1770,17 +1788,22 @@ footer {
     transition: color 450ms;
 }
 
-.footer-social a:hover{
-    color: #D6A771;
-}
-
 .foot-logo{
     height: 100px;
 }
 
-/*-----Fin Footer--------*/
-@media(min-width: 830px) and (max-width: 970px) {
-    i {
-        display: none !important;
+@media (max-width: 830px){
+    .footer-logo {
+        padding: 10px;
+    }
+
+    .footer-cuenta {
+        padding: 10px;
+    }
+
+    .footer-social{
+        padding: 10px;
     }
 }
+
+/*-----Fin Footer--------*/
