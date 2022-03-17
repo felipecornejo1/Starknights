@@ -33,6 +33,19 @@
     font-size: 18px;
 }
 
+.casillas-login:focus {
+    outline: 2px solid #D6A771;
+}
+
+.casillas-login.error{
+    border: 2px red solid;
+    background-color: rgb(255, 210, 210);
+}
+
+.casillas-login.error:focus {
+    outline: none;
+}
+
 .formulario-login .boton-login{
     width: 25%;
     background-color: #1259c3;

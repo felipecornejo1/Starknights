@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Head-->
+<%- include('../../partials/head', {stylesheet: 'style', title: 'Perfil'}) %>
+
+<body>
+    
+    <!--Header-->
+    <%- include('../../partials/header') %>
+
+    <main>
+        
+        <%- include('../../partials/accountMenu') %>
+        <!-- ! Cartel próximamente hasta que esté lista esta vista -->
+        <div class="acc-view">
+            <div class="cartel-proximamente">
+                <h1 class="proximamente">Estamos trabajando en algunas funciones, disculpe las molestias.</h1>
+                <img src="/img/logo-blanco.png">
+            </div>
+        </div>
+
+        <!-- <div class="acc-view">
+            <div class="acc-box column" id="wallet-box">
+                <i class="fab fa-brands fa-ethereum"></i>
+                <h1>
+                    Wallet
+                </h1>
+                <p id="acc-wallet-balance"><%= locals.user.wallet_balance %>  ETH</p>
+                <form action="/users/profile/account/eth-airdrop" method="post">
+                    <button type="submit" id="airdrop-button">Claim 1 ETH</button>
+                </form>
+            </div>
+        </div> -->
+
+    </main>
+
+</body>
