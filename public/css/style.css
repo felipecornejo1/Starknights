@@ -1903,16 +1903,32 @@ footer {
     transition: color 450ms;
 }
 
+.twitter{
+    transition: color 450ms;
+}
+
 .twitter:hover{
     color: #00acee
+}
+
+.instagram{
+    transition: color 450ms;
 }
 
 .instagram:hover{
     color: #d12896
 }
 
+.linkedin{
+    transition: color 450ms;
+}
+
 .linkedin:hover{
     color: #0072b1
+}
+
+.mail{
+    transition: color 450ms;
 }
 
 .mail:hover{
