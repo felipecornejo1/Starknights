@@ -22,9 +22,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         price: {
             allowNull: true,
-            type: dataTypes.DECIMAL
+            type: dataTypes.DECIMAL(10, 3)
         },
-        image: {
+        picture: {
             allowNull: true,
             type: dataTypes.STRING
         }
@@ -37,13 +37,38 @@ module.exports = (sequelize, dataTypes) => {
     // Ejecutar el método define y le pasamos como parametros todo lo que definimos anteriormente
     const Item = sequelize.define(alias, cols, config);
 
+    // Asociar la primary key de esta tabla con las foreign keys de otras
+    Item.associate = function(models) {
+        // Asociar la columna id con la tabla Armor
+        Item.hasMany(models.Armor, {
+            as: 'item',
+            foreignKey: 'itemFK'
+        });
+        Item.hasMany(models.Spaceships, {
+            as: 'item',
+            foreignKey: 'itemFK'
+        });
+        Item.hasMany(models.Weapons, {
+            as: 'item',
+            foreignKey: 'itemFK'
+        });
+        Item.hasMany(models.Pets, {
+            as: 'item',
+            foreignKey: 'itemFK'
+        });
+        Item.hasMany(models.Passes, {
+            as: 'item',
+            foreignKey: 'itemFK'
+        });
+    }
+    
     // Asociar las foreign keys de esta tabla con las primary keys de otras
     Item.associate = function(models) {
         //Asociar la columna typeFK con la tabla ItemTypes
         Item.belongsTo(models.ItemTypes, {
             as: 'types',
             foreignKey: 'typeFK'
-        })
+        });
     }
     
     return Item;
