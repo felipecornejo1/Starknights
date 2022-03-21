@@ -52,6 +52,7 @@ router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', loginValidations, loginValidator, loginDataCheck, usersController.sendLogin);
 // Perfil
 router.get('/profile/account', authMiddleware, usersController.profileAccount);
+router.put('/profile/account/eth-airdrop', usersController.ethAirdrop);
 router.get('/profile/inventory', authMiddleware, usersController.profileInventory);
 router.get('/profile/activity', authMiddleware, usersController.profileActivity);
 router.get('/profile/settings', authMiddleware, usersController.profileSettings);

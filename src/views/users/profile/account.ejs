@@ -27,9 +27,19 @@
                     Wallet
                 </h1>
                 <p id="acc-wallet-balance"><%= locals.user.wallet_balance %>  ETH</p>
-                <form action="/users/profile/account/eth-airdrop" method="post">
-                    <button type="submit" id="airdrop-button">Claim 1 ETH</button>
-                </form>
+                <div id="deposit-withdraw">
+                    <form action="/users/profile/account/eth-airdrop" method="post">
+                        <button type="submit" id="airdrop-button">Depositar</button>
+                    </form>
+                    <form action="/users/profile/account/eth-airdrop" method="post">
+                        <button type="submit" id="airdrop-button">Retirar</button>
+                    </form>
+                </div>
+                <% if(locals.user.claimed_airdrop != 1) { %>
+                    <form action="/users/profile/account/eth-airdrop?_method=PUT" method="post">
+                        <button type="submit" id="airdrop-button">Reclamar 1 ETH</button>
+                    </form>
+                <% } %>
             </div>
         </div>
 
