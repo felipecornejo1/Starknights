@@ -21,8 +21,8 @@
             <div class="container-mkt">
                 <% for(let i of items) { if(i.typeFK == 1 && i.price != null == 1) { %>
                 <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                    <div class="item-id">#<%= i.id %></div>
-                    <p class="item-info"><i class="fa-solid fa-jet-fighter-up"></i> <%= i.name %></p>
+                    <div class="item-id"><i class="fa-solid fa-jet-fighter-up"></i> #<%= i.id %></div>
+                    <p class="item-info"><%= i.name %></p>
                     <img src="/img/items/spaceships/<%= i.picture %>">
                     <div class="item-info-mkt">
                         <h2 class="precio-mkt">Ξ <%= i.price %></h2>
@@ -39,8 +39,8 @@
             <div class="container-mkt">
                 <% for(let i of items) { if(i.typeFK == 3 && i.price != null) { %>
                 <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                    <div class="item-id">#<%= i.id %></div>
-                    <p class="item-info"><i class="fa-solid fa-shield"></i> <%= i.name %></p>
+                    <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
+                    <p class="item-info"><%= i.name %></p>
                     <img src="/img/items/armor/<%= i.picture %>">
                     <div class="item-info-mkt">
                         <h2 class="precio-mkt">Ξ <%= i.price %></h2>
@@ -55,8 +55,8 @@
             <div class="container-mkt">
                 <% for(let i of items) { if(i.typeFK == 4 && i.price != null) { %>
                     <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                        <div class="item-id">#<%= i.id %></div>
-                        <p class="item-info"><i class="fa-solid fa-bone"></i> <%= i.name %></p>
+                        <div class="item-id"><i class="fa-solid fa-bone"></i> #<%= i.id %></div>
+                        <p class="item-info"><%= i.name %></p>
                         <img src="/img/items/pets/<%= i.picture %>">
                             <div class="item-info-mkt">
                             <h2 class="precio-mkt">Ξ <%= i.price %></h2>
