@@ -75,12 +75,11 @@ body {
     border-bottom: 1px solid hsla(0,0%,100%,.15);
     display: flex;
     align-items: center;
-    transition: color .2s;
 }
 
 .articulo-li:hover {
     cursor: pointer;
-    background: linear-gradient(rgba(54, 107, 117, 0.5), rgba(54, 107, 117, .1));
+    background: linear-gradient(rgba(54, 107, 117, 0.5), rgba(54, 107, 117, 0.1));
 }
 
 .h-art-img {
