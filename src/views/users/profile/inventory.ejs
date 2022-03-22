@@ -24,8 +24,8 @@
             <div class="container-mkt">
                 <% for(let i of items) { if(i.typeFK == 1) { %>
                     <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                        <div class="item-id">#<%= i.id %></div>
-                        <p class="item-info"><i class="fa-solid fa-jet-fighter-up"></i> <%= i.name %></p>
+                        <div class="item-id"><i class="fa-solid fa-jet-fighter-up"></i> #<%= i.id %></div>
+                        <p class="item-info"><%= i.name %></p>
                         <img src="/img/items/spaceships/<%= i.picture %>" class="item-img">
                     </a>
                     <% if(i.price != null) { %>
@@ -35,8 +35,8 @@
                     <% } %>
                 <% } else if(i.typeFK == 2){ %>
                     <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                        <div class="item-id">#<%= i.id %></div>
-                        <p class="item-info"><i class="fa-solid fa-shield"></i> <%= i.name %></p>
+                        <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
+                        <p class="item-info"><%= i.name %></p>
                         <img src="/img/items/weapons/<%= i.picture %>" class="item-img">
                     </a>
                     <% if(i.price != null) { %>
@@ -46,8 +46,8 @@
                     <% } %>
                 <% } else if(i.typeFK == 3){ %>
                     <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                        <div class="item-id">#<%= i.id %></div>
-                        <p class="item-info"><i class="fa-solid fa-shield"></i> <%= i.name %></p>
+                        <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
+                        <p class="item-info"><%= i.name %></p>
                         <img src="/img/items/armor/<%= i.picture %>" class="item-img">
                     </a>
                     <% if(i.price != null) { %>
@@ -57,8 +57,8 @@
                     <% } %>
                 <% } else if(i.typeFK == 4){ %>
                     <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                        <div class="item-id">#<%= i.id %></div>
-                        <p class="item-info"><i class="fa-solid fa-shield"></i> <%= i.name %></p>
+                        <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
+                        <p class="item-info"><%= i.name %></p>
                         <img src="/img/items/pets/<%= i.picture %>" class="item-img">
                     </a>
                     <% if(i.price != null) { %>
@@ -68,8 +68,8 @@
                     <% } %>
                 <% } else if(i.typeFK == 5){ %>
                     <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                        <div class="item-id">#<%= i.id %></div>
-                        <p class="item-info"><i class="fa-solid fa-shield"></i> <%= i.name %></p>
+                        <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
+                        <p class="item-info"><%= i.name %></p>
                         <img src="/img/items/passes/<%= i.picture %>" class="item-img">
                     </a>
                     <% if(i.price != null) { %>

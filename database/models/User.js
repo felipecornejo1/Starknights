@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         wallet_balance: {
             allowNull: false,
-            type: dataTypes.INTEGER
+            type: dataTypes.DECIMAL(10, 3)
         },
         claimed_airdrop: {
             allowNull: true,

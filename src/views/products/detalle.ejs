@@ -20,17 +20,21 @@
             </div> 
             <div class="art-img">
                 <% if(item.typeFK == 1) {%>
-                    <img src="/img/naves/<%= item.picture %>" class="art-detail">
+                    <img src="/img/items/spaceships/<%= item.picture %>" class="art-detail">
                 <% } else if (item.typeFK == 2) { %>
-                    <img src="/img/armaduras/<%= item.picture %>" class="art-detail">
-                <% } else { %>
-                    <img src="/img/mascotas/<%= item.picture %>" class="art-detail">
+                    <img src="/img/items/weapons/<%= item.picture %>" class="art-detail">
+                <% } else if(item.typeFK == 3) { %>
+                    <img src="/img/items/armor/<%= item.picture %>" class="art-detail">
+                <% } else if(item.typeFK == 4) { %>
+                    <img src="/img/items/pets/<%= item.picture %>" class="art-detail">
+                <% } else if(item.typeFK == 5) { %>
+                    <img src="/img/items/passes/<%= item.picture %>" class="art-detail">
                 <% } %>
             </div>
 
             <div class= "buttons-detalle"> 
                 <button type="button"> Añadir al carro </button>
-                <% if(item.ownerFK != user.id && item.price != null) { %>
+                <% if(item.ownerFK != user.id && item.price != null && !locals.justBought) { %>
                     <form action="/marketplace/buy/<%= item.id %>?_method=PUT" method="POST">
                         <button type="submit"> Comprar </button>
                     </form>

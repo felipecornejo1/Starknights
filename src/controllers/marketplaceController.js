@@ -83,7 +83,7 @@ const controller =
             .then( result => {
                 db.Items.update({ownerFK: req.session.user.id, price: null}, {where: {id: req.params.id}});
                 db.Users.update({wallet_balance: req.session.user.wallet_balance - result.price}, {where: {id: req.session.user.id}})
-                res.render('/products/detalle', {item: result, user: req.session.user, justBought: true})
+                res.render('products/detalle', {item: result, user: req.session.user, justBought: true})
             });
     },
     destroy : (req, res) => {

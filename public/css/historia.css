@@ -75,6 +75,11 @@ body {
     border-bottom: 1px solid hsla(0,0%,100%,.15);
     display: flex;
     align-items: center;
+    -webkit-transition: all 1s ease-in;
+-moz-transition: all 1s ease-in;
+-o-transition: all 1s ease-in;
+transition: all 1s ease-in;
+
 }
 
 .articulo-li:hover {
