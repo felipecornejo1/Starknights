@@ -33,13 +33,20 @@ body {
     background-size: cover;
 }*/
 
-    
+.h-container {
+    display: flex;
+}
+
+.h-container div {
+    align-items: center;
+}
 
 .historia {
     color: #EAEAEA;
     font-size: 12px;
-    margin: 0vw 25vw 0vw 25vw;
+    margin: 0vw 1vw 0vw 22vw;
     line-height: 1.7;
+    width: 50%;
 }
 
 .historia h1{
@@ -55,4 +62,47 @@ body {
 .articulos {
     color: #EAEAEA;
     font-size: 13px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.articulo-li {
+    min-height: 60px;
+    font-size: 10px;
+    width: 100%;
+    background: linear-gradient(rgba(30, 56, 61, 0.5), rgba(30, 56, 61, 0.1));
+    border-bottom: 1px solid hsla(0,0%,100%,.15);
+    display: flex;
+    align-items: center;
+}
+
+.articulo-li:hover {
+    cursor: pointer;
+    background: linear-gradient(rgba(54, 107, 117, 0.5), rgba(54, 107, 117, 0.1));
+}
+
+.h-art-img {
+    background: transparent;
+    width: 30%;
+    margin-left: 10px;
+    height: auto;
+}
+
+.articulo-a {
+    width: 80%;
+    margin-left: 10px;
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+.art-ol {
+    height: 700px;
+    overflow-y: auto;
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+.space-art-div {
+    width: 50%;
 }
