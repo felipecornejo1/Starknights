@@ -77,7 +77,10 @@ const controller = {
         }
     },
     profileInventory: (req, res) => {
-        res.render('users/profile/inventory', {user: req.session.user})
+        db.Items.findAll({where: {ownerFK: req.session.user.id}})
+            .then(result => {
+                res.render('users/profile/inventory', {items: result, user: req.session.user})
+            });
     },
     profileActivity: (req, res) => {
         res.render('users/profile/activity', {user: req.session.user})

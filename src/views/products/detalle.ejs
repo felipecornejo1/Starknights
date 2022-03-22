@@ -20,20 +20,24 @@
             </div> 
             <div class="art-img">
                 <% if(item.typeFK == 1) {%>
-                    <img src="/img/naves/<%= item.image %>" class="art-detail">
+                    <img src="/img/naves/<%= item.picture %>" class="art-detail">
                 <% } else if (item.typeFK == 2) { %>
-                    <img src="/img/armaduras/<%= item.image %>" class="art-detail">
+                    <img src="/img/armaduras/<%= item.picture %>" class="art-detail">
                 <% } else { %>
-                    <img src="/img/mascotas/<%= item.image %>" class="art-detail">
+                    <img src="/img/mascotas/<%= item.picture %>" class="art-detail">
                 <% } %>
             </div>
 
             <div class= "buttons-detalle"> 
                 <button type="button"> Añadir al carro </button>
-                <button type="button"> Comprar </button>
-            <form action="/marketplace/delete/<%= item.id %>?_method=DELETE" method="POST">
-                <button type="submit"> Borrar </button>
-            </form>
+                <% if(item.ownerFK != user.id && item.price != null) { %>
+                    <form action="/marketplace/buy/<%= item.id %>?_method=PUT" method="POST">
+                        <button type="submit"> Comprar </button>
+                    </form>
+                <% } %>
+                <form action="/marketplace/delete/<%= item.id %>?_method=DELETE" method="POST">
+                    <button type="submit"> Borrar </button>
+                </form>
             </div>
             <div class="cuadro-estadisticas">
                 <table class="bordes-box">

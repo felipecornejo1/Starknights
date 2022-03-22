@@ -14,13 +14,79 @@
         <%- include('../../partials/accountMenu') %>
 
         <!-- ! Cartel próximamente hasta que esté lista esta vista -->
-        <div class="acc-view">
+        <!-- <div class="acc-view">
             <div class="cartel-proximamente">
                 <h1 class="proximamente">Estamos trabajando en algunas funciones, disculpe las molestias.</h1>
                 <img src="/img/logo-blanco.png">
             </div>
+        </div> -->
+        <div class="acc-view">
+            <div class="container-mkt">
+                <% for(let i of items) { if(i.typeFK == 1) { %>
+                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                        <div class="item-id">#<%= i.id %></div>
+                        <p class="item-info"><i class="fa-solid fa-jet-fighter-up"></i> <%= i.name %></p>
+                        <img src="/img/items/spaceships/<%= i.picture %>" class="item-img">
+                    </a>
+                    <% if(i.price != null) { %>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                        </div>
+                    <% } %>
+                <% } else if(i.typeFK == 2){ %>
+                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                        <div class="item-id">#<%= i.id %></div>
+                        <p class="item-info"><i class="fa-solid fa-shield"></i> <%= i.name %></p>
+                        <img src="/img/items/weapons/<%= i.picture %>" class="item-img">
+                    </a>
+                    <% if(i.price != null) { %>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                        </div>
+                    <% } %>
+                <% } else if(i.typeFK == 3){ %>
+                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                        <div class="item-id">#<%= i.id %></div>
+                        <p class="item-info"><i class="fa-solid fa-shield"></i> <%= i.name %></p>
+                        <img src="/img/items/armor/<%= i.picture %>" class="item-img">
+                    </a>
+                    <% if(i.price != null) { %>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                        </div>
+                    <% } %>
+                <% } else if(i.typeFK == 4){ %>
+                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                        <div class="item-id">#<%= i.id %></div>
+                        <p class="item-info"><i class="fa-solid fa-shield"></i> <%= i.name %></p>
+                        <img src="/img/items/pets/<%= i.picture %>" class="item-img">
+                    </a>
+                    <% if(i.price != null) { %>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                        </div>
+                    <% } %>
+                <% } else if(i.typeFK == 5){ %>
+                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                        <div class="item-id">#<%= i.id %></div>
+                        <p class="item-info"><i class="fa-solid fa-shield"></i> <%= i.name %></p>
+                        <img src="/img/items/passes/<%= i.picture %>" class="item-img">
+                    </a>
+                    <% if(i.price != null) { %>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                        </div>
+                    <% } %>
+                <% } } %>
+            </div>
+            <!-- <div class="icons">
+                <i class="fa-solid fa-jet-fighter-up"></i>
+                <i class="fa-solid fa-gun"></i>
+                <i class="fa-solid fa-shield"></i>
+                <i class="fa-solid fa-bone"></i>
+                <i class="fa-solid fa-passport"></i>
+            </div> -->
         </div>
-        
 
     </main>
 
