@@ -43,27 +43,27 @@ const controller =
                     typeFK: 1,
                     ownerFK: req.session.user.id,
                     price: req.body.price,
-                    image: 'test-spaceship.png'
+                    picture: 'test-spaceship.png'
                 }).then(res.redirect('/marketplace'))
             }
             // En caso de que la categoria seleccionada sea 'armaduras'
             else if (req.body.category == 'armaduras') {
                 db.Items.create({
                     name: req.body.name,
-                    typeFK: 2,
+                    typeFK: 3,
                     ownerFK: req.session.user.id,
                     price: req.body.price,
-                    image: 'test-armor.png'
+                    picture: 'test-armor.png'
                 }).then(res.redirect('/marketplace'))
             }
             // En caso de que la categoria seleccionada sea 'mascotas'
             else if (req.body.category == 'mascotas') {
                 db.Items.create({
                     name: req.body.name,
-                    typeFK: 3,
+                    typeFK: 4,
                     ownerFK: req.session.user.id,
                     price: req.body.price,
-                    image: 'test-pet-1.png'
+                    picture: 'test-pet-1.png'
                 }).then(res.redirect('/marketplace'))
             }
             else {
@@ -75,8 +75,16 @@ const controller =
         // En caso de haber errores de express validator:
         else {
             // Renderizar nuevamente la vista y pasarle las variables 'errors' (con los errores) y 'old' (con los datos que llegaron en el formulario)
-            res.render('products/product-create-form', {errors: errors.mapped, old: req.body})
+            res.render('products/product-create-form', {errors: errors.mapped(), old: req.body})
         }
+    },
+    buy : (req, res) => {
+        db.Items.findOne({where: {id: req.params.id}})
+            .then( result => {
+                db.Items.update({ownerFK: req.session.user.id, price: null}, {where: {id: req.params.id}});
+                db.Users.update({wallet_balance: req.session.user.wallet_balance - result.price}, {where: {id: req.session.user.id}})
+                res.render('/products/detalle', {item: result, user: req.session.user, justBought: true})
+            });
     },
     destroy : (req, res) => {
         // Eliminar el item dentro de la base de datos cuyo id coincida con el que llegó por params

@@ -12,26 +12,32 @@
     <main>
         <!--Formulario de item-->
         <% if(locals.errors) { %>
-
             <form action="/marketplace/subir-item" method="post" class="item-form">
                 <h1 class="form-title">Subir Nuevo Item</h1>
+                <input type="text" id="name" name="name" class="casillas" placeholder="Título" value="<%= old.name %>">
                 <% if(errors.name) { %>
-                    <p class="form-error">Completa este campo</p>
+                    <p class="form-error active">Completa este campo</p>
                 <% } %>
-                <input type="text" id="name" name="name" class="casillas" placeholder="Título">
+                <input type="number" min="0.001" step="0.001" name="price" class="casillas" placeholder="Precio" value="<%= old.price %>">
                 <% if(errors.price) { %>
-                    <p class="form-error">Completa este campo</p>
+                    <p class="form-error active">Completa este campo</p>
                 <% } %>
-                <input type="number" name="price" class="casillas" placeholder="Precio">
-                <% if(errors.category) { %>
-                    <p class="form-error">Elige una opción</p>
-                <% } %>
-                <select name="category" class="casillas">
-                    <option value="">Elegir Categoría</option>
-                    <option value="naves">Naves</option>
-                    <option value="armaduras">Armaduras</option>
-                    <option value="mascotas">Mascotas</option>
+                <select name="category" class="casillas" value="<%= old.category %>">
+                    <% if(errors.category) { %>
+                        <option value="">Elegir Categoría</option>
+                        <option value="naves">Naves</option>
+                        <option value="armaduras">Armaduras</option>
+                        <option value="mascotas">Mascotas</option>
+                    <% } else { %>
+                        <option value="<%= old.category %>"><%= old.category %></option>
+                        <option value="naves">Naves</option>
+                        <option value="armaduras">Armaduras</option>
+                        <option value="mascotas">Mascotas</option>
+                    <% } %>
                 </select>
+                <% if(errors.category) { %>
+                    <p class="form-error active">Elige una opción</p>
+                <% } %>
                 <button type="submit" class="save-button">Guardar</button>
             </form>
             
@@ -39,7 +45,7 @@
             <form action="/marketplace/subir-item" method="post" class="item-form">
                 <h1 class="form-title">Subir Nuevo Item</h1>
                 <input type="text" id="name" name="name" class="casillas" placeholder="Título">
-                <input type="number" name="price" class="casillas" placeholder="Precio">
+                <input type="number" min="0.001" step="0.001" name="price" class="casillas" placeholder="Precio">
                 <select name="category" class="casillas">
                     <option value="">Elegir Categoría</option>
                     <option value="naves">Naves</option>

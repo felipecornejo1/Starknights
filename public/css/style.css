@@ -429,10 +429,10 @@ header {
 .container-mkt {
     display: flex;
     flex-wrap: wrap;
-    height: 300px;
+    height: fit-content;
     overflow: hidden;
     justify-content: space-evenly;
-    margin: 20px 50px;
+    margin: 20px auto;
 }
 
 .market-title {
@@ -485,18 +485,23 @@ header {
 }
 
 .item-id {
-    position: absolute;
-    background-color: #17172E;
-    border: 2px #D6A771 solid;
+    background-color: #D6A771;
     border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     color: #fff;
     font-size: 12px;
-    padding: 2px;
+    padding: 4px 6px;
+    align-self: flex-start;
+    margin: 10px 0 0 10px;
 }
 
 .item-mkt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     width: 200px;
+    height: 260px;
     padding: 10px;
     margin: 15px 15px;
     background-color: #11113d;
@@ -506,23 +511,32 @@ header {
     transition: 0.3s;
 }
 
-.item-mkt hr {
-    border: 0;
-    height: 1px;
-    background-color: #fff;
+.item-mkt > .item-info {
+    align-self: flex-start;
+    color: #fff;
+    font-size: 14px;
+    margin-left: 10px;
 }
 
-.item-img {
+.item-info > i {
+    margin-right: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.item-mkt img {
     width: 100px;
     height: 100px;
-    margin: 50px;
+    margin: 20px auto 30px;
 }
 
-.item-title-mkt, .precio-mkt {
+.precio-mkt {
     color: #fff;
     text-align: center;
     font-weight: normal;
     font-size: 1em;
+    border-top: 2px solid #fff;
+    padding-top: 5px;
+    margin: 0;
 }
 /*------Fin Marketplace-------*/
 
@@ -589,6 +603,9 @@ header {
         bottom: 0;
         top: 123px;
         margin: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .acc-box {
@@ -596,6 +613,8 @@ header {
         border-radius: 8px;
         border: 2px rgba(255, 255, 255, 0.2) solid;
         width: fit-content;
+        height: fit-content;
+        margin: 50px 0 0 50px;
         padding: 15px 25px;
         overflow: hidden;
         background-color: rgba(31, 14, 94, 0.404);
@@ -640,7 +659,6 @@ header {
 
     #wallet-box {
         position: relative;
-        margin: 50px 0 0 130px;
         width: 220px;
         height: fit-content;
         text-align: center;
@@ -665,6 +683,17 @@ header {
 
     #deposit-withdraw button {
         padding: 10px 20px;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .icons i {
+        margin: 10px;
     }
     
 /* ------ Fin Cuenta/Profile/Account -------- */
@@ -707,15 +736,21 @@ header {
     padding: 10px;
     border-radius: 5px;
     border: none;
-    margin-bottom: 16px;
+    margin-top: 16px;
     font-size: 15px;
+}
+
+.casillas:focus {
+    outline: #D6A771 3px solid;
 }
 
 .save-button {
     color: #fff;
     background-color: #21218b;
+    border-radius: 8px;
     padding: 10px;
     border: none;
+    margin-top: 20px;
 }
 
 .save-button:hover {
