@@ -44,7 +44,7 @@ body {
 .historia {
     color: #EAEAEA;
     font-size: 12px;
-    margin: 0vw 1vw 0vw 25vw;
+    margin: 0vw 1vw 0vw 22vw;
     line-height: 1.7;
     width: 50%;
 }
@@ -62,12 +62,32 @@ body {
 .articulos {
     color: #EAEAEA;
     font-size: 13px;
-    margin: 0vw 25vw 0vw 0vw;
     width: 50%;
 }
 
 .articulo-li {
-    min-height: 50px;
+    min-height: 60px;
     font-size: 10px;
+    width: 50%;
+    background: linear-gradient(rgba(30, 56, 61, 0.5), rgba(47, 59, 90, .1));
     border-bottom: 1px solid hsla(0,0%,100%,.15);
+    display: flex;
+    align-items: center;
+}
+
+.articulo-li:hover {
+    cursor: pointer;
+}
+
+.h-art-img {
+    background: transparent;
+    width: 30%;
+    margin-left: 10px;
+    height: auto;
+}
+
+.articulo-a {
+    width: 80%;
+    margin-left: 10px;
+    color: aqua;
 }
