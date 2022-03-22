@@ -33,13 +33,20 @@ body {
     background-size: cover;
 }*/
 
-    
+.h-container {
+    display: flex;
+}
+
+.h-container div {
+    align-items: center;
+}
 
 .historia {
     color: #EAEAEA;
     font-size: 12px;
-    margin: 0vw 25vw 0vw 25vw;
+    margin: 0vw 1vw 0vw 25vw;
     line-height: 1.7;
+    width: 50%;
 }
 
 .historia h1{
@@ -55,4 +62,12 @@ body {
 .articulos {
     color: #EAEAEA;
     font-size: 13px;
+    margin: 0vw 25vw 0vw 0vw;
+    width: 50%;
+}
+
+.articulo-li {
+    min-height: 50px;
+    font-size: 10px;
+    border-bottom: 1px solid hsla(0,0%,100%,.15);
 }

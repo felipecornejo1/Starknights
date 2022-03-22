@@ -15,7 +15,7 @@ const controller =
         res.render('products/comprar');
     },
     comprarAmigo: (req, res) => {
-        // Renderizar la vista comprar)
+        // Renderizar la vista comprar para amigo)
         res.render('products/comprarAmigo');
     },
     marketplace: (req, res) => {
