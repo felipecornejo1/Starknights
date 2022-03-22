@@ -11,6 +11,9 @@ window.addEventListener('load', () => {
     let passwordInput = document.querySelector('#reg-input-password');
     let passwordError = document.querySelector('#password-error');
 
+    let pictureInput = document.querySelector('#reg-input-pp');
+    let pictureMessage = document.querySelector('#selected-image');
+
     let casillas = document.querySelectorAll('.casillas');
     let button = document.querySelector('#btn-register');
 
@@ -85,6 +88,24 @@ window.addEventListener('load', () => {
             event.preventDefault();
         }
     });
+
+    pictureInput.addEventListener('change', ()=> {
+
+        let filename = pictureInput.files[0].name
+        let split = filename.indexOf(".");
+        let name = filename.substring(0, split);
+        let ext = filename.substring(split);
+        let limit = 6
+        let spacer = '.'
+
+        let trimName = name.substring(0, limit);
+
+        if (name.length > trimName.length)
+            trimName = trimName.padEnd(limit + 3, spacer);
+
+        pictureMessage.innerHTML = '<i class="fa-solid fa-file-image"></i>' + trimName + ext;
+
+    })
 
     // Eliminar la clase error de una casilla cuando se escriba nuevamente sobre ella
     casillas.forEach(casilla => {

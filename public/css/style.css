@@ -605,7 +605,7 @@ header {
         font-size: 220px;
         position: absolute;
         left: -30px;
-        bottom: -5px;
+        bottom: 10px;
         color: rgba(17, 1, 32, 0.5);
         z-index: -1;
     }
@@ -639,19 +639,32 @@ header {
     }
 
     #wallet-box {
+        position: relative;
         margin: 50px 0 0 130px;
-        width: 300px;
+        width: 220px;
+        height: fit-content;
+        text-align: center;
     }
 
     #acc-wallet-balance {
         font-size: 18px;
-        margin-left: 20px;
         margin-bottom: 30px;
     }
 
     #airdrop-button {
         display: block;
-        margin: auto;
+        margin: 10px auto;
+    }
+
+    #deposit-withdraw {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #deposit-withdraw button {
+        padding: 10px 20px;
     }
     
 /* ------ Fin Cuenta/Profile/Account -------- */
@@ -777,12 +790,24 @@ header {
     color: #fff;
     font-size: 14px;
     margin: 0px auto 30px auto;
-    padding: 20px;
+    padding: 20px 20px 13px 20px;
     background-color: #1f1fc9;
     border-radius: 8px;
     position: relative;
     white-space: nowrap;
-    transition: background-color 450ms;}
+    transition: background-color 450ms;
+}
+
+.file-upload-label p {
+    margin: 10px 0 0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.file-upload-label p > i {
+    font-size: 12px;
+    margin-right: 5px;
+}
 
 .file-upload-label i {
     margin-right: 20px;
@@ -805,11 +830,6 @@ header {
 }
 
 @media (max-width: 830px){ /*------------MOBILE------------------------*/
-
-    /*! Footer invisible hasta que se lo haga responsive */
-    footer {
-        display: none;
-    }
 
     /*----HEADER----*/
     .header {
@@ -1868,9 +1888,8 @@ header {
 }
 
 /*-----Footer--------*/
+
 footer {
-    width: 100%;
-    height: 100%;
     padding: 5px;
     background-color: #070720;
 }
@@ -1878,6 +1897,7 @@ footer {
 .footer-pri {
     color: #fff;  
     display: flex;
+    flex-wrap: wrap-reverse;
     justify-content: space-evenly;
 }
 
@@ -1904,6 +1924,42 @@ footer {
     color: #D6A771;
 }
 
+.twitter .instagram .linkedin .mail{
+    transition: color 450ms;
+}
+
+.twitter{
+    transition: color 450ms;
+}
+
+.twitter:hover{
+    color: #00acee
+}
+
+.instagram{
+    transition: color 450ms;
+}
+
+.instagram:hover{
+    color: #d12896
+}
+
+.linkedin{
+    transition: color 450ms;
+}
+
+.linkedin:hover{
+    color: #0072b1
+}
+
+.mail{
+    transition: color 450ms;
+}
+
+.mail:hover{
+    color: #D6A771;
+}
+
 .footer-social{
     display: flex;
     flex-direction: column;
@@ -1917,9 +1973,12 @@ footer {
 .footer-social a{
     padding: 10px;
     text-decoration: none;
-    font-size: 14px;
     color: #fff; 
     transition: color 450ms;
+}
+
+.footer-social i{
+    font-size: 35px;
 }
 
 .social-logos{
@@ -1928,17 +1987,22 @@ footer {
     transition: color 450ms;
 }
 
-.footer-social a:hover{
-    color: #D6A771;
-}
-
 .foot-logo{
     height: 100px;
 }
 
-/*-----Fin Footer--------*/
-@media(min-width: 830px) and (max-width: 970px) {
-    i {
-        display: none !important;
+@media (max-width: 830px){
+    .footer-logo {
+        padding: 10px;
+    }
+
+    .footer-cuenta {
+        padding: 10px;
+    }
+
+    .footer-social{
+        padding: 10px;
     }
 }
+
+/*-----Fin Footer--------*/

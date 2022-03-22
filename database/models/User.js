@@ -31,6 +31,10 @@ module.exports = (sequelize, dataTypes) => {
         wallet_balance: {
             allowNull: false,
             type: dataTypes.INTEGER
+        },
+        claimed_airdrop: {
+            allowNull: true,
+            type: dataTypes.INTEGER(1)
         }
     }
     // Definir la configuración de esta tabla

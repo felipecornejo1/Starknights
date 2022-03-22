@@ -34,7 +34,8 @@ const controller = {
                     password: bcrypt.hashSync(req.body.password, 10),
                     profile_picture: req.file.filename,
                     created_at: Date.now(),
-                    wallet_balance: 500
+                    wallet_balance: 0,
+                    typeFK: 2
                 })
                 // Redirigir al login
                 res.redirect('/users/login');
@@ -49,12 +50,12 @@ const controller = {
                     password: bcrypt.hashSync(req.body.password, 10),
                     profile_picture: 'default.jpg',
                     created_at: Date.now(),
-                    wallet_balance: 500
+                    wallet_balance: 0,
+                    typeFK: 2
                 });
                 // Redirigir al login
                 res.redirect('/users/login')
             }
-            
         }
         // En caso de haber errores:
         else {
@@ -65,6 +66,15 @@ const controller = {
     profileAccount: (req, res) => {
         // Renderizar la vista profile
         res.render('users/profile/account', {user: req.session.user});
+    },
+    ethAirdrop: (req, res) => {
+        if(req.session.user.claimed_airdrop != 1) {
+            db.Users.update({wallet_balance: req.session.user.wallet_balance + 1, claimed_airdrop: 1}, {where: {id: req.session.user.id}});
+            res.redirect('/users/profile/account')
+        }
+        else {
+            res.render('users/profile/account', {user: req.session.user, errors: {airdrop: 'Ya reclamaste este airdrop'}})
+        }
     },
     profileInventory: (req, res) => {
         res.render('users/profile/inventory', {user: req.session.user})
