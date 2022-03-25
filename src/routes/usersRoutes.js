@@ -30,14 +30,14 @@ const {check} = require('express-validator');
 
 // Definir validaciones del formulario de registro
 const registerValidations = [
-    check('usuario').notEmpty().withMessage('Este campo es obligatorio'),
+    check('username').notEmpty().withMessage('Este campo es obligatorio'),
     check('email').isEmail().withMessage('Debes ingresar un email válido'),
     check('password').isLength({min: 6}).withMessage('La contraseña debe contener 6 caracteres como mínimo')
 ];
 
 // Definir validaciones del formulario de login
 const loginValidations = [
-    check('usuario').notEmpty().withMessage('Ingresa tu nombre de usuario'),
+    check('username').notEmpty().withMessage('Ingresa tu nombre de usuario'),
     check('password').notEmpty().withMessage('Ingresa tu contraseña')
 ];
 

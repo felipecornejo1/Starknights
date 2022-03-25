@@ -22,7 +22,7 @@
     <form class="formulario-login" action= "/users/login" method="POST">
         <h4 class="ya-tienes-cuenta">¿No tienes cuenta? - <a href="/users/register">Registrarse</a></h4>
         <div class="input-container">
-            <input class= "casillas-login" type="text" name="usuario" placeholder="Usuario"/>
+            <input class= "casillas-login" type="text" name="username" placeholder="Usuario"/>
         </div>
         <div class="input-container">
             <input class= "casillas-login" type="password" name="password" placeholder="Contraseña" />
@@ -36,11 +36,11 @@
         <h4 class="ya-tienes-cuenta">¿No tienes cuenta? - <a href="/users/register">Registrarse</a></h4>
 
         <div class="input-container">
-            <% if(locals.errors.usuario) { %>
-                <input class= "casillas-login error" type="text" name="usuario" placeholder="Usuario" value="<%= old.usuario %>"/>
-                <p class="form-error active"><%= errors.usuario.msg %></p>
+            <% if(locals.errors.username) { %>
+                <input class= "casillas-login error" type="text" name="username" placeholder="Usuario" value="<%= old.usuario %>"/>
+                <p class="form-error active"><%= errors.username.msg %></p>
             <% } else { %>
-                <input class= "casillas-login" type="text" name="usuario" placeholder="Usuario" value="<%= old.usuario %>"/>
+                <input class= "casillas-login" type="text" name="username" placeholder="Usuario" value="<%= old.usuario %>"/>
             <% } %>
         </div>
         <div class="input-container">
