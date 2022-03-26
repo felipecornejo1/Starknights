@@ -21,6 +21,7 @@ const controller = {
     sendRegister: (req, res) => {
         // Tomar errores de express validator en variable 'errors'
         let errors = validationResult(req);
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
 
         // En caso de no haber errores:
         if(errors.isEmpty()) {
@@ -29,9 +30,7 @@ const controller = {
             if(req.file) {
                 // Crear un usuario nuevo en la base de datos, dentro de la tabla users (con imagen de perfil)
                 db.Users.create({
-                    name: req.body.usuario,
-                    email: req.body.email,
-                    password: bcrypt.hashSync(req.body.password, 10),
+                    ...req.body,
                     profile_picture: req.file.filename,
                     created_at: Date.now(),
                     wallet_balance: 0,
@@ -45,9 +44,7 @@ const controller = {
             else {
                 // Crear un usuario nuevo en la base de datos, dentro de la tabla users (sin imagen de perfil)
                 db.Users.create({
-                    name: req.body.usuario,
-                    email: req.body.email,
-                    password: bcrypt.hashSync(req.body.password, 10),
+                    ...req.body,
                     profile_picture: 'default.jpg',
                     created_at: Date.now(),
                     wallet_balance: 0,

@@ -33,6 +33,7 @@ window.addEventListener('load', () => {
         if(button.classList.contains('form-filled')){
             // Validaciones del nombre de usuario
             if(nameInput.value.length == 0){
+                console.log(nameImput.value.length);
                 event.preventDefault();
                 nameError.innerText = 'Debes ingresar un nombre de usuario';
                 nameError.classList.add('active');

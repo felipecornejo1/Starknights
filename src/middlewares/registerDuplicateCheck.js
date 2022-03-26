@@ -4,7 +4,7 @@ const registerDuplicateCheck = (req, res, next) => {
     bd.Users.findAll({where: {email: req.body.email}})
         .then(result => {
             var emailResult = result;
-            bd.Users.findAll({where: {name: req.body.usuario}})
+            bd.Users.findAll({where: {username: req.body.username}})
                 .then(result => {
                     let userResult = result;
                     let emailDuplicate = false;

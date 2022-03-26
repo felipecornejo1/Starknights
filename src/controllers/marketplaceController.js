@@ -81,8 +81,18 @@ const controller =
     buy : (req, res) => {
         db.Items.findOne({where: {id: req.params.id}})
             .then( result => {
-                db.Items.update({ownerFK: req.session.user.id, price: null}, {where: {id: req.params.id}});
+                console.log(2);
+                // db.Users.update({wallet_balance:  wallet+ result.price}, {where:{id: result.ownerFK}});
+                db.Users.findOne({where: {id: result.ownerFK}})
+                    .then(user => {
+                        console.log('seller balance 1: ' + user.wallet_balance);
+                        console.log('price: ' + result.price);
+                        db.Users.update({wallet_balance: user.wallet_balance + result.price}, {where: {id: user.id}}).then(change => console.log('seller balance 2: ' + change.wallet_balance))
+                
+                    });
+
                 db.Users.update({wallet_balance: req.session.user.wallet_balance - result.price}, {where: {id: req.session.user.id}})
+                db.Items.update({ownerFK: req.session.user.id, price: null}, {where: {id: req.params.id}});
                 res.render('products/detalle', {item: result, user: req.session.user, justBought: true})
             });
     },

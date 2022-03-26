@@ -1,17 +1,16 @@
 // Importar la libreria bcrypt y los modelos de sequelize (base de datos)
 const bcrypt = require('bcryptjs');
-const { localsName } = require('ejs');
 const bd = require('../../database/models')
 
 const loginDataCheck = (req, res, next) => {
     // Guardar el usuario y contraseña que llegaron por formulario en una variable cada uno
-    let reqUser = req.body.usuario;
+    let reqUser = req.body.username;
     let reqPassword = req.body.password;
 
     //Buscar un usuario en la base de datos cuyo nombre de usuario coincida con el buscado
     bd.Users.findOne({
         where: {
-            name: reqUser
+            username: reqUser
         }
     })
         .then(result => {
@@ -30,7 +29,7 @@ const loginDataCheck = (req, res, next) => {
                 else{
                     // Renderizar la vista del login y pasar las variables errors (con el mensaje de error) y old (con los datos que llegaron por body)
                     res.render('users/login', {errors: {
-                        usuario: {
+                        username: {
                             msg: 'Las credenciales son inválidas'
                         }
                     },
@@ -42,7 +41,7 @@ const loginDataCheck = (req, res, next) => {
             else {
                 // Renderizar la vista del login y pasar las variables errors (con el mensaje de error) y old (con los datos que llegaron por body)
                 res.render('users/login', {errors: {
-                    usuario: {
+                    username: {
                         msg: 'Las credenciales son inválidas'
                     }
                 },
