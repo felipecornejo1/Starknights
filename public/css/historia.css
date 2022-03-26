@@ -115,3 +115,29 @@ body {
     margin-right: 1px;
     margin-top: 1px;
 }
+
+@media (max-width: 830px) {
+    .articulos {
+        display: none;
+    }
+    
+    .historia {
+        color: #EAEAEA;
+        font-size: 12px;
+        margin: 0vw 2.5vw 0vw 2.5vw;
+        line-height: 1.7;
+        width: 100%;
+    }
+    
+    .historia h1{
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .h-portada {
+        width: 100%;
+        height: auto;
+        box-shadow : 0px 0px 10px rgb(100, 100, 100);
+    }
+
+}
