@@ -33,90 +33,122 @@ body {
     background-size: cover;
 }*/
 
-.h-container {
-    display: flex;
+@media only screen and (max-width: 2800px) {
+    .h-container {
+        display: flex;
+    }
+    
+    .h-container div {
+        align-items: center;
+    }
+    
+    .historia {
+        color: #EAEAEA;
+        font-size: 20px;
+        margin: 0vw 1vw 0vw 22vw;
+        line-height: 1.7;
+        width: 50%;
+    }
+    
+    .historia h1{
+        font-size: 25px;
+    }
+    
+    .h-portada {
+        width: 100%;
+        height: auto;
+        box-shadow : 0px 0px 10px rgb(100, 100, 100);
+    }
+    
+    .articulos {
+        color: #EAEAEA;
+        font-size: 13px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .articulo-li {
+        min-height: 60px;
+        font-size: 10px;
+        width: 100%;
+        background-color: rgba(30, 56, 61, 0.5)/*, rgba(30, 56, 61, 0.5)*/;
+        border-bottom: 1px solid hsla(0,0%,100%,.15);
+        display: flex;
+        align-items: center;
+        transition: .3s;
+    }
+    
+    .articulo-li:hover {
+        cursor: pointer;
+        background-color: rgba(54, 107, 117, .7)/*, rgba(54, 107, 117, 0.5)*/;
+    }
+    
+    .h-art-img {
+        background: transparent;
+        width: 30%;
+        margin-left: 10px;
+        height: auto;
+    }
+    
+    .articulo-a {
+        width: 80%;
+        margin-left: 10px;
+        color: #bbbbbb;
+        text-decoration: none;
+    }
+    
+    .art-ol {
+        height: 700px;
+        overflow-y: auto;
+        width: 50%;
+        margin-bottom: auto;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+    
+    .space-art-div {
+        width: 50%;
+    }
+    
+    .simplebar-scrollbar {
+        margin-right: 1px;
+        margin-top: 1px;
+    }
+    
+  }
+
+
+
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .articulos {
+        display: none;
+    }
+    
+    .historia {
+        color: #EAEAEA;
+        font-size: 20px;
+        margin: 0vw 2.5vw 0vw 2.5vw;
+        line-height: 1.7;
+        width: 100%;
+    }
+    
+    .historia h1{
+        font-size: 30px;
+    }
+    
+    .h-portada {
+        width: 100%;
+        height: auto;
+        box-shadow : 0px 0px 10px rgb(100, 100, 100);
+    }
+
 }
 
-.h-container div {
-    align-items: center;
-}
-
-.historia {
-    color: #EAEAEA;
-    font-size: 12px;
-    margin: 0vw 1vw 0vw 22vw;
-    line-height: 1.7;
-    width: 50%;
-}
-
-.historia h1{
-    font-size: 25px;
-}
-
-.h-portada {
-    width: 100%;
-    height: auto;
-    box-shadow : 0px 0px 10px rgb(100, 100, 100);
-}
-
-.articulos {
-    color: #EAEAEA;
-    font-size: 13px;
-    width: 50%;
-    display: flex;
-    align-items: center;
-}
-
-.articulo-li {
-    min-height: 60px;
-    font-size: 10px;
-    width: 100%;
-    background-color: rgba(30, 56, 61, 0.5)/*, rgba(30, 56, 61, 0.5)*/;
-    border-bottom: 1px solid hsla(0,0%,100%,.15);
-    display: flex;
-    align-items: center;
-    transition: .3s;
-}
-
-.articulo-li:hover {
-    cursor: pointer;
-    background-color: rgba(54, 107, 117, .7)/*, rgba(54, 107, 117, 0.5)*/;
-}
-
-.h-art-img {
-    background: transparent;
-    width: 30%;
-    margin-left: 10px;
-    height: auto;
-}
-
-.articulo-a {
-    width: 80%;
-    margin-left: 10px;
-    color: #bbbbbb;
-    text-decoration: none;
-}
-
-.art-ol {
-    height: 700px;
-    overflow-y: auto;
-    width: 50%;
-    margin-bottom: auto;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-}
-
-.space-art-div {
-    width: 50%;
-}
-
-.simplebar-scrollbar {
-    margin-right: 1px;
-    margin-top: 1px;
-}
-
-@media (max-width: 830px) {
+@media only screen and (max-width: 768px) {
     .articulos {
         display: none;
     }
