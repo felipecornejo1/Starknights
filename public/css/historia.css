@@ -36,6 +36,9 @@ body {
 /* Full screen @media query */
 
 @media only screen and (max-width: 2800px) {
+
+    /* Sección historia */
+
     .h-container {
         display: flex;
     }
@@ -61,6 +64,10 @@ body {
         height: auto;
         box-shadow : 0px 0px 10px rgb(100, 100, 100);
     }
+
+    /* Fin sección historia */
+
+    /* Sección artículos */
     
     .articulos {
         color: #EAEAEA;
@@ -99,6 +106,10 @@ body {
         color: #bbbbbb;
         text-decoration: none;
     }
+
+    /* Fin sección artículos */
+
+    /* Scrollbar */
     
     .art-ol {
         height: 700px;
@@ -118,17 +129,25 @@ body {
         margin-right: 1px;
         margin-top: 1px;
     }
+
+    /* Fin scrollbar */
     
-  }
+}
 
 
 /* Tabletas @media query */
 
 @media (min-width: 769px) and (max-width: 1200px) {
 
+    /* Sección artículos */
+
     .articulos {
         display: none;
     }
+
+    /* Fin sección artículos */
+
+    /* Sección Historia */
     
     .historia {
         color: #EAEAEA;
@@ -148,14 +167,22 @@ body {
         box-shadow : 0px 0px 10px rgb(100, 100, 100);
     }
 
+    /* Fin sección Historia */
 }
 
 /* Mobile @media query */
 
 @media only screen and (max-width: 768px) {
+
+    /* Sección artículos */
+
     .articulos {
         display: none;
     }
+
+    /* Fin sección artículos */
+
+    /* Sección Historia */
     
     .historia {
         color: #EAEAEA;
@@ -175,5 +202,7 @@ body {
         height: auto;
         box-shadow : 0px 0px 10px rgb(100, 100, 100);
     }
+
+    /* Fin sección Historia */
 
 }
