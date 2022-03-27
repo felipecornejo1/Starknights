@@ -43,7 +43,6 @@ app.use(session({
 // Activar las cookies y usar el archivo que las maneja (userCookie.js)
 app.use(cookieParser());
 app.use(userCookie);
-
 // Definir las rutas principales
 app.use('/', mainRoutes);
 app.use('/marketplace', marketplaceRoutes);

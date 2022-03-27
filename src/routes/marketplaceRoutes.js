@@ -1,7 +1,8 @@
 // Importar controller y middlewares
 const marketplaceController = require ('./../controllers/marketplaceController');
 const authMiddleware = require('../middlewares/authMiddleware'); // Middleware que verifica que el usuario NO esté logueado
-const buyerCheck = require('../middlewares/buyerCheck'); // Middleware que verifica que el usuario no sea dueño del item y tenga balance suficiente para comprarlo
+const buyCheck = require('../middlewares/buyCheck'); // Middleware que verifica que el usuario no sea dueño del item y tenga balance suficiente para comprarlo
+const editCheck = require('../middlewares/editCheck');
 
 // Importar el método check de express validator
 const {check} = require('express-validator');
@@ -29,7 +30,11 @@ router.get('/nuevo-item', authMiddleware, marketplaceController.create);
 // Enviar y procesar datos del formulario para crear nuevo item
 router.post('/subir-item', authMiddleware, formValidations, marketplaceController.store);
 // Comprar item
-router.put('/buy/:id', buyerCheck, marketplaceController.buy);
+router.put('/buy/:id', buyCheck, marketplaceController.buy);
+// Editar Item
+router.put('/edit/:id', editCheck, marketplaceController.edit)
+// Añadir item al carrito
+
 // Eliminar item
 router.delete('/delete/:id', authMiddleware, marketplaceController.destroy);
 
