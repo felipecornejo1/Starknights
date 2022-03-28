@@ -1,6 +1,7 @@
 // Importar controller y middlewares
 const marketplaceController = require ('./../controllers/marketplaceController');
 const authMiddleware = require('../middlewares/authMiddleware'); // Middleware que verifica que el usuario NO esté logueado
+const founderAuth = require('../middlewares/founderAuth'); // Middleware que verifica que el usuario sea tipo founder
 const buyCheck = require('../middlewares/buyCheck'); // Middleware que verifica que el usuario no sea dueño del item y tenga balance suficiente para comprarlo
 const editCheck = require('../middlewares/editCheck');
 
@@ -26,7 +27,7 @@ router.get('/detail/:id', marketplaceController.detail);
 // Carrito
 router.get('/carrito', marketplaceController.carrito);
 // Formulario para crear nuevo item
-router.get('/nuevo-item', authMiddleware, marketplaceController.create);
+router.get('/nuevo-item', authMiddleware, founderAuth, marketplaceController.create);
 // Enviar y procesar datos del formulario para crear nuevo item
 router.post('/subir-item', authMiddleware, formValidations, marketplaceController.store);
 // Comprar item

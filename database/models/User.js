@@ -32,6 +32,10 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             type: dataTypes.DECIMAL(10, 3)
         },
+        typeFK: {
+            allowNull: true,
+            type: dataTypes.INTEGER
+        },
         claimed_airdrop: {
             allowNull: true,
             type: dataTypes.INTEGER(1)

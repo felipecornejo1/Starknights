@@ -10,6 +10,20 @@
     <%- include('../partials/header') %>
 
     <main class="main-detalle">
+        <% if(locals.errors == 'ownership') { %>
+            <div class="error-popup">
+                <p>Ya eres el dueño de este item</p>
+            </div>
+        <% } else if(locals.errors == 'balance') { %>
+            <div class="error-popup">
+                <p>No tienes suficiente balance para comprar este item</p>
+            </div>
+        <% } 
+        if(locals.justBought == true) { %>
+            <div class="success-popup">
+                <p>Has comprado este item</p>
+            </div>
+        <% } %>
         <div class="flex-detalle">
             <h2 class="producto-title"><%= item.name %></h2>
             <div class="descripciones"> 
@@ -71,6 +85,6 @@
 
     <!--Footer-->
     <%- include('../partials/footer') %>
-
+    <script src="/js/detail.js"></script>
 </body>
 </html>

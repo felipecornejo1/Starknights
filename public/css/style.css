@@ -19,24 +19,6 @@ header {
     border-top: 3px solid #D6A771;
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
-}
-
-.wrap {
-    flex-wrap: wrap;
-}
-
-.nowrap {
-    flex-wrap: nowrap;
-}
-
 .logo {
     padding: 10px 0px 10px  20px;
     height: 100px;
@@ -422,9 +404,71 @@ header {
     bottom: 7px;
 }
 
+.success-popup {
+    opacity: 0;
+    padding: 5px 50px;
+    background-color: #00ff0da1;
+    border-radius: 10px;
+    width: 0;
+    height: 0;
+    position: fixed;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+}
+
+.error-popup {
+    opacity: 0;
+    padding: 5px 50px;
+    background-color: #a71414a9;
+    border-radius: 10px;
+    width: 0;
+    height: 0;
+    position: fixed;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+}
+
+.error-animation {
+    animation: error-popup 3s;
+}
+
+@keyframes error-popup {
+    0% {top: -200px; opacity: 1; width: fit-content; height: fit-content;}
+    10% {top: 100px;}
+    90% {opacity: 1;}
+    100% {opacity: 0; width: fit-content; height: fit-content;}
+}
+
+.error-popup > p {
+    color: #fff;
+    font-weight: bold;
+}
+
+.success-popup > p {
+    color: #fff;
+    font-weight: bold;
+}
+
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    transition: 200ms ease-in-out;
+}
+
+.close-btn:hover {
+    color: #D6A771;
+}
+
 /*-------Marketplace-------*/
-
-
 
 .container-mkt {
     display: flex;

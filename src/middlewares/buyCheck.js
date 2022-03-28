@@ -8,14 +8,9 @@ const buyCheck = (req, res, next) => {
             if(result.ownerFK != req.session.user.id) {
                 if(balance > price) {
                     next()
-                    console.log('1');
                 }
                 else {
                     res.render('products/detalle', {item: result, user: req.session.user, errors: 'balance'});
-                    console.log("balance");
-                    console.log('precio: ' + price + ' balance: ' + balance);
-                    console.log('precio isNaN ' + isNaN(price));
-                    console.log('balance isNaN ' + isNaN(balance));
         }
             }
             else {
