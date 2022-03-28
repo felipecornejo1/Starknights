@@ -35,7 +35,7 @@ router.put('/buy/:id', buyCheck, marketplaceController.buy);
 // Editar Item
 router.put('/edit/:id', editCheck, marketplaceController.edit)
 // Añadir item al carrito
-
+//router.put('/add-to-cart/:id', marketplaceController.addToCart);
 // Eliminar item
 router.delete('/delete/:id', authMiddleware, marketplaceController.destroy);
 
