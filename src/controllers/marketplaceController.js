@@ -67,9 +67,8 @@ const controller =
                 }).then(res.redirect('/marketplace'))
             }
             else {
-                //TODO: hacer que renderice de nuevo la vista product-create-form y pase como error que no se seleccionó ninguna categoría
-                //! Placeholder: redirect a proximamente. Cuando se haga lo mencionado arriba borrar esta linea y la siguiente
-                res.redirect('/proximamente');
+                // Renderizar la vista de nuevo y pasar como error que no hay categoria seleccionada
+                res.render('products/product-create-form', {errors: {other: 'noCategory'}});
             }
         }
         // En caso de haber errores de express validator:
@@ -78,19 +77,22 @@ const controller =
             res.render('products/product-create-form', {errors: errors.mapped(), old: req.body})
         }
     },
+    // Comprar un item
     buy : (req, res) => {
         db.Items.findOne({where: {id: req.params.id}})
             .then( result => {
+                // Guardar el precio y el balance usando el metodo parseFloat para poder hacer operaciones aritmeticas y comparaciones con los datos
                 let price = parseFloat(result.price);
                 let buyerBalance = parseFloat(req.session.user.wallet_balance);
-                // db.Users.update({wallet_balance:  wallet+ result.price}, {where:{id: result.ownerFK}});
+                // Aumentar el balance del vendedor
                 db.Users.findOne({where: {id: result.ownerFK}})
                     .then(user => {
                         let sellerBalance = parseFloat(user.wallet_balance);
                         db.Users.update({wallet_balance: sellerBalance + price}, {where: {id: user.id}}).then(console.log('seller balance 2: ' + sellerBalance));
                     });
-
+                // Bajar el balance del comprador
                 db.Users.update({wallet_balance: buyerBalance - price}, {where: {id: req.session.user.id}})
+                // Cambiar el dueño del item y su precio
                 db.Items.update({ownerFK: req.session.user.id, price: null}, {where: {id: req.params.id}});
                 res.render('products/detalle', {item: result, user: req.session.user, justBought: true})
             });

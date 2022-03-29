@@ -5,12 +5,13 @@
         </div>
         <div class="ctn-menu">
             <% if(locals.isUserLogged == true) { %>
+                <div id="user-id"><%= locals.user.id %></div>
                 <div class="datos-header-mobile">
                     <a href="/users/profile/account">
                         <img class="pp-header" src="/img/profile/<%=locals.user.profile_picture%>">
                         <div class="datos-header-mobile-ctn">
                             <p><%= locals.user.username %></p>
-                            <p><i class="fab fa-brands fa-ethereum"></i></i></i> <%= locals.user.wallet_balance %></p>
+                            <p><i class="fab fa-brands fa-ethereum"></i> <%= locals.user.wallet_balance %></p>
                         </div>
                     </a>
                 </div>
@@ -43,7 +44,7 @@
                                         <img class="pp-header" src="/img/profile/<%=locals.user.profile_picture%>">
                                         <div class="datos-header-ctn">
                                             <p><%= locals.user.username %></p>
-                                            <p><i class="fab fa-brands fa-ethereum"></i></i></i> <%= locals.user.wallet_balance %></p>
+                                            <div><i class="fab fa-brands fa-ethereum"></i> <div class="balance"><%= locals.user.wallet_balance %></div></div>
                                         </div>
                                     </li>
 
@@ -65,6 +66,6 @@
     <button class="header-btn"><i class="fas fa-bars hamburger"></i></button>
 
     <div id="overlay"></div>
-
+    
     <script src="/js/header.js"></script>
 </header>

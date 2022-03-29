@@ -11,7 +11,8 @@ const buyCheck = (req, res, next) => {
                 }
                 else {
                     res.render('products/detalle', {item: result, user: req.session.user, errors: 'balance'});
-        }
+                    
+                }
             }
             else {
                 res.render('products/detalle', {item: result, user: req.session.user, errors: 'ownership'});

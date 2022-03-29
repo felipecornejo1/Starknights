@@ -133,6 +133,10 @@ header {
     color: #fff;
 }
 
+#user-id {
+    display: none;
+}
+
 .datos-header-ctn {
     display: flex;
     flex-direction: column;
@@ -140,6 +144,17 @@ header {
 
 .datos-header-ctn p {
     margin: 0;
+}
+
+.datos-header-ctn > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.balance {
+    margin-left: 5px;
 }
 
 .datos-header-mobile {
@@ -430,11 +445,11 @@ header {
     transform: translateX(-50%);
 }
 
-.error-animation {
-    animation: error-popup 3s;
+.alert-animation {
+    animation: alert-popup 3s;
 }
 
-@keyframes error-popup {
+@keyframes alert-popup {
     0% {top: -200px; opacity: 1; width: fit-content; height: fit-content;}
     10% {top: 100px;}
     90% {opacity: 1;}
@@ -984,6 +999,7 @@ header {
     #datos-header {
         display: none;
     }
+
 
     .datos-header-mobile {
         display: block;

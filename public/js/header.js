@@ -8,6 +8,10 @@ window.addEventListener('load', () => {
     let menu = document.querySelector('.ctn-menu');
     let overlay = document.querySelector('#overlay');
 
+    let balance = document.querySelector('.balance');
+    let userId = document.querySelector('#user-id');
+
+
     botonCuenta.addEventListener('click', () => {
         dropdown.classList.toggle('active');
         dropdownButton.classList.toggle('rotate-180')
@@ -28,5 +32,18 @@ window.addEventListener('load', () => {
     if(window.innerWidth<830){
         dropdown.classList.add('active');
     }
-     
+    
+    
+    if(userId) {
+        setInterval(function(){
+            fetch('https://starknights-api.herokuapp.com/user/' + userId.innerText)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(user){
+                    balance.innerText = user.data[0].wallet_balance;
+                })
+        }, 2000
+        )
+    }
 });
