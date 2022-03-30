@@ -756,21 +756,24 @@ header {
     
 /* ------ Fin Cuenta/Profile/Account -------- */
 
-.cartel-proximamente {
+.cartel-error {
     width: 500px;
     margin: auto;
     margin-top: 100px;
 }
 
-.cartel-proximamente img {
+.cartel-error img, .cartel-error i {
     position: relative;
     width: 300px;
     top: 150px;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 150px;
+    color: #fff;
+    text-align: center;
 }
 
-.proximamente {
+.cartel-error h1 {
     color: #fff;
     font-size: 18px;
     text-align: center;

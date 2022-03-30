@@ -1,8 +1,8 @@
-const { BelongsToMany } = require("sequelize/types");
-
 window.addEventListener('load', () => {
     let errorPopup = document.querySelector('.error-popup');
     let successPopup = document.querySelector('.success-popup');
+    let btnCarrito = document.querySelector('#btn-carrito');
+    let itemId = document.querySelector('.item-id');
     
     // Si hay un elemento error-popup
     if(errorPopup) {
@@ -15,4 +15,8 @@ window.addEventListener('load', () => {
         successPopup.classList.add('alert-animation');
         setTimeout(() => {successPopup.classList.remove('alert-animation');}, 3000); 
     }
-});
+
+    btnCarrito.addEventListener('click', function() {
+        localStorage.setItem('carrito' + itemId.innerText, itemId.innerText);
+    })
+})

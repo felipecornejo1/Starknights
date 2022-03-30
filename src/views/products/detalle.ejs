@@ -45,9 +45,9 @@
                     <img src="/img/items/passes/<%= item.picture %>" class="art-detail">
                 <% } %>
             </div>
-
+            <div class="item-id"><%= item.id %></div>
             <div class= "buttons-detalle"> 
-                <button type="button"> Añadir al carro </button>
+                <button type="button" id="btn-carrito"> Añadir al carrito </button>
                 <% if(item.ownerFK != user.id && item.price != null && !locals.justBought) { %>
                     <form action="/marketplace/buy/<%= item.id %>?_method=PUT" method="POST">
                         <button type="submit"> Comprar </button>
