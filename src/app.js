@@ -12,6 +12,7 @@ const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
+const cors = require('cors');
 
 // Ejecutar express en la variable app
 let app = express();
@@ -22,6 +23,9 @@ app.listen(process.env.PORT || 3000, () => {
 // Configurar ejs como motor de vistas y configurar la ubicación de la carpeta views
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
+
+// Activar cors
+app.use(cors());
 
 // Hacer pública la carpeta public
 const publicPath = path.resolve(__dirname, '..', './public');
