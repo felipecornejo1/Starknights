@@ -21,7 +21,6 @@ const userCookie = (req, res, next) => {
 				// Seguir adelante
 				next()
 			})
-			.catch(res.render('errors/dbError'));
 	}
 	// En caso de no existir ninguna cookie llamada email
 	else {
