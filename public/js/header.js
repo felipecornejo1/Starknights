@@ -36,7 +36,7 @@ window.addEventListener('load', () => {
     
     if(userId) {
         setInterval(function(){
-            fetch('https://starknights-api.herokuapp.com/api/user/' + userId.innerText)
+            fetch('https://starknights.herokuapp.com/api/users/' + userId.innerText)
                 .then(function(response){
                     return response.json();
                 })
