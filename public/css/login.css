@@ -61,6 +61,14 @@
     background-color: #D6A771;
 }
 
+#username-match-error.hidden {
+    display: none;
+}
+
+#password-match-error.hidden {
+    display: none;
+}
+
 @media (min-width: 361px){
     .casillas-login{
         width: 50vw;

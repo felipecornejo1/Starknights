@@ -22,10 +22,12 @@
     <form class="formulario-login" action= "/users/login" method="POST">
         <h4 class="ya-tienes-cuenta">¿No tienes cuenta? - <a href="/users/register">Registrarse</a></h4>
         <div class="input-container">
-            <input class= "casillas-login" type="text" name="username" placeholder="Usuario"/>
+            <input class= "casillas-login" id="login-username" type="text" name="username" placeholder="Usuario"/>
+            <p class="form-error" id="username-error"></p>
         </div>
         <div class="input-container">
-            <input class= "casillas-login" type="password" name="password" placeholder="Contraseña" />
+            <input class= "casillas-login" id="login-password" type="password" name="password" placeholder="Contraseña" />
+            <p class="form-error" id="password-error"></p>
         </div>
         <button class= "boton-login" type="submit"> Ingresar </button>        
         
@@ -37,23 +39,29 @@
 
         <div class="input-container">
             <% if(locals.errors.username) { %>
-                <input class= "casillas-login error" type="text" name="username" placeholder="Usuario" value="<%= old.usuario %>"/>
-                <p class="form-error active"><%= errors.username.msg %></p>
+                <input class= "casillas-login error" id="login-username" type="text" name="username" placeholder="Usuario" value="<%= old.username %>"/>
+                <p class="form-error" id="username-error"></p>
+                <p class="form-error active" id="username-match-error"><%= errors.username.msg %></p>
             <% } else { %>
-                <input class= "casillas-login" type="text" name="username" placeholder="Usuario" value="<%= old.usuario %>"/>
+                <input class= "casillas-login" id="login-password" type="text" name="username" placeholder="Usuario" value="<%= old.username %>"/>
+                <p class="form-error" id="username-error"></p>
             <% } %>
         </div>
         <div class="input-container">
             <% if(locals.errors.password) { %>
-                <input class= "casillas-login error" type="password" name="password" placeholder="Contraseña"/>
-                <p class="form-error active"><%= errors.password.msg %></p>
+                <input class= "casillas-login error" id="login-password" type="password" name="password" placeholder="Contraseña" value="<%= old.password %>"/>
+                <p class="form-error" id="password-error"></p>
+                <p class="form-error active" id="password-match-error"><%= errors.password.msg %></p>
+
             <% } else { %>
-                <input class= "casillas-login" type="password" name="password" placeholder="Contraseña"/>
+                <input class= "casillas-login error" id="login-password" type="password" name="password" placeholder="Contraseña" value="<%= old.password %>"/>
+                <p class="form-error" id="password-error"></p>
             <% } %>
         </div>
         <button class= "boton-login" type="submit"> Ingresar </button>        
     </form>
     <% } %>
       
+    <script src="/js/login.js"></script>
 </body>
 </html>

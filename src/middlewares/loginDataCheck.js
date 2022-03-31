@@ -29,9 +29,9 @@ const loginDataCheck = (req, res, next) => {
                 else{
                     // Renderizar la vista del login y pasar las variables errors (con el mensaje de error) y old (con los datos que llegaron por body)
                     res.render('users/login', {errors: {
-                        username: {
-                            msg: 'Las credenciales son inválidas'
-                        }
+                        password: {
+                            msg: 'La contraseña es incorrecta'
+                        },
                     },
                         old: req.body
                     }) 
@@ -42,7 +42,7 @@ const loginDataCheck = (req, res, next) => {
                 // Renderizar la vista del login y pasar las variables errors (con el mensaje de error) y old (con los datos que llegaron por body)
                 res.render('users/login', {errors: {
                     username: {
-                        msg: 'Las credenciales son inválidas'
+                        msg: 'Este nombre de usuario no se encuentra registrado'
                     }
                 },
                     old: req.body
