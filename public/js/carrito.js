@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
         conseguirItems()
         // agregame los 6 items a la vista
         document.createElement
-        let hola = items.map(item => {
+        let divs = items.map(item => {
             if(item.typeFK == 1) {
                 return `<div class= "productos">
                     <img src= "/img/items/spaceships/${item.picture}"> </img>                    
