@@ -20,7 +20,9 @@ window.addEventListener('load', () => {
             nameError.innerText = 'Debes ingresar un nombre de usuario';
             nameError.classList.add('active');
             nameInput.classList.add('error');
-            nameMatchError.style.display = 'none';
+            if(nameMatchError){
+                nameMatchError.style.display = 'none';
+            }
         }
         else {
             nameError.classList.remove('active');
@@ -32,7 +34,9 @@ window.addEventListener('load', () => {
             passwordError.innerText = 'Debes ingresar una contraseña';
             passwordError.classList.add('active');
             passwordInput.classList.add('error');
-            passwordMatchError.style.display = "none";
+            if(passwordMatchError) {
+                passwordMatchError.style.display = "none";
+            }
         }
         else {
             passwordError.classList.remove('active');

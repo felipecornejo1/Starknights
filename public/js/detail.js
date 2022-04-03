@@ -16,7 +16,23 @@ window.addEventListener('load', () => {
         setTimeout(() => {successPopup.classList.remove('alert-animation');}, 3000); 
     }
 
+    // AL hacer click en Añadir al Carrito
     btnCarrito.addEventListener('click', function() {
-        localStorage.setItem('carrito' + itemId.innerText, itemId.innerText);
-    })
-})
+        let carrito = localStorage.getItem('carrito');
+        // En caso de ya haber datos en localStorage
+        if(carrito){
+            // Dividir la string obtenida por cada guion que haya
+            let split = carrito.split('-');
+            // En caso de que el id seleccionado no se encuentre en este array
+            if(!split.includes(itemId.innerText)){
+                // Crear una variable con el valor anterior, agregarle un guion y el id del item seleccionado y subirlo a localStorage
+                let carritoNuevo = carrito + '-' + itemId.innerText
+                localStorage.setItem('carrito', carritoNuevo);
+            }
+        }
+        // En caso de no haber nada en localStorage, crear una key 'carrito' con el id del item seleccionado
+        else {
+            localStorage.setItem('carrito', itemId.innerText);
+        }
+    });
+});
