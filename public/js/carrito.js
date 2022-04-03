@@ -36,24 +36,27 @@ window.addEventListener('load', () => {
                 await look();
             };
             console.log(items);
+            let divs = items.map(item => {
+                if(item.typeFK == 1) {
+                    return `<div class= "productos">
+                        <img src= "/img/items/spaceships/${item.picture}"> </img>                    
+                        <div class="precio-descuento-descripcion-remover">
+                            <p>${item.price}</p>
+                            <p>${item.name}</p>
+                            <button> Remover </button> 
+                        </div>
+                    </div>`
+                }
+            });
+            divs.map(div => {
+                productosSeleccionados.innerHTML += div;
+            });
+            console.log(divs);
         }
         // Ejecutar todo lo anterior
         conseguirItems()
         // agregame los 6 items a la vista
-        document.createElement
-        let divs = items.map(item => {
-            if(item.typeFK == 1) {
-                return `<div class= "productos">
-                    <img src= "/img/items/spaceships/${item.picture}"> </img>                    
-                    <div class="precio-descuento-descripcion-remover">
-                        <p>${item.price}</p>
-                        <p>${item.name}</p>
-                        <button> Remover </button> 
-                    </div>
-                </div>`
-            }
-        })
+        
     }
 
 })
-[{nombre, precio, owner, }, {}, {}]
