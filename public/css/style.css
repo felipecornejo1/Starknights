@@ -234,6 +234,8 @@ header {
     color: #EAEAEA;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
@@ -274,18 +276,6 @@ header {
     display: flex;        
 }
 
-.precio-descuento-descripcion-remover{
-    display: flex;
-    flex-direction: column; 
-    margin-right: inherit; 
-}
-
-.precio-descuento-descripcion-remover button{
-    align-self: flex-start;
-    margin: 5px;
-    font-size: 15px;
-}
-
 .productos_seleccionados p{
     align-self: flex-start;
     margin: 5px;
@@ -308,7 +298,7 @@ header {
     text-align: right;
 }
 
-.button-carrito button{
+.productos_seleccionados-destacados button{
     padding: 20px;
     transition: background-color 450ms;
     border-radius: 10%;
@@ -319,7 +309,7 @@ header {
     border-radius: 8px;
 }
 
-.button-carrito button:hover{
+.productos_seleccionados-destacados button:hover{
     background-color: #D6A771;
 }
 
@@ -358,66 +348,23 @@ header {
     padding: 15px;
 }
 
-.descripcion-recomendados{
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.descripcion-productos{
+#carrito-resumen {
+    display: none;
+    align-self: flex-end;
     background-color: #11113d;
-    color: #EAEAEA;
-    padding: 10px;
-    margin: 30px 10px;
-    width: 40%;
-    height: auto;
+    margin-right: 25vw;
+    margin-bottom: 50px;
     border-radius: 10px;
 }
 
-#descripcion-p{
-    text-align: center;
-}
-
-.descripcion-productos p{
-    text-align: justify;
-    margin: 20px 30px;
-    font-size: 20px;
-}
-
-.recomendado{
-    color: #EAEAEA;
-    background-color: #11113d ;
-    width: 50%;
-    border-radius: 10px;
-    padding: 20px 0;
-    margin: 30px 10px;
-    box-sizing: border-box;
+#carrito-resumen.active {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: space-evenly;
-}
-
-.recomendado-imagen{
-    margin: 10px;
-    width: 40%;
-    border-radius: 10px;
-    display: flex; 
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.recomendado-imagen img{
-    width: 100%;
-    border-radius: 10px;
-}
-
-.recomendado p{
-    width: 100%;
-    font-size: 20px;
-    text-align: center;
-    position: relative;
-    bottom: 7px;
+#carrito-resumen p, #carrito-resumen button {
+    margin: 10px;
 }
 
 .success-popup {

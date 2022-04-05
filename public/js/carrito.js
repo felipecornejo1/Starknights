@@ -1,6 +1,8 @@
 window.addEventListener('load', () => {
     let productosSeleccionados = document.querySelector('.productos_seleccionados');
-    var loader = document.querySelector('.lds-ellipsis');
+    let loader = document.querySelector('.lds-ellipsis');
+    let resumen = document.querySelector('#carrito-resumen');
+    let total = document.querySelector('#total-carrito');
 
     // Traer los valores de carrito en localStorage
     let carrito = localStorage.getItem('carrito');
@@ -12,7 +14,6 @@ window.addEventListener('load', () => {
         let carritoParsed = split.map(i => {
             return parseInt(i);
         });
-        console.log(carritoParsed);
         // Crear variable Items vacia
         var items = [];
         // Funcion asíncrona para poder esperar resultados
@@ -29,17 +30,14 @@ window.addEventListener('load', () => {
                         .then(item => {
                             // Añadir los datos del item buscado a la variable items
                             items.push(item.data[0]);
-                            console.log(i);
                         })
                 }
                 // Ejecutar la funcion y hacer que espere a que se termine antes de seguir iterando
                 await look();
             };
-            console.log(items);
             let divs = items.map(item => {
                 if(item.typeFK == 1) {
                     return `<div class= "productos" target="${item.id}">
-                        <div class="item-id">${item.id}</div>
                         <img src= "/img/items/spaceships/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
                             <p>Ξ   ${item.price}</p>
@@ -71,7 +69,7 @@ window.addEventListener('load', () => {
                         <div class="precio-descuento-descripcion-remover">
                             <p>Ξ   ${item.price}</p>
                             <p>${item.name}</p>
-                            <button class="remove-btn> Remover </button> 
+                            <button class="remove-btn"> Remover </button> 
                         </div>
                     </div>`
                 } else if(item.typeFK == 5) {
@@ -85,14 +83,24 @@ window.addEventListener('load', () => {
                     </div>`
                 }
             });
+            // Sacar loader
             loader.style.display = 'none'
+
+            // Mostrar Resumen (total)
+            resumen.classList.add('active');
+            var sumaTotal = 0;
+            items.forEach(i => {
+                sumaTotal = sumaTotal + parseFloat(i.price)
+            })
+            total.innerText = `Total: Ξ   ${sumaTotal}`
+
+            // Mostrar items en la vista
             divs.map(div => {
                 productosSeleccionados.innerHTML += div;
             });
-            console.log(divs);
             let removeBtn = document.querySelectorAll('.remove-btn');
 
-
+            // Eliminar items
             removeBtn.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     // Eliminar el item de localStorage
@@ -109,10 +117,8 @@ window.addEventListener('load', () => {
                     carritoParsed = carritoParsed.filter((value, index, arr) => {
                         return value != removeId;
                     })
-                    console.log(carritoParsed);
                     let carritoString = ""
                     carritoParsed.forEach(i => {
-                        console.log('i = ' + i);
                         if(carritoString == "") {
                             carritoString = `${i}`
                         }
@@ -130,6 +136,7 @@ window.addEventListener('load', () => {
                                 <h1>Tu carrito está vacío</h1>
                             </div>
                         `
+                        resumen.style.display = 'none';
                     }
                     carrito = carritoString
                     // Mostrar alerta de item eliminado y eliminar el div de la vista
@@ -142,19 +149,29 @@ window.addEventListener('load', () => {
                     productosSeleccionados.appendChild(popup)
                     setTimeout(() => {popup.classList.remove('alert-animation');}, 3000);
                     e.target.parentElement.parentElement.remove();
+
+                    // Cambiar total
+                    fetch('https://starknights-api.herokuapp.com/items/' + removeId)
+                        .then(response => {
+                            return response.json();
+                        })
+                        .then(item => {
+                            sumaTotal = sumaTotal - parseFloat(item.data[0].price);
+                            total.innerText = `Total: Ξ   ${sumaTotal}`
+                        })
                 });
             });
         }
         // Ejecutar todo lo anterior
-        conseguirItems()
+        conseguirItems();
     }
     else {
-        loader.style.display = "none"
+        loader.style.display = "none";
         productosSeleccionados.innerHTML = `
             <div class="cartel-error no-margin">
                 <h1>Tu carrito está vacío</h1>
             </div>
-        `
+        `;
     }
 
 })
