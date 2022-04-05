@@ -60,23 +60,23 @@
                         <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
                         <p class="item-info"><%= i.name %></p>
                         <img src="/img/items/pets/<%= i.picture %>" class="item-img">
+                        <% if(i.price != null) { %>
+                            <div class="item-info-mkt">
+                                <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                            </div>
+                        <% } %>
                     </a>
-                    <% if(i.price != null) { %>
-                        <div class="item-info-mkt">
-                            <h2 class="precio-mkt">Ξ <%= i.price %></h2>
-                        </div>
-                    <% } %>
                 <% } else if(i.typeFK == 5){ %>
                     <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
                         <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
                         <p class="item-info"><%= i.name %></p>
                         <img src="/img/items/passes/<%= i.picture %>" class="item-img">
+                        <% if(i.price != null) { %>
+                            <div class="item-info-mkt">
+                                <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                            </div>
+                        <% } %>
                     </a>
-                    <% if(i.price != null) { %>
-                        <div class="item-info-mkt">
-                            <h2 class="precio-mkt">Ξ <%= i.price %></h2>
-                        </div>
-                    <% } %>
                 <% } } %>
             </div>
             <!-- <div class="icons">
