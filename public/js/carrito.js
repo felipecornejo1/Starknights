@@ -166,7 +166,6 @@ window.addEventListener('load', () => {
         conseguirItems();
     }
     else {
-        loader.style.display = "none";
         productosSeleccionados.innerHTML = `
             <div class="cartel-error no-margin">
                 <h1>Tu carrito está vacío</h1>

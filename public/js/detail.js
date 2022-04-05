@@ -41,6 +41,15 @@ window.addEventListener('load', () => {
         }
         // En caso de no haber nada en localStorage, crear una key 'carrito' con el id del item seleccionado
         else {
+            let popup = document.createElement('div');
+                popup.classList.add('success-popup');
+                popup.classList.add('alert-animation');
+                popup.innerHTML = `
+                    <p>Has añadido este item al carrito</p>
+                `;
+                document.querySelector('body').appendChild(popup)
+                setTimeout(() => {popup.classList.remove('alert-animation');}, 3000);
+                e.target.innerText = 'Añadido'
             localStorage.setItem('carrito', itemId.innerText);
         }
     });
