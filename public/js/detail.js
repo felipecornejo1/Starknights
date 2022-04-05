@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
     }
 
     // AL hacer click en Añadir al Carrito
-    btnCarrito.addEventListener('click', function() {
+    btnCarrito.addEventListener('click', function(e) {
         let carrito = localStorage.getItem('carrito');
         // En caso de ya haber datos en localStorage
         if(carrito){
@@ -28,6 +28,15 @@ window.addEventListener('load', () => {
                 // Crear una variable con el valor anterior, agregarle un guion y el id del item seleccionado y subirlo a localStorage
                 let carritoNuevo = carrito + '-' + itemId.innerText
                 localStorage.setItem('carrito', carritoNuevo);
+                let popup = document.createElement('div');
+                popup.classList.add('success-popup');
+                popup.classList.add('alert-animation');
+                popup.innerHTML = `
+                    <p>Has añadido este item al carrito</p>
+                `;
+                document.querySelector('body').appendChild(popup)
+                setTimeout(() => {popup.classList.remove('alert-animation');}, 3000);
+                e.target.innerText = 'Añadido'
             }
         }
         // En caso de no haber nada en localStorage, crear una key 'carrito' con el id del item seleccionado

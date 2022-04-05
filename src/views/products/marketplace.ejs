@@ -30,7 +30,7 @@
                     <p class="item-info"><%= i.name %></p>
                     <img src="/img/items/spaceships/<%= i.picture %>">
                     <div class="item-info-mkt">
-                        <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                        <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
                     </div>
                 </a>
                 <% } } %>
@@ -48,7 +48,7 @@
                     <p class="item-info"><%= i.name %></p>
                     <img src="/img/items/armor/<%= i.picture %>">
                     <div class="item-info-mkt">
-                        <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                        <h2 class="precio-mkt"> Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
                     </div>
                 </a>
                 <% } } %>
@@ -64,7 +64,7 @@
                         <p class="item-info"><%= i.name %></p>
                         <img src="/img/items/pets/<%= i.picture %>">
                             <div class="item-info-mkt">
-                            <h2 class="precio-mkt">Ξ <%= i.price %></h2>
+                            <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
                         </div>
                     </a>
                     <% } } %>
