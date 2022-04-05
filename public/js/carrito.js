@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
                     return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/spaceships/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
-                            <p>Ξ   ${item.price}</p>
+                            <p>Ξ   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
                             <p>${item.name}</p>
                             <button class="remove-btn"> Remover </button> 
                         </div>
@@ -49,7 +49,7 @@ window.addEventListener('load', () => {
                     return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/weapons/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
-                            <p>Ξ   ${item.price}</p>
+                            <p>Ξ   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
                             <p>${item.name}</p>
                             <button class="remove-btn"> Remover </button> 
                         </div>
@@ -58,7 +58,7 @@ window.addEventListener('load', () => {
                     return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/armor/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
-                            <p>Ξ   ${item.price}</p>
+                            <p>Ξ   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
                             <p>${item.name}</p>
                             <button class="remove-btn"> Remover </button> 
                         </div>
@@ -67,7 +67,7 @@ window.addEventListener('load', () => {
                     return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/pets/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
-                            <p>Ξ   ${item.price}</p>
+                            <p>Ξ   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
                             <p>${item.name}</p>
                             <button class="remove-btn"> Remover </button> 
                         </div>
@@ -76,7 +76,7 @@ window.addEventListener('load', () => {
                     return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/passes/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
-                            <p>Ξ   ${item.price}</p>
+                            <p>Ξ   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
                             <p>${item.name}</p>
                             <button class="remove-btn"> Remover </button> 
                         </div>

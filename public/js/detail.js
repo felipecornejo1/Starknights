@@ -37,6 +37,16 @@ window.addEventListener('load', () => {
                 document.querySelector('body').appendChild(popup)
                 setTimeout(() => {popup.classList.remove('alert-animation');}, 3000);
                 e.target.innerText = 'Añadido'
+            } else {
+                let popup = document.createElement('div');
+                popup.classList.add('error-popup');
+                popup.classList.add('alert-animation');
+                popup.innerHTML = `
+                    <p>Ya añadiste este item al carrito</p>
+                `;
+                document.querySelector('body').appendChild(popup)
+                setTimeout(() => {popup.classList.remove('alert-animation');}, 3000);
+                e.target.innerText = 'Añadido'
             }
         }
         // En caso de no haber nada en localStorage, crear una key 'carrito' con el id del item seleccionado
