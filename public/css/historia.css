@@ -117,8 +117,6 @@ body {
         width: 50%;
         overflow-y: auto;
         margin-bottom: auto;
-        position: -webkit-sticky;
-        position: sticky;
         top: 0;
     }
     /* 
