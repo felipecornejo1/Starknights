@@ -23,7 +23,7 @@ const router = express.Router();
 // Marketplace
 router.get('/', marketplaceController.marketplace);
 // Detalle de item
-router.get('/detail/:id', marketplaceController.detail);
+router.get('/detail/:id', authMiddleware, marketplaceController.detail);
 // Carrito
 router.get('/carrito', marketplaceController.carrito);
 // Formulario para crear nuevo item
