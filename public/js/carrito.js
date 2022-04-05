@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
     let productosSeleccionados = document.querySelector('.productos_seleccionados');
+    var loader = document.querySelector('.lds-ellipsis');
 
     // Traer los valores de carrito en localStorage
     let carrito = localStorage.getItem('carrito');
@@ -47,7 +48,7 @@ window.addEventListener('load', () => {
                         </div>
                     </div>`
                 } else if(item.typeFK == 2) {
-                    return `<div class= "productos">
+                    return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/weapons/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
                             <p>Ξ   ${item.price}</p>
@@ -56,7 +57,7 @@ window.addEventListener('load', () => {
                         </div>
                     </div>`
                 } else if(item.typeFK == 3) {
-                    return `<div class= "productos">
+                    return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/armor/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
                             <p>Ξ   ${item.price}</p>
@@ -65,7 +66,7 @@ window.addEventListener('load', () => {
                         </div>
                     </div>`
                 } else if(item.typeFK == 4) {
-                    return `<div class= "productos">
+                    return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/pets/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
                             <p>Ξ   ${item.price}</p>
@@ -74,7 +75,7 @@ window.addEventListener('load', () => {
                         </div>
                     </div>`
                 } else if(item.typeFK == 5) {
-                    return `<div class= "productos">
+                    return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/passes/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
                             <p>Ξ   ${item.price}</p>
@@ -84,11 +85,13 @@ window.addEventListener('load', () => {
                     </div>`
                 }
             });
+            loader.style.display = 'none'
             divs.map(div => {
                 productosSeleccionados.innerHTML += div;
             });
             console.log(divs);
             let removeBtn = document.querySelectorAll('.remove-btn');
+
 
             removeBtn.forEach(btn => {
                 btn.addEventListener('click', (e) => {
@@ -146,6 +149,7 @@ window.addEventListener('load', () => {
         conseguirItems()
     }
     else {
+        loader.style.display = "none"
         productosSeleccionados.innerHTML = `
             <div class="cartel-error no-margin">
                 <h1>Tu carrito está vacío</h1>
