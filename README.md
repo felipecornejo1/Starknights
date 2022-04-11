@@ -94,6 +94,6 @@ Christian Adrian Aimone - 21 años
 
 
 ## Links Importantes
-1)[Starknights - Sitio Web](https://starknights.herokuapp.com)
-2)[Tablero de trabajo grupal (Trello)](https://trello.com/b/0aEn9SYd/proyecto-grupal)
-3)[Repositorio de la API (con su propio README)](https://github.com/felipecornejo1/starknights-api)
+1) [Starknights - Sitio Web](https://starknights.herokuapp.com)
+2) [Tablero de trabajo grupal (Trello)](https://trello.com/b/0aEn9SYd/proyecto-grupal)
+3) [Repositorio de la API (con su propio README)](https://github.com/felipecornejo1/starknights-api)
