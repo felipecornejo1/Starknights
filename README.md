@@ -2,7 +2,7 @@
 Digital House
 
 ## Descripción
-Starknights es un juego NFT enfocado en el desarrollo de un personaje que viaja por el universo y puede combatir con otros jugadores en linea, formar alianzas, facciones y organizaciones, y progresar en armamentos y estadísticas. Este proyecto es la página oficial de dicho juego, donde los usuarios pueden comprar y vender items que usarán dentro del juego, como naves, armamento, mascotas, entre otros. El comercio se realiza principalmente entre usuarios, usando ethereum como moneda de cambio. El sitio web fue desarrollado usando HTML (con el motor de plantillas EJS), CSS, Node js, Express y React, además de una base de datos en SQL, conectada a la aplicación usando la ORM de Sequelize.
+Starknights es un juego NFT ficticio enfocado en el desarrollo de un personaje que viaja por el universo y puede combatir con otros jugadores en linea, formar alianzas, facciones y organizaciones, y progresar en armamentos y estadísticas. Este proyecto es la página oficial de dicho juego ficticio (y decimos ficticio porque el juego en sí es sólo un concepto, no existe realmente), donde los usuarios pueden comprar y vender items que usarán dentro del juego, como naves, armamento, mascotas, entre otros. El comercio se realiza principalmente entre usuarios, usando ethereum como moneda de cambio. El proyecto fue desarrollado usando el motor de plantillas EJS y React (explicado más adelante) para el front end y Node js con Express para el backend, además de una base de datos en SQL, conectada a la aplicación usando la ORM de Sequelize.
 
 ## Público Objetivo
 Nuestro proyecto está orientado a jóvenes que les gusten los videojuegos y utilicen las criptomonedas.
