@@ -79,9 +79,9 @@ Página donde se pueden explorar todos los planetas incluidos en la base de dato
 - Condiciones de vida (en porcentaje)
 
 ## Contribuyentes
-Ariel Cocimano - 37 años
-Santiago Badino - 22 años
-Felipe Cornejo - 19 años
+Ariel Cocimano - 37 años<br/>
+Santiago Badino - 22 años<br/>
+Felipe Cornejo - 19 años<br/>
 Christian Adrian Aimone - 21 años
 
 
