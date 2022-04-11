@@ -117,14 +117,12 @@ body {
         width: 50%;
         overflow-y: auto;
         margin-bottom: auto;
-        position: -webkit-sticky;
-        position: sticky;
         top: 0;
     }
-    
+    /* 
     .art-ol.hide-scroll {
         overflow-y: hidden !important;
-    }
+    } */
     
     .space-art-div {
         width: 50%;
