@@ -8,72 +8,102 @@
     
     <!--Header-->
     <%- include('../partials/header') %>
-
-    <main>
-        <% if(locals.errors == 'userType') { %>
-            <div class="error-popup">
-                <p>No tienes permiso para realizar esta acción</p>
-            </div>
-        <% } %>
-
-        <a href="/marketplace/nuevo-item" class="nuevo-item">NUEVO ITEM</a>
-
-        <!--Naves-->
-        <section class="market-section naves">
-            <a href="#" class="market-title"><h1 class="market-title">Naves</h1></a>
-            <a href="/proximamente" class="ver-todo">VER TODO</a>
+    <main id="marketplace">
+        <div class="filters-ctn">
+            <div class="filters">
                 
-            <div class="container-mkt">
-                <% for(let i of items) { if(i.typeFK == 1 && i.price != null == 1) { %>
-                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                    <div class="item-id"><i class="fa-solid fa-jet-fighter-up"></i> #<%= i.id %></div>
-                    <p class="item-info"><%= i.name %></p>
-                    <img src="/img/items/spaceships/<%= i.picture %>">
-                    <div class="item-info-mkt">
-                        <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
-                    </div>
-                </a>
-                <% } } %>
             </div>
-
-            <!--Armaduras-->
-        <section class="market-section armaduras">
-            <a href="#" class="market-title"><h1 class="market-title">Armaduras</h1></a>
-            <a href="/proximamente" class="ver-todo">VER TODO</a>
-                
-            <div class="container-mkt">
-                <% for(let i of items) { if(i.typeFK == 3 && i.price != null) { %>
-                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                    <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
-                    <p class="item-info"><%= i.name %></p>
-                    <img src="/img/items/armor/<%= i.picture %>">
-                    <div class="item-info-mkt">
-                        <h2 class="precio-mkt"> Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+        </div>
+        <div class="items-ctn">
+            <% if(locals.errors == 'userType') { %>
+                <div class="error-popup">
+                    <p>No tienes permiso para realizar esta acción</p>
+                </div>
+            <% } %>
+    
+            <a href="/marketplace/nuevo-item" class="nuevo-item">NUEVO ITEM</a>
+    
+            <!--Naves-->
+            <div class="market-section naves">
+                <a href="#" class="market-title"><h1 class="market-title">Naves</h1></a>
+                <a href="/proximamente" class="ver-todo">VER TODO</a>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <% for(let i of items) { if(i.typeFK == 1 && i.price != null == 1) { %>
+                            <div class="swiper-slide">
+                                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                                    <div class="item-id"><i class="fa-solid fa-jet-fighter-up"></i> #<%= i.id %></div>
+                                    <p class="item-info"><%= i.name %></p>
+                                    <img src="/img/items/spaceships/<%= i.picture %>">
+                                    <div class="item-info-mkt">
+                                        <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                    </div>
+                                </a>
+                            </div>
+                        <% } } %>
                     </div>
-                </a>
-                <% } } %>
+                </div>
             </div>
-
-            <!--Mascotas-->
-            <a href="#" class="market-title"><h1 class="market-title">Mascotas</h1></a>
-            <a href="/proximamente" class="ver-todo">VER TODO</a>
-            <div class="container-mkt">
-                <% for(let i of items) { if(i.typeFK == 4 && i.price != null) { %>
-                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                        <div class="item-id"><i class="fa-solid fa-bone"></i> #<%= i.id %></div>
-                        <p class="item-info"><%= i.name %></p>
-                        <img src="/img/items/pets/<%= i.picture %>">
-                            <div class="item-info-mkt">
-                            <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+    
+                <!--Armaduras-->
+                <div class="market-section naves">
+                    <a href="#" class="market-title"><h1 class="market-title">Armaduras</h1></a>
+                    <a href="/proximamente" class="ver-todo">VER TODO</a>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <% for(let i of items) { if(i.typeFK == 3 && i.price != null == 1) { %>
+                                <div class="swiper-slide">
+                                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                                        <div class="item-id"><i class="fa-solid fa-jet-fighter-up"></i> #<%= i.id %></div>
+                                        <p class="item-info"><%= i.name %></p>
+                                        <img src="/img/items/armor/<%= i.picture %>">
+                                        <div class="item-info-mkt">
+                                            <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                        </div>
+                                    </a>
+                                </div>
+                            <% } } %>
                         </div>
-                    </a>
-                    <% } } %>
-            </div>
-        </section>
+                    </div>
+                </div>
+    
+                <!--Mascotas-->
+                <div class="market-section naves">
+                    <a href="#" class="market-title"><h1 class="market-title">Mascotas</h1></a>
+                    <a href="/proximamente" class="ver-todo">VER TODO</a>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <% for(let i of items) { if(i.typeFK == 4 && i.price != null == 1) { %>
+                                <div class="swiper-slide">
+                                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                                        <div class="item-id"><i class="fa-solid fa-jet-fighter-up"></i> #<%= i.id %></div>
+                                        <p class="item-info"><%= i.name %></p>
+                                        <img src="/img/items/pets/<%= i.picture %>">
+                                        <div class="item-info-mkt">
+                                            <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                        </div>
+                                    </a>
+                                </div>
+                            <% } } %>
+                        </div>
+                    </div>
+                </div>
+        </div>
     </main>
 
     <!--Footer-->
     <%- include('../partials/footer') %>
     <script src="/js/marketplace.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 5,
+          spaceBetween: 10,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
 </body>
 </html>

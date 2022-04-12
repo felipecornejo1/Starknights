@@ -432,6 +432,17 @@ header {
 }
 
 /*-------Marketplace-------*/
+#marketplace {
+    display: flex;
+}
+
+.filters-ctn {
+    min-width: 200px;
+    height: 1000px;
+    background-color: #11113d;
+    margin: 50px;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,0.2);
+}
 
 .container-mkt {
     display: flex;
@@ -441,6 +452,12 @@ header {
     justify-content: center;
     margin: 20px auto;
 }
+
+.swiper {
+    width: 78%;
+    margin: 0 !important;
+}
+
 
 .market-title {
     display: inline-block;

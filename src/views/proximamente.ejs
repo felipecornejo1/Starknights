@@ -13,6 +13,37 @@
         <h1>Estamos trabajando en algunas funciones, disculpe las molestias.</h1>
         <img src="img/logo-blanco.png">
     </div>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
+          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
+          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
+          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
+          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
+          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
+          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
+          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
+          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+  
+      <!-- Swiper JS -->
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
     
     <!--Footer-->
     <%- include('./partials/footer') %>
