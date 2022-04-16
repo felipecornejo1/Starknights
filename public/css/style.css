@@ -1646,6 +1646,12 @@ header {
         box-shadow : 0px 0px 20px rgb(0, 217, 255);
     }
 
+    .protoss-2 {
+        cursor: pointer;
+        opacity: .6;
+        background-color: black;
+    }
+
     /*--FIN ELEGIR RAZA--*/
 
     .titulo-carrito{
