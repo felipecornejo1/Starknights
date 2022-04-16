@@ -1652,6 +1652,18 @@ header {
         background-color: black;
     }
 
+    .terran-2 {
+        cursor: pointer;
+        opacity: .6;
+        background-color: black;
+    }
+
+    .zerg-2 {
+        cursor: pointer;
+        opacity: .6;
+        background-color: black;
+    }
+
     /*--FIN ELEGIR RAZA--*/
 
     .titulo-carrito{
