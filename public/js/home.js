@@ -1,3 +1,5 @@
+window.addEventListener('load', () => {
+
 let protossLink = document.querySelector('.protoss-1')
 let terranLink = document.querySelector('.terran-1')
 let zergLink = document.querySelector('.zerg-1')
@@ -33,7 +35,6 @@ terranLink.addEventListener('mouseout', () => {
 // ZERG
 zergLink.addEventListener('mouseover', () => {
     zergLink.classList.add('zerg-2');
-    
 });
 
 terranLink.addEventListener('click', () => {
@@ -43,4 +44,6 @@ terranLink.addEventListener('click', () => {
 zergLink.addEventListener('mouseout', () => {
     zergLink.classList.add('zerg-1');
     zergLink.classList.remove('zerg-2');
+});
+
 });
