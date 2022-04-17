@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
     }
     
     
-    /* if(userId) {
+    if(userId) {
         setInterval(function(){
             fetch('https://starknights.herokuapp.com/api/users/' + userId.innerText)
                 .then(function(response){
@@ -45,5 +45,5 @@ window.addEventListener('load', () => {
                 })
         }, 2000
         )
-    } */
+    }
 });

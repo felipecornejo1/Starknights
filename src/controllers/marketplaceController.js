@@ -85,6 +85,14 @@ const controller =
                 let price = parseFloat(result.price);
                 let buyerBalance = parseFloat(req.session.user.wallet_balance);
                 // Aumentar el balance del vendedor
+                db.Transactions.create({
+                    buyerFK: req.session.user.id,
+                    sellerFK: result.ownerFK,
+                    amount: result.price,
+                    itemFK: result.id,
+                    date: Date.now()
+                });
+                console.log(req.params.id);
                 db.Users.findOne({where: {id: result.ownerFK}})
                     .then(user => {
                         let sellerBalance = parseFloat(user.wallet_balance);
