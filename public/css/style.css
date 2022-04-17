@@ -453,16 +453,11 @@ header {
     margin: 20px auto;
 }
 
-.swiper {
-    width: 78%;
-    margin: 0 !important;
-}
-
-
 .market-title {
     display: inline-block;
     margin-bottom: 0px;
-    margin-left: 50px;
+    margin-left: 10px;
+    font-size: 24px;
     color: #fff;
     text-decoration: none;
 }
@@ -901,6 +896,10 @@ header {
         width: 100%;
         height: 100px;
         background-color: #070720;
+    }
+
+    .filters-ctn {
+        display: none;
     }
 
     .ctn-menu {
@@ -2132,3 +2131,21 @@ footer {
     }
   }
   /* Fin Loader */
+
+  /* Swiper Marketplace */
+
+  
+    @media (min-width: 1500px) {
+        .swiper {
+            width: 78%;
+            margin: 0 !important;
+        }
+    }
+    @media (min-width: 1200px) {
+        .swiper {
+            width: 74%;
+            margin: 0 !important;
+        }
+    }
+  
+  /* Fin Swiper */
