@@ -12,12 +12,33 @@
     <main>
         
         <%- include('../../partials/accountMenu') %>
-        <!-- ! Cartel próximamente hasta que esté lista esta vista -->
+
         <div class="acc-view">
-            <div class="cartel-proximamente">
-                <h1 class="proximamente">Estamos trabajando en algunas funciones, disculpe las molestias.</h1>
-                <img src="/img/logo-blanco.png">
-            </div>
+
+            <h1>Historial de Actividades</h1>
+            
+            <% if(locals.transactions) { %>
+                <div class="transactions-ctn">
+                    <% transactions.forEach(transaction => { %>
+                        <div class="transaction">
+                            <div class="datetime">
+                                <p class="date"><%= transaction.date.toLocaleString('es-AR').split(' ')[0] %></p>
+                                <p class="time"><%= transaction.date.toLocaleString('es-AR').split(' ')[1] %></p>
+                            </div>
+                            <img src="/img/market-activity.png">
+                            <% if(transaction.buyerFK == user.id) { %>
+                                <p>Compraste el item <a href="/marketplace/detail/<%= transaction.item.id %>"><%= transaction.item.name %> #<%= transaction.item.id %></a> por <%= parseFloat(parseFloat(transaction.amount).toFixed(3)) %> ethereum</p>
+                            <% } else if(transaction.sellerFK == user.id) { %>
+                                <p>Vendiste el item <a href="/marketplace/detail/<%= transaction.item.id %>"><%= transaction.item.name %> #<%= transaction.item.id %></a> por <%= parseFloat(parseFloat(transaction.amount).toFixed(3)) %> eth</p>
+                            <% } %>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <div class="no-transactions">
+                    <p>No realizaste ninguna transacción</p>
+                </div>
+            <% } %>
         </div>
 
     </main>

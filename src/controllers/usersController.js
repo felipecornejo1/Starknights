@@ -1,5 +1,6 @@
 const {validationResult} = require('express-validator')
 const bcrypt = require('bcryptjs');
+const {Op} = require('sequelize')
 
 // Importar modelos de Sequelize (Base de datos)
 const db = require('../../database/models');
@@ -74,13 +75,29 @@ const controller = {
         }
     },
     profileInventory: (req, res) => {
+        // Buscar en la db los items que sean propiedad de este usuario
         db.Items.findAll({where: {ownerFK: req.session.user.id}})
             .then(result => {
                 res.render('users/profile/inventory', {items: result, user: req.session.user})
             });
     },
     profileActivity: (req, res) => {
-        res.render('users/profile/activity', {user: req.session.user})
+        // Buscar en la db las transacciones donde haya participado este usuario e incluir las asociaciones de la tabla
+        db.Transactions.findAll({
+            include: ['buyer', 'seller', 'item'],
+            where: {
+                [Op.or]: [
+                    { buyerFK: req.session.user.id },
+                    { sellerFK: req.session.user.id }
+                ]
+            },
+            order: [
+                ['date', 'DESC'],
+            ],
+        })
+            .then(result => {
+                res.render('users/profile/activity', {user: req.session.user, transactions: result})
+            })
     },
     profileSettings: (req, res) => {
         res.render('users/profile/settings', {user: req.session.user})

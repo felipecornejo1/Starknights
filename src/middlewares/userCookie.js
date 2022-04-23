@@ -21,6 +21,10 @@ const userCookie = (req, res, next) => {
 				// Seguir adelante
 				next()
 			})
+			.catch(err => {
+				console.log(1);
+				res.json(err)
+			})
 	}
 	// En caso de no existir ninguna cookie llamada email
 	else {

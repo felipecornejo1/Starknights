@@ -17,8 +17,8 @@ const cors = require('cors');
 // Ejecutar express en la variable app
 let app = express();
 // Levantar servidor
-app.listen(process.env.PORT || 3000, () => {
-	console.log('Servidor corriendo en el puerto 3000');
+app.listen(process.env.PORT || 8889, () => {
+	console.log('Servidor corriendo en el puerto 8889');
 });
 // Configurar ejs como motor de vistas y configurar la ubicación de la carpeta views
 app.set('view engine', 'ejs');

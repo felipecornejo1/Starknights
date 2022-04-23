@@ -60,6 +60,10 @@ module.exports = (sequelize, dataTypes) => {
             as: 'item',
             foreignKey: 'itemFK'
         });
+        Item.hasMany(models.Transactions, {
+            as: 'transactions',
+            foreignKey: 'itemFK'
+        })
     }
     
     // Asociar las foreign keys de esta tabla con las primary keys de otras

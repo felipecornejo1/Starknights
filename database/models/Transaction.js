@@ -41,13 +41,18 @@ module.exports = (sequelize, dataTypes) => {
      Transaction.associate = function(models) {
         // Asociar la columna buyerFK con la tabla users
         Transaction.belongsTo(models.Users, {
-            as: 'buyers',
+            as: 'buyer',
             foreignKey: 'buyerFK'
         });
         // Asociar la columna sellerFK con la tabla users
         Transaction.belongsTo(models.Users, {
-            as: 'sellers',
+            as: 'seller',
             foreignKey: 'sellerFK'
+        });
+        // Asociar la columna itemFK con la tabla items
+        Transaction.belongsTo(models.Items, {
+            as: 'item',
+            foreignKey: 'itemFK'
         });
     }
 

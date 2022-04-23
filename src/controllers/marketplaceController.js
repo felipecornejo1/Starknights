@@ -85,23 +85,23 @@ const controller =
                 let price = parseFloat(result.price);
                 let buyerBalance = parseFloat(req.session.user.wallet_balance);
                 // Aumentar el balance del vendedor
+                db.Users.findOne({where: {id: result.ownerFK}})
+                .then(user => {
+                    let sellerBalance = parseFloat(user.wallet_balance);
+                    db.Users.update({wallet_balance: sellerBalance + price}, {where: {id: user.id}}).then(console.log('seller balance 2: ' + sellerBalance));
+                }); 
+                // Bajar el balance del comprador
+                db.Users.update({wallet_balance: buyerBalance - price}, {where: {id: req.session.user.id}})
+                // Cambiar el dueño del item y su precio
+                db.Items.update({ownerFK: req.session.user.id, price: null}, {where: {id: req.params.id}});
+                // Subir datos a la tabla de transacciones
                 db.Transactions.create({
                     buyerFK: req.session.user.id,
                     sellerFK: result.ownerFK,
                     amount: result.price,
                     itemFK: result.id,
-                    date: Date.now()
+                    date: new Date()
                 });
-                console.log(req.params.id);
-                db.Users.findOne({where: {id: result.ownerFK}})
-                    .then(user => {
-                        let sellerBalance = parseFloat(user.wallet_balance);
-                        db.Users.update({wallet_balance: sellerBalance + price}, {where: {id: user.id}}).then(console.log('seller balance 2: ' + sellerBalance));
-                    });
-                // Bajar el balance del comprador
-                db.Users.update({wallet_balance: buyerBalance - price}, {where: {id: req.session.user.id}})
-                // Cambiar el dueño del item y su precio
-                db.Items.update({ownerFK: req.session.user.id, price: null}, {where: {id: req.params.id}});
                 res.render('products/detalle', {item: result, user: req.session.user, justBought: true})
             });
     },
