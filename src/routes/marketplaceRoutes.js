@@ -32,10 +32,12 @@ router.get('/nuevo-item', authMiddleware, founderAuth, marketplaceController.cre
 router.post('/subir-item', authMiddleware, formValidations, marketplaceController.store);
 // Comprar item
 router.put('/buy/:id', buyCheck, marketplaceController.buy);
+// Vender item
+router.put('/sell/:id', marketplaceController.sell);
+//Cancelar venta
+router.put('/cancel-sale/:id', marketplaceController.cancelSale);
 // Editar Item
 router.put('/edit/:id', editCheck, marketplaceController.edit);
-// Añadir item al carrito
-router.put('/add-to-cart/:id', marketplaceController.addToCart);
 // Eliminar item
 router.delete('/delete/:id', authMiddleware, marketplaceController.destroy);
 

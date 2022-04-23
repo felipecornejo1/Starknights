@@ -27,6 +27,8 @@
     margin-top: 16px;
     margin-bottom: 0;
     font-size: 15px;
+    background-color: #070720;
+    color: #fff;
 }
 
 .casillas:focus {

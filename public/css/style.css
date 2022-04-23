@@ -15,8 +15,9 @@ body {
 
 header {
     width: 100%;
-    height: 120px;
+    height: auto;
     border-top: 3px solid #D6A771;
+    background-color: #070720;
 }
 
 .logo {
@@ -47,7 +48,7 @@ header {
 
 .nav-ul{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-around;
     list-style: none;
@@ -956,6 +957,7 @@ header {
 @media (max-width: 830px){ /*------------MOBILE------------------------*/
 
     /*----HEADER----*/
+    
     .header {
         width: 100%;
         height: 100px;
@@ -1274,13 +1276,17 @@ header {
     }
 }
 
-@media (min-width: 769px) and (max-width: 1279px){
+@media (min-width: 769px) and (max-width: 1000px){
 
     /*----HEADER----*/
 
+    .nav {
+        flex-direction: column;
+        height: fit-content;
+    }
+
     .header {
         width: 100%;
-        background-color: #070720;
     }
 
     .logo {
@@ -2022,6 +2028,74 @@ header {
     padding: 20px;
     transition: background-color 450ms;
 }
+
+.modal-sell {
+    position: fixed;
+    background-color: #17172E;
+    transform: translate(-50%, -50%) scale(0.7);
+    visibility: hidden;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    z-index: 10;
+    padding: 20px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    transition: 300ms ease-in-out;
+}
+
+.modal-sell.active {
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-sell > h1 {
+    text-align: center;
+}
+
+.modal-sell > p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    text-align: center;
+}
+
+.sell-price-input {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.sell-price-input > input {
+    height: 50px;
+    width: 100px;
+    margin: 0 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 22px;
+    text-align: center;
+    background-color: #070720;
+    color: #fff;
+}
+
+.sell-price-input > input:focus {
+    outline: 3px solid #D6A771;
+}
+
+.sell-price-input > input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.modal-sell > form > button {
+    right: 20px;
+    position: absolute;
+}
+
+/*------Fin Detalle------ */
 
 /*-----Footer--------*/
 

@@ -79,7 +79,7 @@ const controller =
     },
     // Comprar un item
     buy : (req, res) => {
-        db.Items.findOne({where: {id: req.params.id}})
+        db.Items.findByPk(req.params.id)
             .then( result => {
                 // Guardar el precio y el balance usando el metodo parseFloat para poder hacer operaciones aritmeticas y comparaciones con los datos
                 let price = parseFloat(result.price);
@@ -105,11 +105,20 @@ const controller =
                 res.render('products/detalle', {item: result, user: req.session.user, justBought: true})
             });
     },
+    sell: (req, res) => {
+        db.Items.update({price: req.body.price}, {where: {id: req.params.id}})
+            .then(result => {
+                res.redirect('/marketplace/detail/' + req.params.id)
+            })
+    },
+    cancelSale: (req, res) => {
+        db.Items.update({price: null}, {where: {id: req.params.id}})
+            .then(result => {
+                res.redirect('/marketplace/detail/' + req.params.id)
+            })
+    },
     edit: (req, res) => {
         res.send('hola')
-    },
-    addToCart: (req, res) => {
-        
     },
     destroy : (req, res) => {
         // Eliminar el item dentro de la base de datos cuyo id coincida con el que llegó por params

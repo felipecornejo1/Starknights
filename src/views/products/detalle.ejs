@@ -52,6 +52,24 @@
                     <form action="/marketplace/buy/<%= item.id %>?_method=PUT" method="POST">
                         <button type="submit"> Comprar </button>
                     </form>
+                <% } else if(item.ownerFK == user.id && item.price == null) { %>
+                    <button type="submit" id="sell"> Vender </button>
+                    <div class="modal-sell">
+                        <h1>Vender Item</h1>
+                        <p class="modal-sell-msg">Este item se publicará en el marketplace al precio que elijas.<br>Puedes retirarlo de la venta sólo si aún no fue comprado.<br>Recibirás el 100% del precio que pague el comprador.</p>
+                        <form action="/marketplace/sell/<%= item.id %>?_method=PUT" method="POST">
+                            <div class="sell-price-input">
+                                <p>Vender a</p>
+                                <input type="number" min="0.001" step="0.001" inputmode="numeric" name="price">
+                                <p>ETH</p>
+                            </div>
+                            <button type="submit">Confirmar</button>
+                        </form>
+                    </div>
+                <% } else if(item.ownerFK == user.id && item.price != null) { %>
+                    <form action="/marketplace/cancel-sale/<%= item.id %>?_method=PUT" method="POST">
+                        <button type="submit"> Cancelar Venta </button>
+                    </form>
                 <% } %>
                 <form action="/marketplace/delete/<%= item.id %>?_method=DELETE" method="POST">
                     <button type="submit"> Borrar </button>
