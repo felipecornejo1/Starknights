@@ -6,6 +6,7 @@
 html {
     overflow-x: hidden;
     max-width: 100vw;
+    min-height: 100vh;
 }
 
 body {
@@ -18,6 +19,14 @@ header {
     height: auto;
     border-top: 3px solid #D6A771;
     background-color: #070720;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+main {
+    margin-top: 133px;
+    min-height: calc(100vh - 160px - 212px);
 }
 
 .logo {
@@ -227,6 +236,7 @@ header {
 .titulo-carrito{
     color: #EAEAEA;
     margin: 20px;
+    margin-top: 160px !important;
     position: relative;
     left: 20px;
 }
@@ -241,8 +251,10 @@ header {
     justify-content: space-evenly;
 }
 
-.productos_seleccionados{
-    width: 100px;
+.productos_seleccionados {
+    min-height: 100px;
+    padding: 20px;
+    min-width: 300px;
     background-color: #11113d;
     border-radius: 10px;
     box-sizing: border-box;
@@ -252,10 +264,13 @@ header {
 }
 
 .productos{
-    width: 95%;
-    height: 135px;
+    width: 60vw;
+    min-width: 300px;
+    max-width: 800px;
+    padding: 20px;
     background-color: #11113d;
     border-bottom: 1px solid rgba(5, 7, 12, .75);;
+    border-radius: 8px;
     display: flex;
     box-sizing: border-box;
     align-items: center;
@@ -390,7 +405,7 @@ header {
     height: 0;
     position: fixed;
     left: 50%;
-    top: 100px;
+    top: 150px;
     transform: translateX(-50%);
 }
 
@@ -399,8 +414,8 @@ header {
 }
 
 @keyframes alert-popup {
-    0% {top: -200px; opacity: 1; width: fit-content; height: fit-content;}
-    10% {top: 100px;}
+    0% {top: 0px; opacity: 1; width: fit-content; height: fit-content;}
+    10% {top: 150px;}
     90% {opacity: 1;}
     100% {opacity: 0; width: fit-content; height: fit-content;}
 }
@@ -484,7 +499,7 @@ header {
 .nuevo-item {
     display: inline-block;
     position: absolute;
-    top: 150px;
+    top: 160px;
     right: 50px;
     color: #fff;
     font-size: 12px;
@@ -521,7 +536,6 @@ header {
     align-items: center;
     position: relative;
     width: 200px;
-    height: 230px;
     padding: 10px;
     margin: 15px 15px;
     background-color: #11113d;
@@ -557,16 +571,25 @@ header {
     padding-top: 5px;
     margin: 0;
 }
+
+.precio-usd-mkt {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: lighter;
+    font-size: 10px;
+    text-align: center;
+}
+
 /*------Fin Marketplace-------*/
 
 /* ------ Perfil/Cuenta/Profile/Account -------- */
 
     #acc-menu {
-        background-color: rgba(0, 0, 0, 0.2);
         position: fixed;
         width: fit-content;
         padding: 10px 0px;
-        height: 100%;
+        height: 98%;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.2);
         }
 
     #acc-menu a {
@@ -574,7 +597,7 @@ header {
         color: #fff;
         transition: 300ms ease-in-out;
     }
-
+  
     /* #acc-menu a:hover {
         color: #f0b268;
     } */
@@ -617,11 +640,18 @@ header {
 
     .acc-view {
         position: absolute;
-        left: 230px;
-        right: 0;
-        bottom: 0;
-        top: 123px;
         margin: 0;
+        left: 230px;
+        padding: 50px;
+    }
+
+    .acc-view > h1 {
+        color: #fff;
+        width: 100%;
+        height: fit-content;
+        margin: 0;
+        font-size: 28px;
+        margin-top: 0;
     }
 
     .acc-box {
@@ -725,17 +755,8 @@ header {
     .transactions-ctn {
         display: flex;
         flex-direction: column;
-        margin: 50px;
+        margin: 50px 0;
         width: fit-content;
-    }
-
-    
-    .acc-view > h1 {
-        color: #fff;
-        width: 100%;
-        height: fit-content;
-        margin-left: 50px;
-        font-size: 28px;
     }
     
     .transaction {
@@ -782,13 +803,15 @@ header {
 /* ------ Fin Cuenta/Profile/Account -------- */
 
 .cartel-error {
-    width: 500px;
+    width: 80vw;
+    max-width: 500px;
     margin: auto;
     margin-top: 100px;
 }
 
 .cartel-error.no-margin {
-    margin-top: 0;
+    margin: auto;
+    justify-self: center;
 }
 
 .cartel-error img, .cartel-error i {
@@ -962,10 +985,11 @@ header {
         width: 100%;
         height: 100px;
         background-color: #070720;
+        position: fixed;
     }
 
-    .filters-ctn {
-        display: none;
+    main {
+        margin-top: 100px !important;
     }
 
     .ctn-menu {
@@ -1179,46 +1203,12 @@ header {
         margin: 20px;        
     }
 
-    .productos_seleccionados {
-        width: 90%;
-        padding: 20px 0;
-        background-color: #11113d;
-        border-radius: 2%;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-    }
-
     .productos img{
         margin-left: 20px;
         width: 40%;
         max-height: 85%;
         border-radius: 10px;
         display: flex;
-    }
-    
-    .productos_seleccionados p{
-        align-self: flex-start;
-        font-size: 15px;
-    }
-
-    .productos_seleccionados button{
-        margin: 5px;
-        font-size: 12px;        
-    }
-
-    .button-carrito button{
-        padding: 5px;
-    }
-
-    .button-carrito {
-        padding: 0;
-        text-align: center;
-    }
-
-    .total p {
-        padding: 10px;
-        text-align: right;
     }
 
     .destacados {
@@ -1274,9 +1264,15 @@ header {
         right: 20px;
         top: 120px;
     }
+
+    .filters-ctn {
+        display: none;
+    }
+
+    /* Fin Marketplace */
 }
 
-@media (min-width: 769px) and (max-width: 1000px){
+@media (min-width: 830px) and (max-width: 1000px){
 
     /*----HEADER----*/
 
@@ -1288,6 +1284,10 @@ header {
     .header {
         width: 100%;
     }
+
+    main {
+        margin-top: 202px;
+    }   
 
     .logo {
         padding: 5px 0px 5px  20px;
@@ -1306,6 +1306,21 @@ header {
         color: #EAEAEA;
         text-transform: uppercase;
         transition-duration: .3s;
+    }
+
+    .error-popup {
+        top: 230px
+    }
+
+    .success-popup {
+        top: 230px
+    }
+
+    @keyframes alert-popup {
+        0% {top: 0px; opacity: 1; width: fit-content; height: fit-content;}
+        10% {top: 230px;}
+        90% {opacity: 1;}
+        100% {opacity: 0; width: fit-content; height: fit-content;}
     }
 
     /*--FIN HEADER--*/
@@ -1395,32 +1410,8 @@ header {
     .productos{
         height: 171px;
     }
-
-
-
-
-
-
-
-    .titulo-carrito{
-        color: #EAEAEA;
-        margin: 30px;
-        font-size: 30px;
-        position: relative;
-        left: 20px;
-    }
-        
-    .productos_seleccionados{
-        width: 50%;
-        padding: 20px 0;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-    }
     
     .productos{
-        width: 95%;
-        height: 171px;
         margin: 10px;
         display: flex;
         box-sizing: border-box;
@@ -1433,132 +1424,22 @@ header {
         border-radius: 10px;
         display: flex;        
     }
-    
-    .precio-descuento-descripcion-remover{
-        display: flex;
-        flex-direction: column; 
-        margin-right: inherit; 
+
+    /* Profile */
+    .acc-view {
+        top: 230px
     }
-    
-    .precio-descuento-descripcion-remover button{
-        align-self: flex-start;
-        margin: 5px;
-        font-size: 15px;
+    /* Fin Profile */
+
+    /* Marketplace */
+    .filters-ctn {
+        display: none;
     }
-    
-    .productos_seleccionados p{
-        align-self: flex-start;
-        margin: 5px;
-        font-size: 20px;
-    }
-    
-    .productos_seleccionados button{
-        align-self: flex-end;
-        margin: 5px;
-        font-size: 15px;
-        transition: background-color 450ms;
-    }
-    
-    .productos_seleccionados button:hover{
-        background-color: #D6A771;
-    }
-    
-    .total p{
-        padding: 20px;
-        text-align: right;
-    }
-    
-    .button-carrito button{
-        padding: 10px;
-        margin: 10px;
-        transition: background-color 450ms;
-    }
-    
-    .button-carrito button:hover{
-        background-color: #D6A771;
-    }
-    
-    .destacados{
-        width: 40%;
-        margin: 0;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .destacados p{
-        font-size: 22px;
-        position: relative;
-        bottom: 1px;   
-    }
-    
-    .destacados img{
-        width: 90%;
-        border-radius: 10px;
-        padding: 10px;       
-    }
-    
-    .button-carrito{
-        padding: 10px;
-        text-align: center;
-    }
-    
-    .descripcion-recomendados{
-        box-sizing: border-box;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-    
-    .descripcion-productos{
-        padding: 10px;
-        margin: 30px 10px;
-        width: 40%;
-        height: auto;
-        border-radius: 10px;
-    }
-    
-    #descripcion-p{
-        font-size: 22px;
-    }
-    
-    .descripcion-productos p{
-        text-align: justify;
-        margin: 20px 30px;
-        font-size: 15px;
-    }
-    
-    .recomendado{
-        width: 50%;
-        padding: 20px 0;
-        margin: 30px 10px;
-        box-sizing: border-box;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-content: space-evenly;
-    }
-    
-    .recomendado-imagen{
-        margin: 10px;
-        width: 40%;
-        border-radius: 10px;
-        display: flex; 
-        align-items: center;
-    }
-    
-    .recomendado-imagen img{
-        width: 100%;
-        border-radius: 10px;
-    }
-    
-    .recomendado p{
-        width: 100%;
-        font-size: 22px;
-        text-align: center;
-        position: relative;
-        bottom: 7px;
+    /* Fin Marketplace */
+
+    /* Carrito */
+    .titulo-carrito {
+        margin-top: 220px !important;
     }
 }
 
@@ -1675,157 +1556,6 @@ header {
         font-size: 30px;
         position: relative;
         left: 20px;
-    }
-        
-    .productos_seleccionados{
-        width: 50%;
-        padding: 20px 0;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .productos{
-        width: 95%;
-        height: 171px;
-        margin: 10px;
-        display: flex;
-        box-sizing: border-box;
-        align-items: center;
-        justify-content: space-between; 
-    }
-    
-    .productos img{
-        max-height: 140px;
-        border-radius: 10px;
-        display: flex;        
-    }
-    
-    .precio-descuento-descripcion-remover{
-        display: flex;
-        flex-direction: column; 
-        margin-right: inherit; 
-    }
-    
-    .precio-descuento-descripcion-remover button{
-        align-self: flex-start;
-        margin: 5px;
-        font-size: 15px;
-    }
-    
-    .productos_seleccionados p{
-        align-self: flex-start;
-        margin: 5px;
-        font-size: 20px;
-    }
-    
-    .productos_seleccionados button{
-        align-self: flex-end;
-        margin: 5px;
-        font-size: 15px;
-        transition: background-color 450ms;
-    }
-    
-    .productos_seleccionados button:hover{
-        background-color: #D6A771;
-    }
-    
-    .total p{
-        padding: 20px;
-        text-align: right;
-    }
-    
-    .button-carrito button{
-        padding: 10px;
-        margin: 10px;
-        transition: background-color 450ms;
-    }
-    
-    .button-carrito button:hover{
-        background-color: #D6A771;
-    }
-    
-    .destacados{
-        width: 40%;
-        margin: 0;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .destacados p{
-        font-size: 22px;
-        position: relative;
-        bottom: 1px;   
-    }
-    
-    .destacados img{
-        width: 90%;
-        border-radius: 10px;
-        padding: 10px;       
-    }
-    
-    .button-carrito{
-        padding: 10px;
-        text-align: center;
-    }
-    
-    .descripcion-recomendados{
-        box-sizing: border-box;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-    
-    .descripcion-productos{
-        padding: 10px;
-        margin: 30px 10px;
-        width: 40%;
-        height: auto;
-        border-radius: 10px;
-    }
-    
-    #descripcion-p{
-        font-size: 22px;
-    }
-    
-    .descripcion-productos p{
-        text-align: justify;
-        margin: 20px 30px;
-        font-size: 15px;
-    }
-    
-    .recomendado{
-        width: 50%;
-        padding: 20px 0;
-        margin: 30px 10px;
-        box-sizing: border-box;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-content: space-evenly;
-    }
-    
-    .recomendado-imagen{
-        margin: 10px;
-        width: 40%;
-        border-radius: 10px;
-        display: flex; 
-        align-items: center;
-    }
-    
-    .recomendado-imagen img{
-        width: 100%;
-        border-radius: 10px;
-    }
-    
-    .recomendado p{
-        width: 100%;
-        font-size: 22px;
-        text-align: center;
-        position: relative;
-        bottom: 7px;
     }
 }
 
@@ -2277,19 +2007,8 @@ footer {
   /* Fin Loader */
 
   /* Swiper Marketplace */
-
-  
-    @media (min-width: 1500px) {
-        .swiper {
-            width: 78%;
-            margin: 0 !important;
-        }
-    }
-    @media (min-width: 1200px) {
-        .swiper {
-            width: 74%;
-            margin: 0 !important;
-        }
-    }
-  
+  .swiper {  
+    width: 90vw;
+    margin: 0 !important;
+    }  
   /* Fin Swiper */

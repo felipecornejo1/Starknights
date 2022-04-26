@@ -9,11 +9,6 @@
     <!--Header-->
     <%- include('../partials/header') %>
     <main id="marketplace">
-        <div class="filters-ctn">
-            <div class="filters">
-                
-            </div>
-        </div>
         <div class="items-ctn">
             <% if(locals.errors == 'userType') { %>
                 <div class="error-popup">
@@ -37,6 +32,7 @@
                                     <img src="/img/items/spaceships/<%= i.picture %>">
                                     <div class="item-info-mkt">
                                         <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                        <p class="precio-usd-mkt">$ <%= parseFloat(i.price * ethPrice).toFixed(0) %></p>
                                     </div>
                                 </a>
                             </div>
@@ -59,6 +55,7 @@
                                         <img src="/img/items/armor/<%= i.picture %>">
                                         <div class="item-info-mkt">
                                             <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                            <p class="precio-usd-mkt">$ <%= parseFloat(i.price * ethPrice).toFixed(0) %></p>
                                         </div>
                                     </a>
                                 </div>
@@ -81,6 +78,7 @@
                                         <img src="/img/items/pets/<%= i.picture %>">
                                         <div class="item-info-mkt">
                                             <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                            <p class="precio-usd-mkt">$ <%= parseFloat(i.price * ethPrice).toFixed(0) %></p>
                                         </div>
                                     </a>
                                 </div>
@@ -93,49 +91,7 @@
 
     <!--Footer-->
     <%- include('../partials/footer') %>
-    <script src="/js/marketplace.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        if(window.innerWidth > 1500) {
-            var swiper = new Swiper(".mySwiper", {
-              slidesPerView: 5,
-              spaceBetween: 10,
-              pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-              },
-            });
-        }
-        else if(window.innerWidth > 1200) {
-            var swiper = new Swiper(".mySwiper", {
-              slidesPerView: 4,
-              spaceBetween: 10,
-              pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-              },
-            });
-        }
-        else if(window.innerWidth > 500) {
-            var swiper = new Swiper(".mySwiper", {
-              slidesPerView: 3,
-              spaceBetween: 10,
-              pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-              },
-            });
-        }
-        else if(window.innerWidth > 500) {
-            var swiper = new Swiper(".mySwiper", {
-              slidesPerView: 3,
-              spaceBetween: 10,
-              pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-              },
-            });
-        }
-      </script>
+    <script src="/js/marketplace.js"></script>
 </body>
 </html>

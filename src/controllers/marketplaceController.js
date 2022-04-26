@@ -1,18 +1,30 @@
-// Importar validationResult
+// Importaciones
 const {validationResult} = require('express-validator')
-
-// Importar los modelos de Sequelize (base de datos)
 const db = require('../../database/models')
+const fetch = (...args) =>
+  import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 // Controller
 const controller = 
 {
     marketplace: (req, res) => {
+        if(req.query.hola){
+            console.log(req.query.hola);
+        }
+        else {
+            console.log('chau');
+        }
         // Traer todos los datos de la tabla items
         db.Items.findAll()
             // Despues de traer los datos, renderizar la vista marketplace y pasarle las variables 'items' (con todos los datos de la tabla items) y 'user' (con los datos del usuario logueado)
             .then(result => {
-                res.render('products/marketplace', {items: result, user:req.session.user})
+                fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=ETH&CMC_PRO_API_KEY=8ee850bf-cab3-4069-af24-9a235b318dcc')
+                    .then(res => {
+                        return res.json();
+                    })
+                    .then(data => {
+                        res.render('products/marketplace', {items: result, ethData: data.data.ETH, ethPrice: data.data.ETH.quote.USD.price, user:req.session.user})
+                    })
             })
     },
     carrito: (req, res) => {
