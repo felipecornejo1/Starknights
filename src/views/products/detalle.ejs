@@ -26,27 +26,32 @@
         <% } %>
         <div class="flex-detalle">
             <h2 class="producto-title"><%= item.name %></h2>
-            <div class="descripciones"> 
-                
-                <p class="texto-art">
-                    La Nave #1234 es un modelo pesado de transporte, su armamento ligero capaz de eliminar unidades de infanteria para limpiar el terreno para desplegar o regocer unidades de infanteria, a su vez cuenta con un armamente ligero contra otras naves.
-                </p>
-            </div> 
-            <div class="art-img">
+            <div class="art-img" target="<%= item.id %>">
                 <% if(item.typeFK == 1) {%>
+                    <div class="item-id-detalle"><i class="fa-solid fa-jet-fighter-up"></i> #<%= item.id %></div>
                     <img src="/img/items/spaceships/<%= item.picture %>" class="art-detail">
                 <% } else if (item.typeFK == 2) { %>
+                    <div class="item-id-detalle"><i class="fa-solid fa-shield"></i> #<%= item.id %></div>
                     <img src="/img/items/weapons/<%= item.picture %>" class="art-detail">
                 <% } else if(item.typeFK == 3) { %>
+                    <div class="item-id-detalle"><i class="fa-solid fa-shield"></i> #<%= item.id %></div>
                     <img src="/img/items/armor/<%= item.picture %>" class="art-detail">
                 <% } else if(item.typeFK == 4) { %>
+                    <div class="item-id-detalle"><i class="fa-solid fa-paw"></i> #<%= item.id %></div>
                     <img src="/img/items/pets/<%= item.picture %>" class="art-detail">
                 <% } else if(item.typeFK == 5) { %>
+                    <div class="item-id-detalle"><i class="fa-solid fa-jet-fighter-up"></i> #<%= item.id %></div>
                     <img src="/img/items/passes/<%= item.picture %>" class="art-detail">
                 <% } %>
             </div>
-            <div class="item-id"><%= item.id %></div>
             <div class= "buttons-detalle"> 
+                <div class="datos-detalle">
+                    <% if(item.price != null) { %>
+                        <h1><span class="eth-symbol">Ξ</span> <%= item.price %></h1>
+                        <p class="precio-usd-mkt">$<%= parseInt(ethPrice) %></p>
+                    <% } %>
+                    <p>Dueño: <a href="/users/profile/<%= item.ownerFK %>"><%= item.owner.username + ' #' + item.ownerFK %></a></p>
+                </div>
                 <% if(item.ownerFK != user.id && item.price != null && !locals.justBought) { %>
                     <button type="button" id="btn-carrito"> Añadir al carrito </button>
                     <form action="/marketplace/buy/<%= item.id %>?_method=PUT" method="POST">
@@ -74,23 +79,6 @@
                 <form action="/marketplace/delete/<%= item.id %>?_method=DELETE" method="POST">
                     <button type="submit"> Borrar </button>
                 </form>
-            </div>
-            <div class="cuadro-estadisticas">
-                <table class="bordes-box">
-                    <tr class="Fila1">
-                        <th class="filehistory-selected" style="white-space: nowrap;">Armadura <i class="fas fa-shield-alt"></i></th>
-                        <th class="filehistory-selected" style="white-space: nowrap;">Velocidad <i class="fas fa-tachometer-alt"></i></th>
-                        <th class="filehistory-selected" style="white-space: nowrap;">Armas <i class="fas fa-khanda"></i></th>
-                        <th class="filehistory-selected" style="white-space: nowrap;">Raza <i class="fab fa-gitkraken"></i></th>
-                    </tr>
-                        <br>
-                    <tr class="Fila1">
-                        <td class="filehistory-selected" style="white-space: nowrap;">48</td>
-                        <td class="filehistory-selected" style="white-space: nowrap;">235km</td>
-                        <td class="filehistory-selected" style="white-space: nowrap;">Armas corto alcance (objetivos no blindados)</td>
-                        <td class="filehistory-selected" style="white-space: nowrap;">Terran</td>
-                    </tr>
-                </table>  
             </div>
                 
         </div> 

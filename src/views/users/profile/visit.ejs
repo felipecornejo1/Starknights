@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Head-->
+<%- include('../../partials/head', {stylesheet: 'style', title: 'Perfil'}) %>
+
+<body>
+    
+    <!--Header-->
+    <%- include('../../partials/header') %>
+
+    <main id="main-visit">
+        <div class="visit-pp-data">
+            <img src="/img/profile/<%= visiting.profile_picture %>" class="profile-picture">
+            <div class="visit-data">
+                <h1><%= visiting.username + ' #' + visiting.id %></h1>
+                <p><%= visiting.type.name %></p>
+            </div>
+        </div>
+
+        <h1>Items</h1>
+
+        <div class="container-mkt">
+            <% for(let i of visiting.items) { if(i.typeFK == 1) { %>
+                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                    <div class="item-id"><i class="fa-solid fa-jet-fighter-up"></i> #<%= i.id %></div>
+                    <p class="item-info"><%= i.name %></p>
+                    <img src="/img/items/spaceships/<%= i.picture %>" class="item-img">
+                    <% if(i.price != null) { %>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                        </div>
+                    <% } %>
+                </a>
+            <% } else if(i.typeFK == 2){ %>
+                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                    <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
+                    <p class="item-info"><%= i.name %></p>
+                    <img src="/img/items/weapons/<%= i.picture %>" class="item-img">
+                    <% if(i.price != null) { %>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                        </div>
+                    <% } %>
+                </a>
+            <% } else if(i.typeFK == 3){ %>
+                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                    <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
+                    <p class="item-info"><%= i.name %></p>
+                    <img src="/img/items/armor/<%= i.picture %>" class="item-img">
+                    <% if(i.price != null) { %>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                        </div>
+                    <% } %>
+                </a>
+            <% } else if(i.typeFK == 4){ %>
+                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                    <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
+                    <p class="item-info"><%= i.name %></p>
+                    <img src="/img/items/pets/<%= i.picture %>" class="item-img">
+                    <% if(i.price != null) { %>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                        </div>
+                    <% } %>
+                </a>
+            <% } else if(i.typeFK == 5){ %>
+                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                    <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
+                    <p class="item-info"><%= i.name %></p>
+                    <img src="/img/items/passes/<%= i.picture %>" class="item-img">
+                    <% if(i.price != null) { %>
+                        <div class="item-info-mkt">
+                            <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                        </div>
+                    <% } %>
+                </a>
+            <% } } %>
+        </div>
+        
+        <div class="visit-items"></div>
+
+    </main>
+
+</body>

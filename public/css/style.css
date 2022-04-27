@@ -29,6 +29,15 @@ main {
     min-height: calc(100vh - 160px - 212px);
 }
 
+#register {
+    margin-top: 180px;
+    margin-bottom: 50px;
+}
+
+.eth-symbol {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .logo {
     padding: 10px 0px 10px  20px;
     height: 100px;
@@ -392,7 +401,7 @@ main {
     height: 0;
     position: fixed;
     left: 50%;
-    top: 100px;
+    top: 230px;
     transform: translateX(-50%);
 }
 
@@ -450,6 +459,8 @@ main {
 /*-------Marketplace-------*/
 #marketplace {
     display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .filters-ctn {
@@ -557,7 +568,6 @@ main {
 }
 
 .item-mkt img {
-    width: 100px;
     height: 100px;
     margin: 20px auto;
 }
@@ -799,6 +809,44 @@ main {
         align-items: center;
         margin-right: 10px;
     }
+
+    #main-visit {
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-top: 160px;
+    }
+
+    #main-visit > h1 {
+        color: #fff;
+        margin-left: 100px;
+    }
+
+    .visit-pp-data {
+        display: flex;
+        margin-bottom: 50px;
+    }
+
+    .visit-data {
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+        justify-content: center;
+    }
+
+    .visit-data h1 {
+        color: #fff;
+        text-transform: capitalize;
+        margin: 0;
+    }
+
+    .visit-data p {
+        color: #fff;
+        background: linear-gradient(180deg, rgba(193,28,28,1) 0%, rgba(200,25,47,1) 41%, rgba(132,10,10,1) 100%);
+        text-align: center;
+        padding: 10px;
+        border-radius: 8px;
+        width: fit-content;
+    }
     
 /* ------ Fin Cuenta/Profile/Account -------- */
 
@@ -972,9 +1020,7 @@ main {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    margin: 50px auto;
     border-radius: 50%;
-    border: 5px solid #D6A771
 }
 
 @media (max-width: 830px){ /*------------MOBILE------------------------*/
@@ -990,6 +1036,10 @@ main {
 
     main {
         margin-top: 100px !important;
+    }
+
+    #register {
+        margin-top: 130px !important;
     }
 
     .ctn-menu {
@@ -1270,6 +1320,22 @@ main {
     }
 
     /* Fin Marketplace */
+
+    /* Profile */
+    #acc-menu {
+        display: none;
+    }
+    
+    .acc-view {
+        left: 0;
+    }
+    /* Fin Profile */
+
+    /* Detalle */
+    .main-detalle {
+        margin-top: 150px !important;
+    }
+    /* Fin Detalle */
 }
 
 @media (min-width: 830px) and (max-width: 1000px){
@@ -1287,7 +1353,11 @@ main {
 
     main {
         margin-top: 202px;
-    }   
+    }
+
+    #register {
+        margin-top: 250px;
+    }
 
     .logo {
         padding: 5px 0px 5px  20px;
@@ -1441,6 +1511,13 @@ main {
     .titulo-carrito {
         margin-top: 220px !important;
     }
+    /* Fin Carrito */
+
+    /* Detalle */
+    .main-detalle {
+        margin-top: 250px !important;
+    }
+    /* Fin Detalle */
 }
 
 @media (min-width: 1280px) {
@@ -1656,8 +1733,15 @@ main {
 
 
 /*-----Detalle------*/
+
+.main-detalle {
+    margin-top: 180px;
+}
+
 .producto-title{
     text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 .Fila1 {
@@ -1674,7 +1758,11 @@ main {
 }
 
 .flex-detalle{
-    width: 850px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 70vw;
+    max-width: 850px;
     height: auto;
     background-color: #11113d;
     margin: auto;
@@ -1686,26 +1774,18 @@ main {
     color: #EAEAEA;
 }
 
-.descripciones{
-  float: left;
-  width: 400px;
-  height: 250px;
-  margin: 5px;
-  padding: 5px;
+.item-id-detalle {
+    position: absolute;
+    background-color: #D6A771;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-.descripciones{
-    font-size: 20px;
-    text-align: right;
-  }
-
 .art-img{
-    float: right;
     text-align: center;
     border-radius: 10%;
     width: 350px;
     height: auto;
-    margin: auto;
     padding: 10px;
     background-color: #17172E;
     border-radius: 15px;
@@ -1719,17 +1799,37 @@ main {
     text-align: left;
 }
 
+.buttons-detalle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 20px;
+}
+
 .buttons-detalle button{
     background-color: #17172E;
     color: #fff;
     border: #D6A771 solid 1px;
-    padding: 5px 10px;
+    padding: 20px;
     border-radius: 8px;
     margin: 5px 0;
+    width: 300px;
 }
 .buttons-detalle button:hover {
     background-color: #D6A771;
     transition-duration: 450ms;
+}
+
+.datos-detalle p {
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 16px !important;
+}
+
+.datos-detalle h1 {
+    margin: 0;
 }
 
 .bordes-box{
@@ -1739,7 +1839,7 @@ main {
 }
 
 .main-detalle{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .texto-art{
@@ -1768,7 +1868,7 @@ main {
     left: 50%;
     top: 50%;
     width: 500px;
-    z-index: 10;
+    z-index: 1000;
     padding: 20px;
     padding-bottom: 50px;
     border-radius: 20px;
@@ -1821,6 +1921,8 @@ input::-webkit-inner-spin-button {
 }
 
 .modal-sell > form > button {
+    width: fit-content;
+    padding: 10px;
     right: 20px;
     position: absolute;
 }

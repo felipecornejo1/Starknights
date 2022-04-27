@@ -21,6 +21,7 @@
             </div>
         </div> -->
         <div class="acc-view">
+            <h1>Inventario</h1>
             <div class="container-mkt">
                 <% for(let i of items) { if(i.typeFK == 1) { %>
                     <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
@@ -29,7 +30,7 @@
                         <img src="/img/items/spaceships/<%= i.picture %>" class="item-img">
                         <% if(i.price != null) { %>
                             <div class="item-info-mkt">
-                                <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
                             </div>
                         <% } %>
                     </a>
@@ -40,7 +41,7 @@
                         <img src="/img/items/weapons/<%= i.picture %>" class="item-img">
                         <% if(i.price != null) { %>
                             <div class="item-info-mkt">
-                                <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
                             </div>
                         <% } %>
                     </a>
@@ -51,7 +52,7 @@
                         <img src="/img/items/armor/<%= i.picture %>" class="item-img">
                         <% if(i.price != null) { %>
                             <div class="item-info-mkt">
-                                <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
                             </div>
                         <% } %>
                     </a>
@@ -62,7 +63,7 @@
                         <img src="/img/items/pets/<%= i.picture %>" class="item-img">
                         <% if(i.price != null) { %>
                             <div class="item-info-mkt">
-                                <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
                             </div>
                         <% } %>
                     </a>
@@ -73,7 +74,7 @@
                         <img src="/img/items/passes/<%= i.picture %>" class="item-img">
                         <% if(i.price != null) { %>
                             <div class="item-info-mkt">
-                                <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
                             </div>
                         <% } %>
                     </a>

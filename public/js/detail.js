@@ -2,11 +2,10 @@ window.addEventListener('load', () => {
     let errorPopup = document.querySelector('.error-popup');
     let successPopup = document.querySelector('.success-popup');
     let btnCarrito = document.querySelector('#btn-carrito');
-    let itemId = document.querySelector('.item-id');
+    let itemId = document.querySelector('.art-img').getAttribute('target');
     let sellBtn = document.querySelector('#sell');
     let sellModal = document.querySelector('.modal-sell');
     let overlay = document.querySelector('#overlay');
-
     
     // Si hay un elemento error-popup
     if(errorPopup) {
@@ -29,9 +28,9 @@ window.addEventListener('load', () => {
                 // Dividir la string obtenida por cada guion que haya
                 let split = carrito.split('-');
                 // En caso de que el id seleccionado no se encuentre en este array
-                if(!split.includes(itemId.innerText)){
+                if(!split.includes(itemId)){
                     // Crear una variable con el valor anterior, agregarle un guion y el id del item seleccionado y subirlo a localStorage
-                    let carritoNuevo = carrito + '-' + itemId.innerText
+                    let carritoNuevo = carrito + '-' + itemId
                     localStorage.setItem('carrito', carritoNuevo);
                     let popup = document.createElement('div');
                     popup.classList.add('success-popup');
@@ -65,7 +64,7 @@ window.addEventListener('load', () => {
                     document.querySelector('body').appendChild(popup)
                     setTimeout(() => {popup.classList.remove('alert-animation');}, 3000);
                     e.target.innerText = 'Añadido'
-                localStorage.setItem('carrito', itemId.innerText);
+                localStorage.setItem('carrito', itemId);
             }
         });
     }

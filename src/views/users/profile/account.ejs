@@ -12,15 +12,16 @@
     <main>
         
         <%- include('../../partials/accountMenu') %>
-        <!-- ! Cartel próximamente hasta que esté lista esta vista -->
-        <!-- <div class="acc-view">
-            <div class="cartel-proximamente">
-                <h1 class="proximamente">Estamos trabajando en algunas funciones, disculpe las molestias.</h1>
-                <img src="/img/logo-blanco.png">
-            </div>
-        </div> -->
 
         <div class="acc-view">
+            <div class="visit-pp-data">
+                <img src="/img/profile/<%= user.profile_picture %>" class="profile-picture">
+                <div class="visit-data">
+                    <h1><%= user.username + ' #' + user.id %></h1>
+                    <p><%= user.type.name %></p>
+                </div>
+            </div>
+
             <div class="acc-box" id="wallet-box">
                 <i class="fab fa-brands fa-ethereum"></i>
                 <h1>

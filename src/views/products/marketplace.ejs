@@ -21,17 +21,16 @@
             <!--Naves-->
             <div class="market-section naves">
                 <a href="#" class="market-title"><h1 class="market-title">Naves</h1></a>
-                <a href="/proximamente" class="ver-todo">VER TODO</a>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <% for(let i of items) { if(i.typeFK == 1 && i.price != null == 1) { %>
+                        <% for(let i of items) { if(i.typeFK == 1 && i.price != null) { %>
                             <div class="swiper-slide">
                                 <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
                                     <div class="item-id"><i class="fa-solid fa-jet-fighter-up"></i> #<%= i.id %></div>
                                     <p class="item-info"><%= i.name %></p>
                                     <img src="/img/items/spaceships/<%= i.picture %>">
                                     <div class="item-info-mkt">
-                                        <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                        <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
                                         <p class="precio-usd-mkt">$ <%= parseFloat(i.price * ethPrice).toFixed(0) %></p>
                                     </div>
                                 </a>
@@ -41,51 +40,71 @@
                 </div>
             </div>
     
-                <!--Armaduras-->
-                <div class="market-section naves">
-                    <a href="#" class="market-title"><h1 class="market-title">Armaduras</h1></a>
-                    <a href="/proximamente" class="ver-todo">VER TODO</a>
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <% for(let i of items) { if(i.typeFK == 3 && i.price != null == 1) { %>
-                                <div class="swiper-slide">
-                                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                                        <div class="item-id"><i class="fa-solid fa-jet-fighter-up"></i> #<%= i.id %></div>
-                                        <p class="item-info"><%= i.name %></p>
-                                        <img src="/img/items/armor/<%= i.picture %>">
-                                        <div class="item-info-mkt">
-                                            <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
-                                            <p class="precio-usd-mkt">$ <%= parseFloat(i.price * ethPrice).toFixed(0) %></p>
-                                        </div>
-                                    </a>
-                                </div>
-                            <% } } %>
-                        </div>
+            <!--Armas-->
+            <div class="market-section naves">
+                <a href="#" class="market-title"><h1 class="market-title">Armas</h1></a>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <% for(let i of items) { if(i.typeFK == 2 && i.price != null) { %>
+                            <div class="swiper-slide">
+                                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                                    <div class="item-id"><i class="fa-solid fa-gun"></i> #<%= i.id %></div>
+                                    <p class="item-info"><%= i.name %></p>
+                                    <img src="/img/items/weapons/<%= i.picture %>">
+                                    <div class="item-info-mkt">
+                                        <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                        <p class="precio-usd-mkt">$ <%= parseFloat(i.price * ethPrice).toFixed(0) %></p>
+                                    </div>
+                                </a>
+                            </div>
+                        <% } } %>
                     </div>
                 </div>
-    
-                <!--Mascotas-->
-                <div class="market-section naves">
-                    <a href="#" class="market-title"><h1 class="market-title">Mascotas</h1></a>
-                    <a href="/proximamente" class="ver-todo">VER TODO</a>
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <% for(let i of items) { if(i.typeFK == 4 && i.price != null == 1) { %>
-                                <div class="swiper-slide">
-                                    <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
-                                        <div class="item-id"><i class="fa-solid fa-jet-fighter-up"></i> #<%= i.id %></div>
-                                        <p class="item-info"><%= i.name %></p>
-                                        <img src="/img/items/pets/<%= i.picture %>">
-                                        <div class="item-info-mkt">
-                                            <h2 class="precio-mkt">Ξ <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
-                                            <p class="precio-usd-mkt">$ <%= parseFloat(i.price * ethPrice).toFixed(0) %></p>
-                                        </div>
-                                    </a>
-                                </div>
-                            <% } } %>
-                        </div>
+            </div>
+
+            <!--Armaduras-->
+            <div class="market-section naves">
+                <a href="#" class="market-title"><h1 class="market-title">Armaduras</h1></a>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <% for(let i of items) { if(i.typeFK == 3 && i.price != null) { %>
+                            <div class="swiper-slide">
+                                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                                    <div class="item-id"><i class="fa-solid fa-shield"></i> #<%= i.id %></div>
+                                    <p class="item-info"><%= i.name %></p>
+                                    <img src="/img/items/armor/<%= i.picture %>">
+                                    <div class="item-info-mkt">
+                                        <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                        <p class="precio-usd-mkt">$ <%= parseFloat(i.price * ethPrice).toFixed(0) %></p>
+                                    </div>
+                                </a>
+                            </div>
+                        <% } } %>
                     </div>
                 </div>
+            </div>
+
+            <!--Mascotas-->
+            <div class="market-section naves">
+                <a href="#" class="market-title"><h1 class="market-title">Mascotas</h1></a>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <% for(let i of items) { if(i.typeFK == 4 && i.price != null) { %>
+                            <div class="swiper-slide">
+                                <a href="/marketplace/detail/<%= i.id %>" class="item-mkt">
+                                    <div class="item-id"><i class="fa-solid fa-paw"></i> #<%= i.id %></div>
+                                    <p class="item-info"><%= i.name %></p>
+                                    <img src="/img/items/pets/<%= i.picture %>">
+                                    <div class="item-info-mkt">
+                                        <h2 class="precio-mkt"><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(i.price).toFixed(3)) %></h2>
+                                        <p class="precio-usd-mkt">$ <%= parseFloat(i.price * ethPrice).toFixed(0) %></p>
+                                    </div>
+                                </a>
+                            </div>
+                        <% } } %>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

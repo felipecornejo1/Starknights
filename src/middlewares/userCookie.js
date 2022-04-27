@@ -9,7 +9,8 @@ const userCookie = (req, res, next) => {
 	if(req.cookies.email !== undefined) {
 		// Buscar un usuario dentro de la base de datos, cuyo email coincida con el guardado dentro de la cookie
 		db.Users.findOne({
-			where: {email: req.cookies.email}
+			where: {email: req.cookies.email},
+			include: ['type']
 		})
 			.then(user => {
 				// Guardar todos los datos del usuario en la variable user dentro de session

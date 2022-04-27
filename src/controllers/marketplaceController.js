@@ -33,10 +33,16 @@ const controller =
     },
     detail: (req, res) => {
         // Traer el item de la base de datos que coincida con el parámetro id
-        db.Items.findOne({where: {id: req.params.id}})
+        db.Items.findOne({where: {id: req.params.id}, include: ['owner']})
             // Después de traer ese item, renderizar la vista 'detalle' y pasarle las variables 'item' (con el item encontrado) y 'user' (con los datos del usuario logueado)
             .then(result => {
-                res.render('products/detalle', {item: result, user: req.session.user});
+                fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=ETH&CMC_PRO_API_KEY=8ee850bf-cab3-4069-af24-9a235b318dcc')
+                    .then(res => {
+                        return res.json();
+                    })
+                    .then(data => {
+                        res.render('products/detalle', {item: result, ethPrice: data.data.ETH.quote.USD.price, user: req.session.user});
+                    })
             });
     },
     create: (req, res) => {
@@ -49,7 +55,7 @@ const controller =
         // En caso de no haber errores:
         if(errors.isEmpty()) {
             // En caso de que la categoria seleccionada sea 'naves'
-            if(req.body.category == 'naves') {
+            if(req.body.category == 1) {
                 db.Items.create({
                     name: req.body.name,
                     typeFK: 1,
@@ -58,8 +64,18 @@ const controller =
                     picture: 'test-spaceship.png'
                 }).then(res.redirect('/marketplace'))
             }
+            // En caso de que la categoria seleccionada sea 'armas'
+            else if(req.body.category == 2) {
+                db.Items.create({
+                    name: req.body.name,
+                    typeFK: 2,
+                    ownerFK: req.session.user.id,
+                    price: req.body.price,
+                    picture: 'raygun.png'
+                }).then(res.redirect('/marketplace'))
+            }
             // En caso de que la categoria seleccionada sea 'armaduras'
-            else if (req.body.category == 'armaduras') {
+            else if (req.body.category == 3) {
                 db.Items.create({
                     name: req.body.name,
                     typeFK: 3,
@@ -69,7 +85,7 @@ const controller =
                 }).then(res.redirect('/marketplace'))
             }
             // En caso de que la categoria seleccionada sea 'mascotas'
-            else if (req.body.category == 'mascotas') {
+            else if (req.body.category == 4) {
                 db.Items.create({
                     name: req.body.name,
                     typeFK: 4,
@@ -97,13 +113,32 @@ const controller =
                 let price = parseFloat(result.price);
                 let buyerBalance = parseFloat(req.session.user.wallet_balance);
                 // Aumentar el balance del vendedor
-                db.Users.findOne({where: {id: result.ownerFK}})
+                db.Users.findOne({where: {id: result.ownerFK}, include: [items]})
                 .then(user => {
                     let sellerBalance = parseFloat(user.wallet_balance);
-                    db.Users.update({wallet_balance: sellerBalance + price}, {where: {id: user.id}}).then(console.log('seller balance 2: ' + sellerBalance));
+                    if(user.typeFK != 1 && user.items.length == 10){
+                        db.Users.update({wallet_balance: sellerBalance + price, typeFK: 2}, {where: {id: user.id}});
+                    }
+                    else if(user.typeFK != 1 && user.items.length == 30){
+                        db.Users.update({wallet_balance: sellerBalance + price, typeFK: 3}, {where: {id: user.id}});
+                    }
+                    else {
+                        db.Users.update({wallet_balance: sellerBalance + price}, {where: {id: user.id}});
+                    }
                 }); 
                 // Bajar el balance del comprador
-                db.Users.update({wallet_balance: buyerBalance - price}, {where: {id: req.session.user.id}})
+                db.Users.findByPk(req.session.user.id, {include: ['items']})
+                    .then(user => {
+                        if(user.typeFK != 1 && user.items.length == 9){
+                            db.Users.update({wallet_balance: buyerBalance - price, typeFK: 3}, {where: {id: req.session.user.id}});
+                        }
+                        else if(user.typeFK != 1 && user.items.length == 29){
+                            db.Users.update({wallet_balance: buyerBalance - price, typeFK: 4}, {where: {id: req.session.user.id}});
+                        }
+                        else {
+                            db.Users.update({wallet_balance: buyerBalance - price}, {where: {id: req.session.user.id}});
+                        }
+                    })
                 // Cambiar el dueño del item y su precio
                 db.Items.update({ownerFK: req.session.user.id, price: null}, {where: {id: req.params.id}});
                 // Subir datos a la tabla de transacciones

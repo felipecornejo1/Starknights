@@ -65,6 +65,12 @@ const controller = {
         // Renderizar la vista profile
         res.render('users/profile/account', {user: req.session.user});
     },
+    visit: (req, res) => {
+        db.Users.findByPk(req.params.id, {include: ['type', 'items']})
+            .then(result => {
+                res.render('users/profile/visit', {user: req.session.user, visiting: result});
+            })
+    },
     ethAirdrop: (req, res) => {
         if(req.session.user.claimed_airdrop != 1) {
             db.Users.update({wallet_balance: req.session.user.wallet_balance + 1, claimed_airdrop: 1}, {where: {id: req.session.user.id}});

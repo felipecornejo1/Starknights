@@ -56,6 +56,7 @@ router.put('/profile/account/eth-airdrop', usersController.ethAirdrop);
 router.get('/profile/inventory', authMiddleware, usersController.profileInventory);
 router.get('/profile/activity', authMiddleware, usersController.profileActivity);
 router.get('/profile/settings', authMiddleware, usersController.profileSettings);
+router.get('/profile/:id', usersController.visit);
 // Cerrar sesión
 router.post('/logout', authMiddleware, usersController.logout);
 

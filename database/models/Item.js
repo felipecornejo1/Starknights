@@ -70,9 +70,13 @@ module.exports = (sequelize, dataTypes) => {
     Item.associate = function(models) {
         //Asociar la columna typeFK con la tabla ItemTypes
         Item.belongsTo(models.ItemTypes, {
-            as: 'types',
+            as: 'type',
             foreignKey: 'typeFK'
         });
+        Item.belongsTo(models.Users, {
+            as: 'owner',
+            foreignKey: 'ownerFK'
+        })
     }
     
     return Item;

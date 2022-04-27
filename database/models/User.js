@@ -46,9 +46,23 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'users',
         timestamps: false
     }
+
     
     // Ejecutar el método define y le pasamos como parametros todo lo que definimos anteriormente
     const User = sequelize.define(alias, cols, config);
+    
+    // Asociar las foreign keys de esta tabla con las primary keys de otras
+    User.associate = function(models) {
+        //Asociar la columna typeFK con la tabla UserTypes
+        User.belongsTo(models.UserTypes, {
+            as: 'type',
+            foreignKey: 'typeFK'
+        });
+        User.hasMany(models.Items, {
+            as: 'items',
+            foreignKey: 'ownerFK'
+        })
+    }
     
     return User;
 }

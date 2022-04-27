@@ -17,51 +17,52 @@
   <!--Header-->
   <%- include('../partials/header') %>
 
-  
-  <% if(locals.errors == undefined) { %>
-  
-    <form class= "formulario-register" action="/users/register" method="POST" enctype="multipart/form-data">
-      <h4 class="title">Registro de usuario </h4>
-      <h4 class="ya-tienes-cuenta">¿Ya tienes cuenta? - <a href="/users/login">Iniciar sesión</a></h4>
-      <input class="casillas" id="reg-input-name" type="text" name="username" placeholder="Nombre de Usuario"/>
-      <p class="form-error" id="name-error"></p>
-      <input class="casillas" id="reg-input-email" type="text" name="email" placeholder="Correo Electrónico"/>
-      <p class="form-error" id="email-error"></p>
-      <input class="casillas" id="reg-input-password" type="password" name="password" placeholder="Contraseña"/>
-      <p class="form-error" id="password-error"></p>
-      <p class="form-message">La contraseña debe contener al menos 6 caracteres</p>
-      <h3 class="titulos"> Ingrese su foto de perfil </h3>
-      <label for="reg-input-pp" class="file-upload-label"><i class="fas fa-upload"></i>Subir una Imagen  <p id="selected-image"></p></label>
-      <input class= "file-upload"; type="file" name="archivo" id="reg-input-pp" accept="image/*" style="color:transparent"/>
-      <button class= "boton" id="btn-register" type="submit"> Enviar </button>   
-    </form>
-
-  <% } else { %>
-    <form class= "formulario-register" action="/users/register" method="POST" enctype="multipart/form-data">
-      <h4 class="title">Registro de usuario </h4>
-      <h4 class="ya-tienes-cuenta">¿Ya tienes cuenta? - <a href="/users/login">Iniciar sesión</a></h4>
-      <% if (errors.userDuplicate == true){ %>
-        <input class="casillas error" id="reg-input-name" type="text" name="username" placeholder="Nombre de Usuario" value="<%= old.username %>"/>
-        <p class="form-error active">Este nombre de usuario ya se encuentra registrado</p>
-      <% } else { %>
-        <input class="casillas" id="reg-input-name" type="text" name="username" placeholder="Nombre de Usuario" value="<%= old.username %>"/>
+  <main id="register">
+    <% if(locals.errors == undefined) { %>
+    
+      <form class= "formulario-register" action="/users/register" method="POST" enctype="multipart/form-data">
+        <h4 class="title">Registro de usuario </h4>
+        <h4 class="ya-tienes-cuenta">¿Ya tienes cuenta? - <a href="/users/login">Iniciar sesión</a></h4>
+        <input class="casillas" id="reg-input-name" type="text" name="username" placeholder="Nombre de Usuario"/>
         <p class="form-error" id="name-error"></p>
-      <% } if (errors.emailDuplicate == true){ %>
-        <input class="casillas error" id="reg-input-email" type="text" name="email" placeholder="Correo Electrónico" value="<%= old.email %>"/>
-        <p class="form-error active">Este correo electrónico ya se encuentra registrado</p>
-      <% } else { %>
-        <input class="casillas" id="reg-input-email" type="text" name="email" placeholder="Correo Electrónico" value="<%= old.email %>"/>
+        <input class="casillas" id="reg-input-email" type="text" name="email" placeholder="Correo Electrónico"/>
         <p class="form-error" id="email-error"></p>
-      <% } %>
-      <input class="casillas" id="reg-input-password" type="password" name="password" placeholder="Contraseña" value="<%= old.password %>"/>
-      <p class="form-error" id="password-error"></p>
-      <p class="form-message">La contraseña debe contener al menos 6 caracteres</p>
-      <h3 class="titulos"> Ingrese su foto de perfil </h3>
-      <label for="reg-input-pp" class="file-upload-label"><i class="fas fa-upload"></i>Subir una Imagen  <p id="selected-image"></p></label>
-      <input class= "file-upload"; type="file" name="archivo" id="reg-input-pp" accept="image/*" style="color:transparent;"/>
-      <button class= "boton" id="btn-register" type="submit"> Enviar </button>   
-    </form>
-  <% } %>
+        <input class="casillas" id="reg-input-password" type="password" name="password" placeholder="Contraseña"/>
+        <p class="form-error" id="password-error"></p>
+        <p class="form-message">La contraseña debe contener al menos 6 caracteres</p>
+        <h3 class="titulos"> Ingrese su foto de perfil </h3>
+        <label for="reg-input-pp" class="file-upload-label"><i class="fas fa-upload"></i>Subir una Imagen  <p id="selected-image"></p></label>
+        <input class= "file-upload"; type="file" name="archivo" id="reg-input-pp" accept="image/*" style="color:transparent"/>
+        <button class= "boton" id="btn-register" type="submit"> Enviar </button>   
+      </form>
+  
+    <% } else { %>
+      <form class= "formulario-register" action="/users/register" method="POST" enctype="multipart/form-data">
+        <h4 class="title">Registro de usuario </h4>
+        <h4 class="ya-tienes-cuenta">¿Ya tienes cuenta? - <a href="/users/login">Iniciar sesión</a></h4>
+        <% if (errors.userDuplicate == true){ %>
+          <input class="casillas error" id="reg-input-name" type="text" name="username" placeholder="Nombre de Usuario" value="<%= old.username %>"/>
+          <p class="form-error active">Este nombre de usuario ya se encuentra registrado</p>
+        <% } else { %>
+          <input class="casillas" id="reg-input-name" type="text" name="username" placeholder="Nombre de Usuario" value="<%= old.username %>"/>
+          <p class="form-error" id="name-error"></p>
+        <% } if (errors.emailDuplicate == true){ %>
+          <input class="casillas error" id="reg-input-email" type="text" name="email" placeholder="Correo Electrónico" value="<%= old.email %>"/>
+          <p class="form-error active">Este correo electrónico ya se encuentra registrado</p>
+        <% } else { %>
+          <input class="casillas" id="reg-input-email" type="text" name="email" placeholder="Correo Electrónico" value="<%= old.email %>"/>
+          <p class="form-error" id="email-error"></p>
+        <% } %>
+        <input class="casillas" id="reg-input-password" type="password" name="password" placeholder="Contraseña" value="<%= old.password %>"/>
+        <p class="form-error" id="password-error"></p>
+        <p class="form-message">La contraseña debe contener al menos 6 caracteres</p>
+        <h3 class="titulos"> Ingrese su foto de perfil </h3>
+        <label for="reg-input-pp" class="file-upload-label"><i class="fas fa-upload"></i>Subir una Imagen  <p id="selected-image"></p></label>
+        <input class= "file-upload"; type="file" name="archivo" id="reg-input-pp" accept="image/*" style="color:transparent;"/>
+        <button class= "boton" id="btn-register" type="submit"> Enviar </button>   
+      </form>
+    <% } %>
+  </main>
 
 </body>
 

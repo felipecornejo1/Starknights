@@ -31,6 +31,8 @@
     border-radius: 5px;
     border: none;
     font-size: 18px;
+    background-color: #070720;
+    color: #fff;
 }
 
 .casillas-login:focus {
