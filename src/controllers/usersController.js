@@ -78,7 +78,7 @@ const controller = {
     },
     ethAirdrop: (req, res) => {
         if(req.session.user.claimed_airdrop != 1) {
-            db.Users.update({wallet_balance: req.session.user.wallet_balance + 1, claimed_airdrop: 1}, {where: {id: req.session.user.id}});
+            db.Users.update({wallet_balance: 100, claimed_airdrop: 1}, {where: {id: req.session.user.id}});
             res.redirect('/users/profile/account')
         }
         else {
