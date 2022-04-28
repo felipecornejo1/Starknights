@@ -2,11 +2,24 @@ window.addEventListener('load', () => {
     let errorPopup = document.querySelector('.error-popup');
     let successPopup = document.querySelector('.success-popup');
     let btnCarrito = document.querySelector('#btn-carrito');
+    let carrito = localStorage.getItem('carrito');
     let itemId = document.querySelector('.art-img').getAttribute('target');
     let sellBtn = document.querySelector('#sell');
-    let sellModal = document.querySelector('.modal-sell');
+    let sellModal = document.querySelector('#sell-item');
     let overlay = document.querySelector('#overlay');
+    let titlePen = document.querySelector('#title-pen');
+    let titleModal = document.querySelector('#edit-title');
+    let pricePen = document.querySelector('#price-pen');
+    let priceModal = document.querySelector('#edit-price');
     
+    
+    if(carrito){
+        // Dividir la string obtenida por cada guion que haya
+        var split = carrito.split('-');
+        if(split.includes(itemId)){
+            btnCarrito.innerText = 'Añadido'
+        }
+    }
     // Si hay un elemento error-popup
     if(errorPopup) {
         // Agregarle la clase alert-animation y quitársela después de 3 segundos
@@ -22,11 +35,8 @@ window.addEventListener('load', () => {
     // AL hacer click en Añadir al Carrito
     if(btnCarrito){
         btnCarrito.addEventListener('click', function(e) {
-            let carrito = localStorage.getItem('carrito');
             // En caso de ya haber datos en localStorage
             if(carrito){
-                // Dividir la string obtenida por cada guion que haya
-                let split = carrito.split('-');
                 // En caso de que el id seleccionado no se encuentre en este array
                 if(!split.includes(itemId)){
                     // Crear una variable con el valor anterior, agregarle un guion y el id del item seleccionado y subirlo a localStorage
@@ -78,6 +88,28 @@ window.addEventListener('load', () => {
         })
         overlay.addEventListener('click', () => {
             sellModal.classList.remove('active');
+        })
+    }
+
+    if(pricePen) {
+        pricePen.addEventListener('click', () => {
+            overlay.classList.add('active');
+            document.querySelector('html').style.overflowY = 'hidden'
+            priceModal.classList.add('active');
+        })
+        overlay.addEventListener('click', () => {
+            priceModal.classList.remove('active');
+        })
+    }
+    
+    if(titlePen) {
+        titlePen.addEventListener('click', () => {
+            overlay.classList.add('active');
+            document.querySelector('html').style.overflowY = 'hidden'
+            titleModal.classList.add('active');
+        })
+        overlay.addEventListener('click', () => {
+            titleModal.classList.remove('active');
         })
     }
 });

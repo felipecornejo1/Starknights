@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
                     return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/spaceships/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
-                            <p>Ξ   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
+                            <p><span class="eth-symbol">Ξ</span>   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
                             <p>${item.name}</p>
                             <button class="remove-btn"> Remover </button> 
                         </div>
@@ -49,7 +49,7 @@ window.addEventListener('load', () => {
                     return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/weapons/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
-                            <p>Ξ   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
+                            <p><span class="eth-symbol">Ξ</span>   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
                             <p>${item.name}</p>
                             <button class="remove-btn"> Remover </button> 
                         </div>
@@ -58,7 +58,7 @@ window.addEventListener('load', () => {
                     return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/armor/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
-                            <p>Ξ   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
+                            <p><span class="eth-symbol">Ξ</span>   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
                             <p>${item.name}</p>
                             <button class="remove-btn"> Remover </button> 
                         </div>
@@ -67,7 +67,7 @@ window.addEventListener('load', () => {
                     return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/pets/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
-                            <p>Ξ   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
+                            <p><span class="eth-symbol">Ξ</span>   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
                             <p>${item.name}</p>
                             <button class="remove-btn"> Remover </button> 
                         </div>
@@ -76,7 +76,7 @@ window.addEventListener('load', () => {
                     return `<div class= "productos" target="${item.id}">
                         <img src= "/img/items/passes/${item.picture}"> </img>                    
                         <div class="precio-descuento-descripcion-remover">
-                            <p>Ξ   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
+                            <p><span class="eth-symbol">Ξ</span>   ${parseFloat(parseFloat(item.price).toFixed(3))}</p>
                             <p>${item.name}</p>
                             <button class="remove-btn"> Remover </button> 
                         </div>
@@ -92,7 +92,7 @@ window.addEventListener('load', () => {
             items.forEach(i => {
                 sumaTotal = sumaTotal + parseFloat(i.price)
             })
-            total.innerText = `Total: Ξ   ${sumaTotal}`
+            total.innerHTML = `Total: <span class="eth-symbol">Ξ</span>   ${sumaTotal}`
 
             // Mostrar items en la vista
             divs.map(div => {
@@ -157,7 +157,7 @@ window.addEventListener('load', () => {
                         })
                         .then(item => {
                             sumaTotal = sumaTotal - parseFloat(item.data[0].price);
-                            total.innerText = `Total: Ξ   ${sumaTotal}`
+                            total.innerText = `Total: <span class="eth-symbol">Ξ</span>   ${sumaTotal}`
                         })
                 });
             });

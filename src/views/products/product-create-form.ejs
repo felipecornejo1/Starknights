@@ -2,14 +2,14 @@
 <html lang="en">
 
 <!--Head-->
-<%- include('../partials/head', {stylesheet: 'style', title: 'Nuevo Item'}) %>
+<%- include('../partials/head', {stylesheet: ['style'], title: 'Nuevo Item'}) %>
 
 <body>
 
     <!--Header-->
     <%- include('../partials/header') %>
 
-    <main>
+    <main id="register">
         <!--Formulario de item-->
         <% if(locals.errors) { %>
             <form action="/marketplace/subir-item" method="post" class="item-form">

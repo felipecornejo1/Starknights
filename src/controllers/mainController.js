@@ -1,3 +1,4 @@
+const db = require('../../database/models');
 // Controller
 const controller =
 {
@@ -10,7 +11,11 @@ const controller =
         res.render('proximamente', {user: req.session.user});
     },
     planetas: (req, res) => {
-        res.render('planetas');
+        db.Planets.findAll({include: ['solar_system']})
+            .then(result => {
+                console.log(result);
+                res.render('planetas', {planets: result});
+            })
     },
     historia: (req, res) => {
         res.render('historia');

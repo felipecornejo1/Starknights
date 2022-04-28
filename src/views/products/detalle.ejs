@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!--Head-->
-<%- include('../partials/head', {stylesheet: 'style', title: 'Detalle'}) %>
+<%- include('../partials/head', {stylesheet: ['style'], title: 'Detalle'}) %>
 
 <body>
     
@@ -25,7 +25,22 @@
             </div>
         <% } %>
         <div class="flex-detalle">
-            <h2 class="producto-title"><%= item.name %></h2>
+            <div class="titulo-edit">
+                <% if(item.ownerFK == user.id) { %>
+                    <h2 class="producto-title"><%= item.name %>       <i class="fa-solid fa-pen" id="title-pen"></i></h2>
+                    <div class="modal-sell buttons-detalle" id="edit-title">
+                        <h1>Editar Nombre</h1>
+                        <form action="/marketplace/edit-title/<%= item.id %>?_method=PUT" method="POST">
+                            <div class="sell-price-input">
+                                <input type="text" name="name">
+                            </div>
+                            <button type="submit">Confirmar</button>
+                        </form>
+                    </div>
+                <% } else { %>
+                    <h2 class="producto-title"><%= item.name %></h2>
+                <% } %>
+            </div>
             <div class="art-img" target="<%= item.id %>">
                 <% if(item.typeFK == 1) {%>
                     <div class="item-id-detalle"><i class="fa-solid fa-jet-fighter-up"></i> #<%= item.id %></div>
@@ -47,8 +62,23 @@
             <div class= "buttons-detalle"> 
                 <div class="datos-detalle">
                     <% if(item.price != null) { %>
-                        <h1><span class="eth-symbol">Ξ</span> <%= item.price %></h1>
-                        <p class="precio-usd-mkt">$<%= parseInt(ethPrice) %></p>
+                        <div class="precio-edit">
+                            <h1><span class="eth-symbol">Ξ</span> <%= parseFloat(parseFloat(item.price).toFixed(3)) %></h1>
+                                <% if(item.ownerFK == user.id) { %>
+                                    <i class="fa-solid fa-pen" id="price-pen"></i>
+                                    <div class="modal-sell" id="edit-price">
+                                        <h1>Editar Precio</h1>
+                                        <form action="/marketplace/edit-price/<%= item.id %>?_method=PUT" method="POST">
+                                            <div class="sell-price-input">
+                                                <input type="number" min="0.001" step="0.001" inputmode="numeric" name="price">
+                                                <p>ETH</p>
+                                            </div>
+                                            <button type="submit">Confirmar</button>
+                                        </form>
+                                    </div>
+                                <% } %>
+                        </div>
+                        <p class="precio-usd-mkt">$<%= parseInt(ethPrice * item.price) %></p>
                     <% } %>
                     <p>Dueño: <a href="/users/profile/<%= item.ownerFK %>"><%= item.owner.username + ' #' + item.ownerFK %></a></p>
                 </div>
@@ -59,7 +89,7 @@
                     </form>
                 <% } else if(item.ownerFK == user.id && item.price == null) { %>
                     <button type="submit" id="sell"> Vender </button>
-                    <div class="modal-sell">
+                    <div class="modal-sell" id="sell-item">
                         <h1>Vender Item</h1>
                         <p class="modal-sell-msg">Este item se publicará en el marketplace al precio que elijas.<br>Puedes retirarlo de la venta sólo si aún no fue comprado.<br>Recibirás el 100% del precio que pague el comprador.</p>
                         <form action="/marketplace/sell/<%= item.id %>?_method=PUT" method="POST">
@@ -75,10 +105,11 @@
                     <form action="/marketplace/cancel-sale/<%= item.id %>?_method=PUT" method="POST">
                         <button type="submit"> Cancelar Venta </button>
                     </form>
+                <% }  if(item.ownerFK == user.id) { %>
+                    <form action="/marketplace/delete/<%= item.id %>?_method=DELETE" method="POST">
+                        <button type="submit"> Descartar (<span class="eth-symbol">Ξ</span> 0.5) </button>
+                    </form>
                 <% } %>
-                <form action="/marketplace/delete/<%= item.id %>?_method=DELETE" method="POST">
-                    <button type="submit"> Borrar </button>
-                </form>
             </div>
                 
         </div> 

@@ -68,7 +68,12 @@ const controller = {
     visit: (req, res) => {
         db.Users.findByPk(req.params.id, {include: ['type', 'items']})
             .then(result => {
-                res.render('users/profile/visit', {user: req.session.user, visiting: result});
+                if(result != undefined) {
+                    res.render('users/profile/visit', {user: req.session.user, visiting: result});
+                }
+                else {
+                    res.render('404')
+                }
             })
     },
     ethAirdrop: (req, res) => {

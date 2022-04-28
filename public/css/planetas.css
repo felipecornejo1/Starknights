@@ -1,3 +1,19 @@
+html {
+    background-color: #000;
+}
+main {
+    min-height: 0 !important;
+}
+
+h1 {
+    width: 100%;
+    margin-left: 130px;
+    color: #EAEAEA;
+}
+
+.h1-planetas {
+    margin-left: 0;
+}
 
 .bg-img {
     /* The image used */
@@ -25,11 +41,24 @@
 }
 
 .p2-img {
-    width: 60%;
+    width: 300px;
     margin-top: 3%;
     margin-left: 15%;
-    margin-bottom: 3%;
-    padding-right: 0;
+    margin-bottom: 50px;
+    margin-right: 50px;
+}
+
+.planet-stats {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.planet-stats > p {
+    background-color: #0B141B;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 5px 10px;
 }
 
 .p2-img-container {
@@ -71,11 +100,11 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .p2-seccion {
-    background-color: #000000;
+    background-color: #0E161D;
     color: #EAEAEA;
     display: flex;
     justify-content: space-evenly;
@@ -102,4 +131,21 @@
     background-color: #0E161D;
     margin: 0;
     padding: 0;
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        text-align: center;
+        margin-left: 0;
+    }
+    .p2-seccion {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        margin: auto;
+    }
+    .planet-stats {
+        flex-direction: column;
+        text-align: center;
+    }
 }

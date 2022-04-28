@@ -33,7 +33,7 @@
     font-size: 18px;
     background-color: #070720;
     color: #fff;
-}
+} 
 
 .casillas-login:focus {
     outline: 2px solid #D6A771;
@@ -57,6 +57,8 @@
     font-size: 18px;
     border-radius: 5px;
     transition: background-color 450ms;
+    cursor: pointer;
+    border: none;
 }
 
 .formulario-login .boton-login:hover{

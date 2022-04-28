@@ -2,48 +2,19 @@
 <html lang="en">
 
 <!--Head-->
-<%- include('partials/head', {stylesheet: 'style', title: 'Proximamente'}) %>
+<%- include('partials/head', {stylesheet: ['style'], title: 'Proximamente'}) %>
 
 <body>
     
     <!--Header-->
     <%- include('partials/header') %>
 
-    <div class="cartel-error">
-        <h1>Estamos trabajando en algunas funciones, disculpe las molestias.</h1>
-        <img src="img/logo-blanco.png">
-    </div>
-
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
-          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
-          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
-          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
-          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
-          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
-          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
-          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
-          <div class="swiper-slide slide-demo"><img src="/img/planetas/planeta1.jpg" alt=""></div>
-        </div>
-        <div class="swiper-pagination"></div>
+    <main id="register">
+      <div class="cartel-error">
+          <h1>Estamos trabajando en algunas funciones, disculpe las molestias.</h1>
+          <img src="img/logo-blanco.png">
       </div>
-  
-      <!-- Swiper JS -->
-      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  
-      <!-- Initialize Swiper -->
-      <script>
-        var swiper = new Swiper(".mySwiper", {
-          slidesPerView: 3,
-          spaceBetween: 30,
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        });
-      </script>
+    </main>
     
     <!--Footer-->
     <%- include('./partials/footer') %>

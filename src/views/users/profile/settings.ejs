@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!--Head-->
-<%- include('../../partials/head', {stylesheet: 'style', title: 'Perfil'}) %>
+<%- include('../../partials/head', {stylesheet: ['style'], title: 'Perfil'}) %>
 
 <body>
     
@@ -10,16 +10,23 @@
     <%- include('../../partials/header') %>
 
     <main>
-        
         <%- include('../../partials/accountMenu') %>
-        <!-- ! Cartel próximamente hasta que esté lista esta vista -->
         <div class="acc-view">
-            <div class="cartel-proximamente">
-                <h1 class="proximamente">Estamos trabajando en algunas funciones, disculpe las molestias.</h1>
-                <img src="/img/logo-blanco.png">
-            </div>
+            <form class= "profile-edit" action="/users/edit" method="POST" enctype="multipart/form-data">
+                <h4 class="title">Registro de usuario </h4>
+                <input class="casillas" id="reg-input-name" type="text" name="username" placeholder="Nombre de Usuario"/>
+                <p class="form-error" id="name-error"></p>
+                <input class="casillas" id="reg-input-email" type="text" name="email" placeholder="Correo Electrónico"/>
+                <p class="form-error" id="email-error"></p>
+                <input class="casillas" id="reg-input-password" type="password" name="password" placeholder="Contraseña"/>
+                <p class="form-error" id="password-error"></p>
+                <p class="form-message">La contraseña debe contener al menos 6 caracteres</p>
+                <h3 class="titulos"> Ingrese su foto de perfil </h3>
+                <label for="reg-input-pp" class="file-upload-label"><i class="fas fa-upload"></i>Subir una Imagen  <p id="selected-image"></p></label>
+                <input class= "file-upload"; type="file" name="archivo" id="reg-input-pp" accept="image/*" style="color:transparent"/>
+                <button class= "boton" id="btn-register" type="submit"> Enviar </button>   
+              </form>
         </div>
-
     </main>
 
 </body>

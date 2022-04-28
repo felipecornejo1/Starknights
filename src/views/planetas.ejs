@@ -2,49 +2,32 @@
 <html lang="en">
 
 <!--Head-->
-<head>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/planetas.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planetas - Starknights</title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
+<%- include('partials/head', {stylesheet: ['style', 'planetas'], title: 'Planetas'}) %>
+
 
 <body  id="principal">
     <!--Header-->
     <%- include('partials/header') %>
     <main></main>
         <div class="bg-img"></div>
-        <div class="p3-seccion">
-            <div class="p3-img-container">
-                <img src="/img/planetas/planeta3.jpg" class="p3-img">
+        <% for(let planet of planets) { %>
+            <h1><%= planet.name %></h1>
+            <div class="p2-seccion">
+                <div class="p2-img-container">
+                    <img src="/img/planetas/<%= planet.picture %>" class="p2-img">
+                </div>
+                <div class="txt-p2">
+                    <div class="planet-stats">
+                        <p>Sistema Solar: <%= planet.solar_system.name %></p>
+                        <p>Tamaño: <%= planet.size %></p>
+                        <p>Población: <%= planet.population %></p>
+                        <p>Habitabilidad: <%= planet.living_conditions %>%</p>
+                        <p>ESI: <%= planet.esi %>%</p>
+                    </div>
+                    <p><%= planet.description %></p>
+                </div>
             </div>
-            <div class="txt-p3">
-                <h1>OUTLAND</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis iste voluptates rem nihil magnam, quae dolores minima fugit accusantium dignissimos reiciendis officiis error enim ipsam necessitatibus veniam quidem aperiam quos.</p>
-            </div>
-        </div>
-        <div class="p1-seccion">
-            <div class="p1-img-container">
-                <img src="/img/planetas/planeta1.jpg" class="p1-img">
-            </div>
-            <div class="txt-p1">
-                <h1>DRAENOR</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis iste voluptates rem nihil magnam, quae dolores minima fugit accusantium dignissimos reiciendis officiis error enim ipsam necessitatibus veniam quidem aperiam quos.</p>
-            </div>
-        </div>
-        <div class="p2-seccion">
-            <div class="p2-img-container">
-                <img src="/img/planetas/planeta2.jpg" class="p2-img">
-            </div>
-            <div class="txt-p2">
-                <h1>ARGUS</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis iste voluptates rem nihil magnam, quae dolores minima fugit accusantium dignissimos reiciendis officiis error enim ipsam necessitatibus veniam quidem aperiam quos.</p>
-            </div>
-        </div>
+        <% } %>
         <div class="bg-text">
             <h1 class="h1-planetas">PLANETAS</h1>
             <p class="p-planetas">VISITA O COLONIZA</p>

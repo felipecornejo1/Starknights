@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!--Head-->
-<%- include('partials/head', {stylesheet: 'style', title: 'Inicio'}) %>
+<%- include('partials/head', {stylesheet: ['style'], title: 'Inicio'}) %>
 
 <body  id="principal">
     
@@ -23,26 +23,41 @@
             </div>
             <div class="div-civilizacion-txt">
                 <h1 class="h1-civilizacion">Crea tu propia civilización</h1>
-                <p class="p-civilizacion">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                <br>
-                Cumque, molestiae quia voluptatem ad dolorum repudiandae id 
-                <br>
-                praesentium obcaecati fuga iste, magnam eligendi cupiditate, neque mollitia!
+                <p class="p-civilizacion">
+                    Explora el universo de Starknights y sus decenas de planetas únicos. Coopera o combate con otros jugadores en línea para dominar planetas enteros, con un sistema basado en el desarrollo no sólo de tu personaje, ¡Sino también de una civilización entera! 
                 </p>
             </div>
         </div>
         <h1 class="h1-elige-raza">Elige tu raza</h1>
         <div class="container-raza">
-                <a href="https://google.com">
-                    <img src="img/Protoss1.jpg" alt="protoss-1" class="protoss-1">
-                </a>
-                <a href="fb.com">
-                    <img src="img/Terran1.jpg" alt="terran-1" class="terran-1">
-                </a>
-                <a href="twitter.com">
-                    <img src="img/Zerg1.jpg" alt="zerg-1" class="zerg-1">
-                </a>
+            <div class="raza">
+                <h2>Protoss</h2>
+                <img src="img/Protoss1.jpg" alt="protoss-1" class="protoss-1">
+                <ul>
+                    <li>Orientado al combate</li>
+                    <li>Rápidos</li>
+                </ul>
+            </div>
+            <div class="raza">
+                <h2>Terran</h2>
+                <img src="img/Terran1.jpg" alt="terran-1" class="terran-1">
+                <ul>
+                    <li>Orientado a la exploración</li>
+                    <li>Inteligentes</li>
+                </ul>
+            </div>
+            <div class="raza">
+                <h2>Zerg</h2>
+                <img src="img/Zerg1.jpg" alt="zerg-1" class="zerg-1">
+                <ul>
+                    <li>Orientado al combate</li>
+                    <li>Resistentes</li>
+                </ul>
+            </div>
+            <h1 class="h1-elige-raza">Explora el Universo</h1>
         </div>
+
+
     </main>
 
     <!--Footer-->

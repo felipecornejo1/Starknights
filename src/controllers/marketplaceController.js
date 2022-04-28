@@ -36,13 +36,18 @@ const controller =
         db.Items.findOne({where: {id: req.params.id}, include: ['owner']})
             // Después de traer ese item, renderizar la vista 'detalle' y pasarle las variables 'item' (con el item encontrado) y 'user' (con los datos del usuario logueado)
             .then(result => {
-                fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=ETH&CMC_PRO_API_KEY=8ee850bf-cab3-4069-af24-9a235b318dcc')
-                    .then(res => {
-                        return res.json();
-                    })
-                    .then(data => {
-                        res.render('products/detalle', {item: result, ethPrice: data.data.ETH.quote.USD.price, user: req.session.user});
-                    })
+                if(result != undefined) {
+                    fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=ETH&CMC_PRO_API_KEY=8ee850bf-cab3-4069-af24-9a235b318dcc')
+                        .then(res => {
+                            return res.json();
+                        })
+                        .then(data => {
+                            res.render('products/detalle', {item: result, ethPrice: data.data.ETH.quote.USD.price, user: req.session.user});
+                        })
+                }
+                else {
+                    res.render('404')
+                }
             });
     },
     create: (req, res) => {
@@ -164,13 +169,28 @@ const controller =
                 res.redirect('/marketplace/detail/' + req.params.id)
             })
     },
-    edit: (req, res) => {
-        res.send('hola')
+    editPrice: (req, res) => {
+        db.Items.update({price: req.body.price}, {where: {id: req.params.id}})
+            .then(result => {
+                res.redirect('/marketplace/detail/' + req.params.id)
+            })
+    },
+    editName: (req, res) => {
+        db.Items.update({name: req.body.name}, {where: {id: req.params.id}})
+            .then(result => {
+                res.redirect('/marketplace/detail/' + req.params.id)
+            })
     },
     destroy : (req, res) => {
         // Eliminar el item dentro de la base de datos cuyo id coincida con el que llegó por params
         db.Items.destroy({where: {id: req.params.id}})
-            .then(res.redirect('/marketplace'));
+            .then(
+                db.Users.findByPk(req.session.user)
+                    .then(result => {
+                        db.Users.update({wallet_balance: wallet_balance + 0.5}, {where: {id: result.id}})
+                            .then(res.redirect('/marketplace'));
+                    })
+            );
 	}
 };
 

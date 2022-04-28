@@ -36,8 +36,10 @@ router.put('/buy/:id', buyCheck, marketplaceController.buy);
 router.put('/sell/:id', marketplaceController.sell);
 //Cancelar venta
 router.put('/cancel-sale/:id', marketplaceController.cancelSale);
-// Editar Item
-router.put('/edit/:id', editCheck, marketplaceController.edit);
+// Editar Precio
+router.put('/edit-price/:id', editCheck, marketplaceController.editPrice);
+// Editar Nombre
+router.put('/edit-title/:id', editCheck, marketplaceController.editName);
 // Eliminar item
 router.delete('/delete/:id', authMiddleware, marketplaceController.destroy);
 
