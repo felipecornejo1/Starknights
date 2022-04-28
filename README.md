@@ -69,7 +69,7 @@ Centro donde el usuario puede administrar su perfil e inventario, consiste de 4 
 ### Historia
 Página que resume la historia ficticia del mundo donde toma lugar el juego
 
-### Planetas
+### Explorar
 Página donde se pueden explorar todos los planetas incluidos en la base de datos del juego, con sus distintas características. Cada planeta está vinculado a un sistema solar y tiene definidos los siguientes campos:
 
 - Nombre
@@ -81,7 +81,7 @@ Página donde se pueden explorar todos los planetas incluidos en la base de dato
 ## Contribuyentes
 Ariel Cocimano - 37 años<br/>
 Santiago Badino - 22 años<br/>
-Felipe Cornejo - 19 años<br/>
+Felipe Cornejo - 20 años<br/>
 Christian Adrian Aimone - 21 años
 
 
